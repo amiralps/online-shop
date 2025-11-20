@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "بلوکات مربع",
+    "title": "عینک بلوکات مربع",
     "description": "دارای استاندارد uv400 و لولا فلزی باکیفیت عالی",
     "images": [
       "products/images/blue-cut-square.jpg",
@@ -12,14 +12,15 @@
         "color": "nesscaffe",
         "namecolor": "نسکافه ای",
         "inventory": 10,
-        "price": 350
+        "price": 350,
+        "code": "#e0c28a"
       }
     ],
     "info": {"saledcounts": 1, "rate": 4.3}
   },
   {
     "id": 2,
-    "title": "بلوکات",
+    "title": "عینک بلوکات",
     "description": "دارای استاندارد uv400 و لولا فلزی باکیفیت عالی",
     "images": [
       "products/images/blue-cut.jpg",
@@ -35,13 +36,15 @@
         "color": "blue-pastille",
         "namecolor": "آبی پاستیلی",
         "inventory": 10,
-        "price": 250
+        "price": 250,
+        "code": "#8fd1f2"
       },
       {
         "color": "pink-pastille",
         "namecolor": "صورتی پاستیلی",
         "inventory": 10,
-        "price": 250
+        "price": 250,
+        "code": "#ffcee0"
       }
     ],
     "info": {"saledcounts": 1, "rate": 4.3}
@@ -56,8 +59,20 @@
       "products/images/sunglasses3.jpg"
     ],
     "colors": [
-      {"color": "black", "namecolor": "مشکی", "inventory": 10, "price": 230},
-      {"color": "brown", "namecolor": "قهوه ای", "inventory": 10, "price": 230}
+      {
+        "color": "black",
+        "namecolor": "مشکی",
+        "inventory": 10,
+        "price": 230,
+        "code": "#000"
+      },
+      {
+        "color": "brown",
+        "namecolor": "قهوه ای",
+        "inventory": 10,
+        "price": 230,
+        "code": "#c98600"
+      }
     ],
     "info": {"saledcounts": 1, "rate": 4.3}
   },
@@ -72,8 +87,20 @@
       "products/images/balanciaga4.jpg"
     ],
     "colors": [
-      {"color": "black", "namecolor": "مشکی", "inventory": 10, "price": 450},
-      {"color": "silver", "namecolor": "نقره ای", "inventory": 10, "price": 450}
+      {
+        "color": "black",
+        "namecolor": "مشکی",
+        "inventory": 10,
+        "price": 450,
+        "code": "#000"
+      },
+      {
+        "color": "silver",
+        "namecolor": "نقره ای",
+        "inventory": 10,
+        "price": 450,
+        "code": "#e0e0e0"
+      }
     ],
     "info": {"saledcounts": 1, "rate": 4.3}
   },
@@ -86,8 +113,20 @@
       "products/images/harry-potter2.jpg"
     ],
     "colors": [
-      {"color": "black", "namecolor": "مشکی", "inventory": 10, "price": 210},
-      {"color": "gold", "namecolor": "طلایی", "inventory": 10, "price": 230}
+      {
+        "color": "black",
+        "namecolor": "مشکی",
+        "inventory": 10,
+        "price": 210,
+        "code": "#000"
+      },
+      {
+        "color": "gold",
+        "namecolor": "طلایی",
+        "inventory": 10,
+        "price": 230,
+        "code": "#ffdd35"
+      }
     ],
     "info": {"saledcounts": 1, "rate": 4.3}
   },
@@ -100,7 +139,13 @@
       "products/images/sunglasses-with-piersing2.webp"
     ],
     "colors": [
-      {"color": "gold", "namecolor": "طلایی", "inventory": 10, "price": 350}
+      {
+        "color": "gold",
+        "namecolor": "طلایی",
+        "inventory": 10,
+        "price": 350,
+        "code": "#ffdd35"
+      }
     ],
     "info": {"saledcounts": 1, "rate": 4.3}
   },
@@ -113,8 +158,20 @@
       "products/images/sunglasses-3D2.jpg"
     ],
     "colors": [
-      {"color": "black", "namecolor": "مشکی", "inventory": 10, "price": 210},
-      {"color": "white", "namecolor": "سفید", "inventory": 10, "price": 210}
+      {
+        "color": "black",
+        "namecolor": "مشکی",
+        "inventory": 10,
+        "price": 210,
+        "code": "#000"
+      },
+      {
+        "color": "white",
+        "namecolor": "سفید",
+        "inventory": 10,
+        "price": 210,
+        "code": "#fff"
+      }
     ],
     "info": {"saledcounts": 1, "rate": 4.3}
   },
@@ -129,7 +186,13 @@
       "products/images/polarized-sunglasses4.jpg"
     ],
     "colors": [
-      {"color": "black", "namecolor": "مشکی", "inventory": 10, "price": 210}
+      {
+        "color": "black",
+        "namecolor": "مشکی",
+        "inventory": 10,
+        "price": 210,
+        "code": "#000"
+      }
     ],
     "info": {"saledcounts": 1, "rate": 4.3}
   }

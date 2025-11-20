@@ -9,6 +9,23 @@
   animation: my-animation alternate infinite .8s ease-in-out;
 }
 
+ul {
+  list-style-type: none;
+}
+
+.colors {
+  display: flex;
+  list-style-type: none;
+  gap: 15px;
+}
+
+.colors li {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
 p {
   direction: rtl;
   text-align: left;
