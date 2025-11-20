@@ -1,12 +1,12 @@
 img {
   width: 200px;
   height: 200px;
-  transition: 0.4s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 img:hover {
   border-radius: 50%;
-  animation: my-animation forwards infinite 1s linear;
+  animation: my-animation alternate infinite .8s ease-in-out;
 }
 
 p {
@@ -19,6 +19,6 @@ p {
 	transform: none;
   }
   100% {
-	transform: rotate(360deg);
+	transform: translateY(-5px);
   }
 }

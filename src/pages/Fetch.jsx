@@ -9,7 +9,6 @@ function Fetch() {
   }, []);
   return (
     <>
-      <div>Fetch</div>
       <ul>
         {products.length &&
           products.map((i) => (
