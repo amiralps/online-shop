@@ -7,11 +7,11 @@ function Products() {
   useEffect(() => {
     axios.get("products/data.json").then((res) => setProducts(res.data));
   }, []);
+  if (!products.length) return <h1>Loading ...</h1>
   return (
     <>
       <ul>
-        {products.length &&
-          products.map((i) => (
+        {products.map((i) => (
             <li key={i.id}>
               <h1>{i.title}</h1>
               {i.images.map((image, index) => (
