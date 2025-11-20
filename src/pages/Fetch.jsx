@@ -15,7 +15,7 @@ function Fetch() {
             <li key={i.id}>
               <h1>{i.title}</h1>
               {i.images.map((image, index) => (
-                <img key={index} src={image} alt={i.title} />
+                <img className={styles.image} key={index} src={image} alt={i.title} />
               ))}
               <p>{i.description}</p>
             </li>
