@@ -4,12 +4,17 @@
     "title": "بلوکات مربع",
     "description": "دارای استاندارد uv400 و لولا فلزی باکیفیت عالی",
     "images": [
-      "products/images/bue-cut-square.jpg",
-      "products/images/bue-cut-square2.jpg"
+      "products/images/blue-cut-square.jpg",
+      "products/images/blue-cut-square2.jpg"
     ],
-    "price": 0,
-    "colors": ["black"],
-    "inventory": 10,
+    "colors": [
+      {
+        "color": "nesscaffe",
+        "namecolor": "نسکافه ای",
+        "inventory": 10,
+        "price": 350
+      }
+    ],
     "info": {"saledcounts": 1, "rate": 4.3}
   },
   {
@@ -25,28 +30,40 @@
       "products/images/blue-cut6.jpg",
       "products/images/blue-cut7.jpg"
     ],
-    "price": 350,
-    "colors": ["pink", "blue"],
-    "inventory": 10,
+    "colors": [
+      {
+        "color": "blue-pastille",
+        "namecolor": "آبی پاستیلی",
+        "inventory": 10,
+        "price": 250
+      },
+      {
+        "color": "pink-pastille",
+        "namecolor": "صورتی پاستیلی",
+        "inventory": 10,
+        "price": 250
+      }
+    ],
     "info": {"saledcounts": 1, "rate": 4.3}
   },
   {
     "id": 3,
-    "title": "عینک آفتابی",
+    "title": "عینک آفتابی پلاریزه",
     "description": "دارای استاندارد uv400 و لولا فلزی باکیفیت عالی",
     "images": [
       "products/images/sunglasses.jpg",
       "products/images/sunglasses2.jpg",
       "products/images/sunglasses3.jpg"
     ],
-    "price": 250,
-    "colors": ["black", "brown"],
-    "inventory": 10,
+    "colors": [
+      {"color": "black", "namecolor": "مشکی", "inventory": 10, "price": 230},
+      {"color": "brown", "namecolor": "قهوه ای", "inventory": 10, "price": 230}
+    ],
     "info": {"saledcounts": 1, "rate": 4.3}
   },
   {
     "id": 4,
-    "title": "عینک آفتابی بالنسیاگا",
+    "title": "عینک آفتابی بالانسیاگا",
     "description": "دارای استاندارد uv400 و لولا فلزی باکیفیت عالی",
     "images": [
       "products/images/balanciaga.webp",
@@ -54,9 +71,10 @@
       "products/images/balanciaga3.webp",
       "products/images/balanciaga4.jpg"
     ],
-    "price": 450,
-    "colors": ["black", "silver"],
-    "inventory": 10,
+    "colors": [
+      {"color": "black", "namecolor": "مشکی", "inventory": 10, "price": 450},
+      {"color": "silver", "namecolor": "نقره ای", "inventory": 10, "price": 450}
+    ],
     "info": {"saledcounts": 1, "rate": 4.3}
   },
   {
@@ -67,22 +85,23 @@
       "products/images/harry-potter.jpg",
       "products/images/harry-potter2.jpg"
     ],
-    "price": 0,
-    "colors": ["black"],
-    "inventory": 10,
+    "colors": [
+      {"color": "black", "namecolor": "مشکی", "inventory": 10, "price": 210},
+      {"color": "gold", "namecolor": "طلایی", "inventory": 10, "price": 230}
+    ],
     "info": {"saledcounts": 1, "rate": 4.3}
   },
   {
     "id": 6,
     "title": "عینک آفتابی پیرسینگ دار",
-    "description": "دارای استاندارد uv400 و لولا فلزی باکیفیت عالی",
+    "description": "دارای استاندارد uv400 و لولا فلزی باکیفیت عالی فریم فلزی",
     "images": [
       "products/images/sunglasses-with-piersing.webp",
       "products/images/sunglasses-with-piersing2.webp"
     ],
-    "price": 0,
-    "colors": ["gold"],
-    "inventory": 10,
+    "colors": [
+      {"color": "gold", "namecolor": "طلایی", "inventory": 10, "price": 350}
+    ],
     "info": {"saledcounts": 1, "rate": 4.3}
   },
   {
@@ -93,24 +112,25 @@
       "products/images/sunglasses-3D.jpeg",
       "products/images/sunglasses-3D2.jpg"
     ],
-    "price": 0,
-    "colors": ["black"],
-    "inventory": 10,
+    "colors": [
+      {"color": "black", "namecolor": "مشکی", "inventory": 10, "price": 210},
+      {"color": "white", "namecolor": "سفید", "inventory": 10, "price": 210}
+    ],
     "info": {"saledcounts": 1, "rate": 4.3}
   },
   {
     "id": 8,
     "title": "عینک آفتابی پلاریزه",
-    "description": "دارای استاندارد uv400 و لولا فلزی باکیفیت عالی",
+    "description": "دارای استاندارد uv400 و لولا فلزی باکیفیت عالی فریم فلزی",
     "images": [
       "products/images/polarized-sunglasses.jpg",
       "products/images/polarized-sunglasses2.jpg",
       "products/images/polarized-sunglasses3.jpg",
       "products/images/polarized-sunglasses4.jpg"
     ],
-    "price": 0,
-    "colors": ["black"],
-    "inventory": 10,
+    "colors": [
+      {"color": "black", "namecolor": "مشکی", "inventory": 10, "price": 210}
+    ],
     "info": {"saledcounts": 1, "rate": 4.3}
   }
 ]
