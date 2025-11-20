@@ -2,7 +2,7 @@ import axios from "axios";
 import {useEffect, useState} from "react";
 import styles from "../styles/Products.module.css"
 
-function Fetch() {
+function Products() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     axios.get("products/data.json").then((res) => setProducts(res.data));
@@ -24,4 +24,4 @@ function Fetch() {
     </>
   );
 }
-export default Fetch;
+export default Products;

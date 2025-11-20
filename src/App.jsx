@@ -1,5 +1,5 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Fetch from "./pages/Fetch";
+import Products from "./pages/Products";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 
@@ -10,7 +10,7 @@ function App() {
       <Navbar />
         <Routes>
           <Route index element={<Home />} />
-          <Route path="products" element={<Fetch />} />
+          <Route path="products" element={<Products />} />
         </Routes>
       </BrowserRouter>
     </>
