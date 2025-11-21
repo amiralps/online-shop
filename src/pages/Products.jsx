@@ -1,13 +1,19 @@
 import axios from "axios";
 import {useEffect, useState} from "react";
 import styles from "../styles/Products.module.css";
-
 function Products() {
+  const [colorPick, setColorPick] = useState();
+  const colorClickHandler = (e) => {
+    if (e.target.localName == "div") {
+      setColorPick(e.target.parentNode.innerText)
+    } else {
+      setColorPick(e.target.innerText)
+    }
+  };
   const [products, setProducts] = useState([]);
   useEffect(() => {
     axios.get("products/data.json").then((res) => setProducts(res.data));
   }, []);
-  console.log(products);
   if (!products.length) return <h1>Loading ...</h1>;
   return (
     <>
@@ -25,10 +31,13 @@ function Products() {
             ))}
             <p>{i.description}</p>
             <ul className={styles.colors}>
-              {i.colors.map((items, index) => (
-                <li style={{backgroundColor: items.code}} key={index}></li>
+              <p>رنگ ها :</p>
+              {i.colors.map((item, index) => (
+                <li key={index} onClick={colorClickHandler} className={colorPick == item.namecolor ? styles.active : null}>
+                  <p>{item.namecolor}</p>
+                  <div style={{backgroundColor: item.code}}></div>
+                </li>
               ))}
-              : رنگ ها
             </ul>
           </li>
         ))}

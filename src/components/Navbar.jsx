@@ -1,11 +1,18 @@
-import { NavLink } from "react-router-dom"
+import {NavLink} from "react-router-dom";
+import styles from "../styles/Navbar.module.css";
 
 function Navbar() {
   return (
-	<ul>
-		<li><NavLink to="/">Home</NavLink></li>
-		<li><NavLink to="products">Products</NavLink></li>
-	</ul>
-  )
+    <div className={styles.navbar}>
+      <ul>
+        <li>
+          <NavLink to="/">خانه</NavLink>
+        </li>
+        <li>
+          <NavLink to="products">محصولات</NavLink>
+        </li>
+      </ul>
+    </div>
+  );
 }
-export default Navbar
+export default Navbar;

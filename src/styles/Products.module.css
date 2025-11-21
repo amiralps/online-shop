@@ -16,19 +16,28 @@ ul {
 .colors {
   display: flex;
   list-style-type: none;
-  gap: 15px;
+}
+
+.colors li div {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #6666664b;
+  z-index: 1;
 }
 
 .colors li {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 1px solid #000;
+  display: flex;
+  gap: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+  padding: 3px 5px;
+  transition: .3s;
+  border-radius: 5px;
 }
 
-p {
-  direction: rtl;
-  text-align: left;
+.colors li.active {
+  box-shadow: 0 0 1px 1px #686868d3;
 }
 
 @keyframes my-animation {
