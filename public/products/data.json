@@ -4,8 +4,8 @@
     "title": "عینک بلوکات مربع",
     "description": "دارای استاندارد uv400 و لولا فلزی باکیفیت عالی",
     "images": [
-      "products/images/blue-cut-square.jpg",
-      "products/images/blue-cut-square2.jpg"
+      "/products/images/blue-cut-square.jpg",
+      "/products/images/blue-cut-square2.jpg"
     ],
     "colors": [
       {
@@ -23,13 +23,13 @@
     "title": "عینک بلوکات",
     "description": "دارای استاندارد uv400 و لولا فلزی باکیفیت عالی",
     "images": [
-      "products/images/blue-cut.jpg",
-      "products/images/blue-cut2.jpg",
-      "products/images/blue-cut3.jpg",
-      "products/images/blue-cut4.jpg",
-      "products/images/blue-cut5.jpg",
-      "products/images/blue-cut6.jpg",
-      "products/images/blue-cut7.jpg"
+      "/products/images/blue-cut.jpg",
+      "/products/images/blue-cut2.jpg",
+      "/products/images/blue-cut3.jpg",
+      "/products/images/blue-cut4.jpg",
+      "/products/images/blue-cut5.jpg",
+      "/products/images/blue-cut6.jpg",
+      "/products/images/blue-cut7.jpg"
     ],
     "colors": [
       {
@@ -54,9 +54,9 @@
     "title": "عینک آفتابی پلاریزه",
     "description": "دارای استاندارد uv400 و لولا فلزی باکیفیت عالی",
     "images": [
-      "products/images/sunglasses.jpg",
-      "products/images/sunglasses2.jpg",
-      "products/images/sunglasses3.jpg"
+      "/products/images/sunglasses.jpg",
+      "/products/images/sunglasses2.jpg",
+      "/products/images/sunglasses3.jpg"
     ],
     "colors": [
       {
@@ -81,10 +81,10 @@
     "title": "عینک آفتابی بالانسیاگا",
     "description": "دارای استاندارد uv400 و لولا فلزی باکیفیت عالی",
     "images": [
-      "products/images/balanciaga.webp",
-      "products/images/balanciaga2.jpg",
-      "products/images/balanciaga3.webp",
-      "products/images/balanciaga4.jpg"
+      "/products/images/balanciaga.webp",
+      "/products/images/balanciaga2.jpg",
+      "/products/images/balanciaga3.webp",
+      "/products/images/balanciaga4.jpg"
     ],
     "colors": [
       {
@@ -109,8 +109,8 @@
     "title": "عینک هری پاتری",
     "description": "دارای استاندارد uv400 و لولا فلزی باکیفیت عالی",
     "images": [
-      "products/images/harry-potter.jpg",
-      "products/images/harry-potter2.jpg"
+      "/products/images/harry-potter.jpg",
+      "/products/images/harry-potter2.jpg"
     ],
     "colors": [
       {
@@ -135,8 +135,8 @@
     "title": "عینک آفتابی پیرسینگ دار",
     "description": "دارای استاندارد uv400 و لولا فلزی باکیفیت عالی فریم فلزی",
     "images": [
-      "products/images/sunglasses-with-piersing.webp",
-      "products/images/sunglasses-with-piersing2.webp"
+      "/products/images/sunglasses-with-piersing.webp",
+      "/products/images/sunglasses-with-piersing2.webp"
     ],
     "colors": [
       {
@@ -154,8 +154,8 @@
     "title": "عینک آفتابی دسته سه بعدی",
     "description": "دارای استاندارد uv400 و لولا فلزی باکیفیت عالی",
     "images": [
-      "products/images/sunglasses-3D.jpeg",
-      "products/images/sunglasses-3D2.jpg"
+      "/products/images/sunglasses-3D.jpeg",
+      "/products/images/sunglasses-3D2.jpg"
     ],
     "colors": [
       {
@@ -180,10 +180,10 @@
     "title": "عینک آفتابی پلاریزه",
     "description": "دارای استاندارد uv400 و لولا فلزی باکیفیت عالی فریم فلزی",
     "images": [
-      "products/images/polarized-sunglasses.jpg",
-      "products/images/polarized-sunglasses2.jpg",
-      "products/images/polarized-sunglasses3.jpg",
-      "products/images/polarized-sunglasses4.jpg"
+      "/products/images/polarized-sunglasses.jpg",
+      "/products/images/polarized-sunglasses2.jpg",
+      "/products/images/polarized-sunglasses3.jpg",
+      "/products/images/polarized-sunglasses4.jpg"
     ],
     "colors": [
       {

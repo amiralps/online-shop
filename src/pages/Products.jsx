@@ -1,44 +1,30 @@
-import axios from "axios";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import styles from "../styles/Products.module.css";
+import {useDispatch, useSelector} from "react-redux";
+import {getProducts} from "../features/products/productSlice.js";
+import {Link} from "react-router-dom";
 function Products() {
-  const [colorPick, setColorPick] = useState();
-  const colorClickHandler = (e) => {
-    if (e.target.localName == "div") {
-      setColorPick(e.target.parentNode.innerText)
-    } else {
-      setColorPick(e.target.innerText)
-    }
-  };
-  const [products, setProducts] = useState([]);
+  const dispatch = useDispatch();
   useEffect(() => {
-    axios.get("products/data.json").then((res) => setProducts(res.data));
+    dispatch(getProducts());
   }, []);
-  if (!products.length) return <h1>Loading ...</h1>;
+  const {error, loading, products} = useSelector((state) => state.products);
+  if (error) return <h1>{error}</h1>;
+  if (!products.length || loading) return <h1>Loading ...</h1>;
   return (
     <>
-      <ul>
-        {products.map((i) => (
-          <li key={i.id}>
-            <h1>{i.title}</h1>
-            {i.images.map((image, index) => (
+      <ul className={styles.products}>
+        {products.map((item) => (
+          <li key={item.id}>
+            <h1>{item.title}</h1>
+            <Link to={`/products/${item.id}`}>
               <img
                 className={styles.image}
-                key={index}
-                src={image}
-                alt={i.title}
+                src={item.images[0]}
+                alt={item.title}
               />
-            ))}
-            <p>{i.description}</p>
-            <ul className={styles.colors}>
-              <p>رنگ ها :</p>
-              {i.colors.map((item, index) => (
-                <li key={index} onClick={colorClickHandler} className={colorPick == item.namecolor ? styles.active : null}>
-                  <p>{item.namecolor}</p>
-                  <div style={{backgroundColor: item.code}}></div>
-                </li>
-              ))}
-            </ul>
+            </Link>
+            <p>{item.description}</p>
           </li>
         ))}
       </ul>

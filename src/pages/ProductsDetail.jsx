@@ -1,6 +1,57 @@
+import {useEffect, useState} from "react";
+import styles from "../styles/Products.module.css";
+import {useDispatch, useSelector} from "react-redux";
+import {getProducts} from "../features/products/productSlice.js";
+import {useParams} from "react-router-dom";
 function ProductsDetail() {
+  const {id} = useParams();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getProducts());
+  }, []);
+  const {error, loading, products} = useSelector((state) => state.products);
+  const [colorPick, setColorPick] = useState(0);
+  const colorClickHandler = (e) => {
+    if (e.target.localName == "div") {
+      setColorPick(e.target.parentNode.innerText);
+    } else {
+      setColorPick(e.target.innerText);
+    }
+  };
+  if (error) return <h1>{error}</h1>;
+  if (!products.length || loading) return <h1>Loading ...</h1>;
+  const product = products.find((i) => i.id == id);
   return (
-	<h1>ProductsDetail</h1>
-  )
+    <>
+      <div>
+        <h1>{product.title}</h1>
+        {product.images.map((image, index) => (
+          <img
+            className={styles.image}
+            key={index}
+            src={image}
+            alt={product.title}
+          />
+        ))}
+        <p>{product.description}</p>
+        <p>رنگ : {colorPick !== 0 ? colorPick : product.colors[0].namecolor}</p>
+        <ul className={styles.colors}>
+          {product.colors.map((item, index) => (
+            <li
+              key={index}
+              onClick={colorClickHandler}
+              className={
+                colorPick == item.namecolor || colorPick == index
+                  ? styles.active
+                  : null
+              }>
+              <p>{item.namecolor}</p>
+              <div style={{backgroundColor: item.code}}></div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
+  );
 }
-export default ProductsDetail
+export default ProductsDetail;
