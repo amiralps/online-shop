@@ -2,7 +2,7 @@ import {useEffect} from "react";
 import styles from "../styles/Products.module.css";
 import {useDispatch, useSelector} from "react-redux";
 import {getProducts} from "../features/products/productSlice.js";
-import {Link} from "react-router-dom";
+import Card from "../components/card.jsx";
 function Products() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -12,23 +12,11 @@ function Products() {
   if (error) return <h1>{error}</h1>;
   if (!products.length || loading) return <h1>Loading ...</h1>;
   return (
-    <>
-      <ul className={styles.products}>
-        {products.map((item) => (
-          <li key={item.id}>
-            <h1>{item.title}</h1>
-            <Link to={`/products/${item.id}`}>
-              <img
-                className={styles.image}
-                src={item.images[0]}
-                alt={item.title}
-              />
-            </Link>
-            <p>{item.description}</p>
-          </li>
-        ))}
-      </ul>
-    </>
+    <div className={styles.products}>
+      {products.map((item) => (
+        <Card key={item.id} data={item} />
+      ))}
+    </div>
   );
 }
 export default Products;
