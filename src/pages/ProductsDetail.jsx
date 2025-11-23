@@ -11,13 +11,6 @@ function ProductsDetail() {
   }, []);
   const {error, loading, products} = useSelector((state) => state.products);
   const [colorPick, setColorPick] = useState(0);
-  const colorClickHandler = (e) => {
-    if (e.target.localName == "div") {
-      setColorPick(e.target.parentNode.innerText);
-    } else {
-      setColorPick(e.target.innerText);
-    }
-  };
   if (error) return <h1>{error}</h1>;
   if (!products.length || loading) return <h1>Loading ...</h1>;
   const product = products.find((i) => i.id == id);
@@ -41,17 +34,15 @@ function ProductsDetail() {
           />
         ))}
         <p>{product.description}</p>
-        <p>رنگ : {colorPick !== 0 ? colorPick : product.colors[0].namecolor}</p>
+        <p>رنگ : {product.colors[colorPick].namecolor}</p>
         <ul className={styles.colors}>
           {product.colors.map((item, index) => (
             <li
               key={index}
-              onClick={colorClickHandler}
-              className={
-                colorPick == item.namecolor || colorPick == index
-                  ? styles.active
-                  : null
-              }>
+              onClick={() => {
+                setColorPick(index);
+              }}
+              className={colorPick == index ? styles.active : null}>
               <p>{item.namecolor}</p>
               <div style={{backgroundColor: item.code}}></div>
             </li>

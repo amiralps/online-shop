@@ -4,9 +4,10 @@ function Card({data: {id, title, images, description}, data}) {
   return (
     <>
       <Link className={styles.link} to={`/products/${id}`}>
-        <div
-          className={styles.card}
-          style={{backgroundImage: `url(${images[0]})`}}>
+        <div className={styles.card}>
+          <div
+            className={styles.bgimage}
+            style={{backgroundImage: `url(${images[0]})`}}></div>
           <h1>{title}</h1>
           <p>{description}</p>
         </div>
