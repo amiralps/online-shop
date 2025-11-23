@@ -55,7 +55,7 @@ ul {
   transform: translateY(-15px);
 }
 
-@media (hover: hover) {
+@media (min-width: 1025px) {
   .card h1,
   .card p {
     width: 100%;
