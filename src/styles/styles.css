@@ -1,13 +1,14 @@
 * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-	padding: 20px 50px;
+  padding: 20px 50px;
 }
 
 a.active {
-	background-color: #c9c9c9;
+  background-color: #c9c9c9;
 }
