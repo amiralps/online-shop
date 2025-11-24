@@ -4,10 +4,6 @@
   transition: 0.3s ease-in-out;
 }
 
-.image:hover {
-  border-radius: 50%;
-}
-
 ul {
   list-style-type: none;
 }

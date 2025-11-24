@@ -3,8 +3,19 @@ import styles from "../styles/ProductsDetail.module.css";
 import {useDispatch, useSelector} from "react-redux";
 import {getProducts} from "../features/products/productSlice.js";
 import {useParams} from "react-router-dom";
+// Import Swiper React components
+import {Swiper, SwiperSlide} from "swiper/react";
+// import Swiper core and required modules
+import {Navigation, FreeMode, Thumbs} from "swiper/modules";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+
 function ProductsDetail() {
   const {id} = useParams();
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProducts());
@@ -25,14 +36,47 @@ function ProductsDetail() {
     <>
       <div>
         <h1>{product.title}</h1>
-        {product.images.map((image, index) => (
-          <img
-            className={styles.image}
-            key={index}
-            src={image}
-            alt={product.title}
-          />
-        ))}
+        <Swiper
+          modules={[Navigation, FreeMode, Thumbs]}
+          spaceBetween={10}
+          navigation={true}
+          loop={true}
+          thumbs={{swiper: thumbsSwiper}}
+          className={styles.productImagesSwiper}>
+          {product.images.map((image, index) => (
+            <SwiperSlide>
+              <img
+                className={styles.image}
+                key={index}
+                src={image}
+                alt={product.title}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <Swiper
+          allowTouchMove={false}
+          onSwiper={setThumbsSwiper}
+          loop={true}
+          spaceBetween={10}
+          slidesPerView={4}
+          noSwiping
+          freeMode={true}
+          watchSlidesProgress={true}
+          modules={[FreeMode, Navigation, Thumbs]}
+          className={styles.productImagesPagination}>
+          {product.images.map((image, index) => (
+            <SwiperSlide>
+              <img
+                className={styles.image}
+                key={index}
+                src={image}
+                alt={product.title}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
         <p>{product.description}</p>
         <p>رنگ : {product.colors[colorPick].namecolor}</p>
         <ul className={styles.colors}>
@@ -43,8 +87,8 @@ function ProductsDetail() {
                 setColorPick(index);
               }}
               className={colorPick == index ? styles.active : null}>
-              <p>{item.namecolor}</p>
               <div style={{backgroundColor: item.code}}></div>
+              <p>{item.namecolor}</p>
             </li>
           ))}
         </ul>

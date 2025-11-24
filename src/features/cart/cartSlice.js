@@ -10,8 +10,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    removeItem(state, action) {
-	},
+    removeItem(state, action) {},
     addItem(state, action) {},
     increment(state, action) {},
     decrement(state, action) {},

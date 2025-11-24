@@ -6,9 +6,15 @@
 }
 
 body {
-  padding: 20px 50px;
+  padding: 20px 10px;
 }
 
 a.active {
   background-color: #c9c9c9;
+}
+
+@media (min-width: 320px) and (max-width: 389px) {
+  body {
+    padding: 10px 5px;
+  }
 }
