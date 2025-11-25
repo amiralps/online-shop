@@ -2,6 +2,7 @@
   width: 200px;
   height: 200px;
   transition: 0.3s ease-in-out;
+  user-select: none;
 }
 
 ul {
@@ -29,10 +30,73 @@ ul {
   margin: 0 10px;
   cursor: pointer;
   padding: 3px 5px;
-  transition: .3s;
+  transition: 0.3s;
   border-radius: 5px;
 }
 
 .colors li.active {
   box-shadow: 0 0 1px 1px #686868d3;
+}
+
+.productImagesPagination {
+  height: 60px;
+  min-width: 200px;
+  width: 20%;
+  margin: 10px 0 !important;
+  padding: 8px 5px 8px 0 !important;
+  border: 2px solid #4375ff;
+  border-radius: 8px;
+}
+
+.productImagesPagination > div > div {
+  width: fit-content !important;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.productImagesPagination > div {
+  gap: 10px;
+}
+
+.productImagesPagination img {
+  height: 100%;
+  width: auto;
+}
+
+:global(.swiper-slide-thumb-active) {
+  box-shadow: 0 0 0 0 #000, 0 0 2px 2px #4375ff;
+}
+
+.productImagesPagination > div > div::after {
+  transition: 0.3s;
+  content: "";
+  width: 10px;
+  height: 3px;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 15px;
+  background: #6e6e6e;
+  border: #ffffff 1px solid;
+}
+
+:global(.swiper-slide-thumb-active)::after {
+  bottom: 0px !important;
+}
+
+@media (min-width: 1024px) {
+  .colors li {
+    padding: 3px;
+    border-radius: 50%;
+  }
+
+  .colors li div {
+    width: 20px;
+    height: 20px;
+  }
+
+  .colors li.active {
+    box-shadow: 0 0 1px 2px #90d3ffd3;
+  }
 }

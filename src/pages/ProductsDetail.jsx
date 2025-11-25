@@ -15,10 +15,17 @@ import "swiper/css/thumbs";
 
 function ProductsDetail() {
   const {id} = useParams();
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024)
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProducts());
+    window.addEventListener("resize", () => {
+      setIsDesktop(window.innerWidth > 1024);
+    });
+    return window.removeEventListener("resize", () => {
+      setIsDesktop(window.innerWidth > 1024);
+    })
   }, []);
   const {error, loading, products} = useSelector((state) => state.products);
   const [colorPick, setColorPick] = useState(0);
@@ -40,7 +47,7 @@ function ProductsDetail() {
           modules={[Navigation, FreeMode, Thumbs]}
           spaceBetween={10}
           navigation={true}
-          loop={true}
+          // loop={true}
           thumbs={{
             swiper:
               thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
@@ -53,11 +60,11 @@ function ProductsDetail() {
           ))}
         </Swiper>
         <Swiper
-          allowTouchMove={false}
+          // allowTouchMove={false}
           onSwiper={setThumbsSwiper}
-          loop={true}
-          spaceBetween={10}
-          slidesPerView={4}
+          // loop={product.images.length > 4 ? true : false}
+          spaceBetween={6}
+          slidesPerView={product.images.length > 4 ? 4 : product.images.length}
           noSwiping
           freeMode={true}
           watchSlidesProgress={true}
@@ -81,7 +88,7 @@ function ProductsDetail() {
               }}
               className={colorPick == index ? styles.active : null}>
               <div style={{backgroundColor: item.code}}></div>
-              <p>{item.namecolor}</p>
+              {!isDesktop ? <p>{item.namecolor}</p> : null}
             </li>
           ))}
         </ul>
