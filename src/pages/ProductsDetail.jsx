@@ -41,16 +41,14 @@ function ProductsDetail() {
           spaceBetween={10}
           navigation={true}
           loop={true}
-          thumbs={{swiper: thumbsSwiper}}
+          thumbs={{
+            swiper:
+              thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
+          }}
           className={styles.productImagesSwiper}>
           {product.images.map((image, index) => (
-            <SwiperSlide>
-              <img
-                className={styles.image}
-                key={index}
-                src={image}
-                alt={product.title}
-              />
+            <SwiperSlide key={index}>
+              <img className={styles.image} src={image} alt={product.title} />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -66,13 +64,8 @@ function ProductsDetail() {
           modules={[FreeMode, Navigation, Thumbs]}
           className={styles.productImagesPagination}>
           {product.images.map((image, index) => (
-            <SwiperSlide>
-              <img
-                className={styles.image}
-                key={index}
-                src={image}
-                alt={product.title}
-              />
+            <SwiperSlide key={index}>
+              <img className={styles.image} src={image} alt={product.title} />
             </SwiperSlide>
           ))}
         </Swiper>
