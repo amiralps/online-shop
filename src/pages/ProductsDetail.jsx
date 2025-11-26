@@ -12,6 +12,7 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import styles from "../styles/ProductsDetail.module.css";
+import styles2 from "../styles/ProductsDetail2.module.css";
 
 function ProductsDetail() {
   const {id} = useParams();
@@ -105,6 +106,10 @@ function ProductsDetail() {
                 </li>
               ))}
             </ul>
+            <div className={styles2.addToBox}>
+              <button>افزودن به سبد</button>
+              <span>تومان {product.colors[colorPick].price}.000</span>
+            </div>
           </div>
         </div>
       </div>

@@ -1,19 +1,24 @@
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import Products from "./pages/Products";
 import Home from "./pages/Home";
-import Navbar from "./components/Navbar";
 import ProductsDetail from "./pages/ProductsDetail";
+import LayOutWithNavbar from "./layout/LayOutWithNavbar";
+import LayOutWithoutNavbar from "./layout/LayOutWithoutNavbar";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
         <Routes>
-          <Route index element={<Home />} />
-          <Route path="products" element={<Products />} />
-          <Route path="products/:id" element={<ProductsDetail />} />
-          <Route path="*" element={<Navigate to={"/"} replace />} />
+          <Route element={<LayOutWithNavbar />}>
+            <Route index element={<Home />} />
+            <Route path="products" element={<Products />} />
+          </Route>
+          <Route element={<LayOutWithoutNavbar />}>
+            <Route path="products/:id" element={<ProductsDetail />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>

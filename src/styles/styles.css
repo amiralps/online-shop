@@ -6,7 +6,7 @@
 }
 
 body {
-  padding: 20px 10px;
+  padding: 10px;
 }
 
 a.active {
@@ -15,6 +15,6 @@ a.active {
 
 @media (min-width: 320px) and (max-width: 389px) {
   body {
-    padding: 10px 5px;
+    padding: 0;
   }
 }
