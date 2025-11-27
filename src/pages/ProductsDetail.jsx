@@ -32,11 +32,13 @@ function ProductsDetail() {
     const scrollHandler = () => {
       const scrollY = window.scrollY;
 
-      // مقدار scale (مثلاً بین 1 تا 1.5)
+      // scale val
       const scale = 1 + scrollY / -500;
+      const transform = `${Math.floor(scrollY / -2.8)}px`;
 
       // ست کردن CSS Variable روی root
       document.documentElement.style.setProperty("--scroll-scale", scale);
+      document.documentElement.style.setProperty("--scroll-transform", transform);
     };
 
     window.addEventListener("scroll", scrollHandler);

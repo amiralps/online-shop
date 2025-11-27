@@ -177,7 +177,7 @@ ul {
     height: 350px;
     position: sticky;
     top: 0;
-    transform: scale(var(--scroll-scale));
+    transform: translateY(var(--scroll-transform)) scale(var(--scroll-scale));
   }
 
   .productImagesPagination {
