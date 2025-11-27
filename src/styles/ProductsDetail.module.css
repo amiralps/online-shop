@@ -177,6 +177,7 @@ ul {
     height: 350px;
     position: sticky;
     top: 0;
+    opacity: var(--scroll-scale);
     transform: translateY(var(--scroll-transform)) scale(var(--scroll-scale));
   }
 
