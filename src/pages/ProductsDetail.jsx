@@ -110,7 +110,7 @@ function ProductsDetail() {
               <button>افزودن به سبد</button>
               <span>تومان {product.colors[colorPick].price}.000</span>
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ea consequatur modi quo dicta ducimus obcaecati labore! Soluta, consequatur maiores sed porro earum ipsum corrupti? Repellat inventore veritatis sed? Id quas, eaque modi, nisi dolores excepturi cumque aliquid ut quibusdam laboriosam animi natus ullam laborum. Optio repellat numquam a saepe sed dicta mollitia vitae nam iusto maxime. Ipsa minima optio ratione consequuntur hic laborum, magni, mollitia, magnam ut praesentium repudiandae vero a expedita? Alias quibusdam dolorum quae, minima beatae at itaque tenetur quis facilis esse distinctio totam asperiores enim unde fugit debitis impedit dicta non modi rerum, nostrum possimus dolor sint consequuntur. Architecto quibusdam ut voluptates ducimus quia.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque vitae ea repellendus sed ad eos iusto fugiat quo aliquam fugit nam possimus rerum in asperiores at expedita ratione id saepe ipsam, non aspernatur. Dolor rerum sint ut voluptatem incidunt quibusdam quasi, fugiat rem mollitia? Sapiente nobis iusto fugiat excepturi, nemo nesciunt expedita ab iure porro optio id voluptas ducimus. Nulla dignissimos nisi, excepturi ratione architecto omnis autem iste fuga temporibus, maiores eligendi? Consequatur nihil aperiam quibusdam officia!</p>
           </div>
         </div>
       </div>
