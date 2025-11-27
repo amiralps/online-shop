@@ -200,7 +200,7 @@ ul {
     z-index: 2;
   }
 
-  .productDetails p:nth-last-child {
+  .productDetails > p:nth-last-child {
     padding: 0 15px;
   }
 }
