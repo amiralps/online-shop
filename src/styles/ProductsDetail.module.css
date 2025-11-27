@@ -175,7 +175,7 @@ ul {
     flex-direction: column;
     width: 100%;
     height: 350px;
-    position: fixed;
+    position: sticky;
     top: 0;
   }
 
@@ -191,7 +191,6 @@ ul {
 
   .productDetails {
     width: 100%;
-    margin-top: 370px;
     padding-top: 20px;
     border-radius: 20px 20px 0 0;
     box-shadow: 0 -4px 10px 1px #00000080;
@@ -199,6 +198,7 @@ ul {
     gap: 20px;
     background-color: #fff;
     z-index: 2;
+    height: auto;
     min-height: 100dvh;
   }
 }

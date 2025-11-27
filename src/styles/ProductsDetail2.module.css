@@ -1,27 +1,27 @@
-  .addToBox {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    justify-content: start;
-    background-color: #ffffff;
-    padding: 8px 15px;
-    /* box-shadow: 0 0 5px 1px #0000009d; */
-  }
+.addToBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  justify-content: start;
+  background-color: #ffffff;
+  padding: 8px 15px;
+  /* box-shadow: 0 0 5px 1px #0000009d; */
+}
 
-  .addToBox button {
-    font-size: 1rem;
-    background-color: #51ff00;
-    border-radius: 5px;
-    border: none;
-    padding: 6px 8px;
-    width: 130px;
-    cursor: pointer;
-  }
+.addToBox button {
+  font-size: 1rem;
+  background-color: #51ff00;
+  border-radius: 5px;
+  border: none;
+  padding: 6px 8px;
+  width: 130px;
+  cursor: pointer;
+}
 
-  .addToBox span {
-    font-size: 1rem;
-  }
+.addToBox span {
+  font-size: 1rem;
+}
 
 @media (max-width: 560px) {
   .addToBox {
