@@ -28,6 +28,20 @@ function ProductsDetail() {
       setIsDesktop(window.innerWidth > 1024);
     });
   }, []);
+  useEffect(() => {
+    const scrollHandler = () => {
+      const scrollY = window.scrollY;
+
+      // مقدار scale (مثلاً بین 1 تا 1.5)
+      const scale = 1 + scrollY / -500;
+
+      // ست کردن CSS Variable روی root
+      document.documentElement.style.setProperty("--scroll-scale", scale);
+    };
+
+    window.addEventListener("scroll", scrollHandler);
+    return () => window.removeEventListener("scroll", scrollHandler);
+  }, []);
   const {error, loading, products} = useSelector((state) => state.products);
   const [colorPick, setColorPick] = useState(0);
   if (error) return <h1>{error}</h1>;
@@ -110,7 +124,30 @@ function ProductsDetail() {
               <button>افزودن به سبد</button>
               <span>تومان {product.colors[colorPick].price}.000</span>
             </div>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque vitae ea repellendus sed ad eos iusto fugiat quo aliquam fugit nam possimus rerum in asperiores at expedita ratione id saepe ipsam, non aspernatur. Dolor rerum sint ut voluptatem incidunt quibusdam quasi, fugiat rem mollitia? Sapiente nobis iusto fugiat excepturi, nemo nesciunt expedita ab iure porro optio id voluptas ducimus. Nulla dignissimos nisi, excepturi ratione architecto omnis autem iste fuga temporibus, maiores eligendi? Consequatur nihil aperiam quibusdam officia!</p>
+            <p className={styles.lorem}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
+              quibusdam, illum totam aliquid velit ad nemo? Odio est,
+              exercitationem inventore, eum facere iusto quae excepturi incidunt
+              odit magni natus porro ea atque amet aliquid nemo. Nemo fugiat
+              repudiandae repellat illo doloribus iusto suscipit debitis numquam
+              deserunt excepturi. Ipsum cupiditate ipsa tempora, amet eos culpa
+              dolorem veniam, fugit, quasi at laboriosam totam voluptas eligendi
+              dolores sequi iure vero est in? Aliquam doloribus sed facere
+              ratione eum dolorem, alias at laborum, quos reiciendis nesciunt
+              quidem animi modi! Obcaecati laudantium ut corporis labore
+              reiciendis soluta blanditiis dignissimos iure odit sapiente? Aut
+              consequuntur eum dolorum sapiente maxime vitae minima, dolor, quia
+              dolore quae, officiis consequatur accusantium iure cum? Unde hic
+              laborum laboriosam iure dolorem. Magnam aliquam vero earum
+              cupiditate libero tempora veritatis nemo quae? Aspernatur
+              accusamus reiciendis itaque corporis laboriosam adipisci illo
+              laudantium quos incidunt consequuntur dicta blanditiis veniam
+              natus eius aperiam pariatur similique atque nisi soluta repellat,
+              doloribus ducimus mollitia odit. Ipsa, itaque exercitationem dolor
+              quo voluptatum excepturi laborum eos dicta quasi quisquam, culpa
+              corrupti, aliquam nisi. Consequatur natus, temporibus reiciendis
+              quas incidunt optio fugit cum.
+            </p>
           </div>
         </div>
       </div>

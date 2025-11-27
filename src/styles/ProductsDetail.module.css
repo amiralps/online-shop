@@ -177,6 +177,7 @@ ul {
     height: 350px;
     position: sticky;
     top: 0;
+    transform: scale(var(--scroll-scale));
   }
 
   .productImagesPagination {
@@ -192,6 +193,7 @@ ul {
   .productDetails {
     width: 100%;
     padding-top: 20px;
+    padding-bottom: 48px;
     border-radius: 20px 20px 0 0;
     box-shadow: 0 -4px 10px 1px #00000080;
     align-items: center;
@@ -200,7 +202,8 @@ ul {
     z-index: 2;
   }
 
-  .productDetails > p:nth-child(3) {
+  .productDetails p.lorem {
     padding: 0 15px;
+    text-align: justify;
   }
 }
