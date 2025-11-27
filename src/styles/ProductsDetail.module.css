@@ -5,7 +5,7 @@
   align-items: center;
   flex-direction: column;
   width: 350px;
-  height: 450px;
+  height: 400px;
 }
 
 .mySlider img {
@@ -56,7 +56,7 @@ ul {
 /* pagination image slider (thumbs) */
 .productImagesPagination {
   height: 15%;
-  width: 72%;
+  width: 65%;
   margin: 0 !important;
   padding: 8px !important;
   border: 2px solid #4375ff;
@@ -67,6 +67,7 @@ ul {
   width: fit-content !important;
   overflow: hidden;
   transition: 0.3s;
+  justify-content: center;
 }
 
 .productImagesPagination > div {
@@ -126,13 +127,18 @@ ul {
   border-radius: 15px;
 }
 
+.productImagesSwiper > div > div {
+  display: flex;
+  justify-content: center;
+}
+
 /* .productImagesSwiper > div > div {
   display: flex;
   justify-content: center;
 } */
 
 .productImagesSwiper img {
-  width: 100%;
+  width: auto;
   height: 100%;
 }
 
@@ -161,11 +167,6 @@ ul {
 
   .productImagesSwiper {
     border-radius: 0;
-  }
-
-  .productImagesSwiper > div > div {
-    display: flex;
-    justify-content: center;
   }
 
   .mySlider {
