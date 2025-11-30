@@ -182,6 +182,18 @@ function ProductsDetail() {
               {product.description}
               <br />
               {product.description}
+              <br />
+              {product.description}
+              <br />
+              {product.description}
+              <br />
+              {product.description}
+              <br />
+              {product.description}
+              <br />
+              {product.description}
+              <br />
+              {product.description}
             </p>
           </div>
         </div>
