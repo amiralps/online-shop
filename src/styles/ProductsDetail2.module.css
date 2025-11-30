@@ -17,10 +17,39 @@
   padding: 6px 8px;
   width: 130px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.addToBox button:hover {
+  background-color: #3cbe00;
+}
+
+.addToBox button:active {
+  background-color: #1a5300;
+  color: #fff;
+  transition: none;
 }
 
 .addToBox span {
   font-size: 1rem;
+}
+
+.backButton {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+  border: none;
+  background: #0300b4;
+  color: #fff;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 2px 0;
 }
 
 @media (max-width: 560px) {

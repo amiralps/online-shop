@@ -13,6 +13,12 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import styles from "../styles/ProductsDetail.module.css";
 import styles2 from "../styles/ProductsDetail2.module.css";
+import {
+  removeItem,
+  addItem,
+  increment,
+  decrement,
+} from "../features/cart/cartSlice.js";
 
 function ProductsDetail() {
   const {id} = useParams();
@@ -33,19 +39,27 @@ function ProductsDetail() {
       const scrollY = window.scrollY;
 
       // scale val
-      const scale = 1 + scrollY / -500;
+      const scale = (1 + scrollY / -500).toFixed(3);
       const transform = `${Math.floor(scrollY / -2.8)}px`;
 
-      // ست کردن CSS Variable روی root
-      document.documentElement.style.setProperty("--scroll-scale", scale);
-      document.documentElement.style.setProperty("--scroll-transform", transform);
+      // css variables
+      document.documentElement.style.setProperty(
+        "--scroll-scale",
+        scale >= 0 ? scale : 0
+      );
+      document.documentElement.style.setProperty(
+        "--scroll-transform",
+        transform
+      );
     };
 
     window.addEventListener("scroll", scrollHandler);
     return () => window.removeEventListener("scroll", scrollHandler);
   }, []);
+  const cartStatus = useSelector((state) => state.cart);
   const {error, loading, products} = useSelector((state) => state.products);
   const [colorPick, setColorPick] = useState(0);
+  const thisCart = cartStatus.selectedItems.find((item) => item.id == id);
   if (error) return <h1>{error}</h1>;
   if (!products.length || loading) return <h1>Loading ...</h1>;
   const product = products.find((i) => i.id == id);
@@ -106,6 +120,13 @@ function ProductsDetail() {
             </Swiper>
           </div>
           <div className={styles.productDetails}>
+            <button
+              className={styles2.backButton}
+              onClick={() => {
+                history.back();
+              }}>
+              ⮜
+            </button>
             <h1>{product.title}</h1>
             <p>{product.description}</p>
             <p>رنگ : {product.colors[colorPick].namecolor}</p>
@@ -123,8 +144,19 @@ function ProductsDetail() {
               ))}
             </ul>
             <div className={styles2.addToBox}>
-              <button>افزودن به سبد</button>
-              <span>تومان {product.colors[colorPick].price}.000</span>
+              <button
+                onClick={() => {
+                  !thisCart?.colors[colorPick].quantity
+                    ? dispatch(addItem({data: product, colorIndex: colorPick}))
+                    : dispatch(
+                        increment({data: product, colorIndex: colorPick})
+                      );
+                }}>
+                {!thisCart?.colors[colorPick].quantity
+                  ? "افزودن به سبد"
+                  : `${thisCart.colors[colorPick].quantity} +`}
+              </button>
+              <span>{product.colors[colorPick].price}.000 تومان</span>
             </div>
             <p className={styles.lorem}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Et

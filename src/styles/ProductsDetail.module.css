@@ -46,11 +46,11 @@ ul {
   margin: 0 10px;
   cursor: pointer;
   padding: 3px 5px;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 .colors li.active {
-  border: 2px solid #686868d3;
+  border: 2px solid #000000;
 }
 
 /* pagination image slider (thumbs) */
@@ -158,6 +158,10 @@ ul {
     height: 100%;
   }
 
+  .colors {
+    overflow-x: scroll;
+  }
+
   .productDAS {
     flex-direction: column;
     /* width: 100%; */
@@ -195,7 +199,7 @@ ul {
   .productDetails {
     width: 100%;
     padding-top: 20px;
-    padding-bottom: 48px;
+    padding-bottom: 58px;
     border-radius: 20px 20px 0 0;
     box-shadow: 0 -4px 10px 1px #00000080;
     align-items: center;
@@ -203,9 +207,9 @@ ul {
     background-color: #fff;
     z-index: 2;
   }
+}
 
-  .productDetails p.lorem {
-    padding: 0 15px;
-    text-align: justify;
-  }
+.productDetails p.lorem {
+  padding: 0 25px;
+  text-align: justify;
 }
