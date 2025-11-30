@@ -158,29 +158,30 @@ function ProductsDetail() {
               </button>
               <span>{product.colors[colorPick].price}.000 تومان</span>
             </div>
-            <p className={styles.lorem}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
-              quibusdam, illum totam aliquid velit ad nemo? Odio est,
-              exercitationem inventore, eum facere iusto quae excepturi incidunt
-              odit magni natus porro ea atque amet aliquid nemo. Nemo fugiat
-              repudiandae repellat illo doloribus iusto suscipit debitis numquam
-              deserunt excepturi. Ipsum cupiditate ipsa tempora, amet eos culpa
-              dolorem veniam, fugit, quasi at laboriosam totam voluptas eligendi
-              dolores sequi iure vero est in? Aliquam doloribus sed facere
-              ratione eum dolorem, alias at laborum, quos reiciendis nesciunt
-              quidem animi modi! Obcaecati laudantium ut corporis labore
-              reiciendis soluta blanditiis dignissimos iure odit sapiente? Aut
-              consequuntur eum dolorum sapiente maxime vitae minima, dolor, quia
-              dolore quae, officiis consequatur accusantium iure cum? Unde hic
-              laborum laboriosam iure dolorem. Magnam aliquam vero earum
-              cupiditate libero tempora veritatis nemo quae? Aspernatur
-              accusamus reiciendis itaque corporis laboriosam adipisci illo
-              laudantium quos incidunt consequuntur dicta blanditiis veniam
-              natus eius aperiam pariatur similique atque nisi soluta repellat,
-              doloribus ducimus mollitia odit. Ipsa, itaque exercitationem dolor
-              quo voluptatum excepturi laborum eos dicta quasi quisquam, culpa
-              corrupti, aliquam nisi. Consequatur natus, temporibus reiciendis
-              quas incidunt optio fugit cum.
+            <p className={styles.description}>
+              {product.description}
+              <br />
+              {product.description}
+              <br />
+              {product.description}
+              <br />
+              {product.description}
+              <br />
+              {product.description}
+              <br />
+              {product.description}
+              <br />
+              {product.description}
+              <br />
+              {product.description}
+              <br />
+              {product.description}
+              <br />
+              {product.description}
+              <br />
+              {product.description}
+              <br />
+              {product.description}
             </p>
           </div>
         </div>

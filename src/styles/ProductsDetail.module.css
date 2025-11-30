@@ -209,7 +209,8 @@ ul {
   }
 }
 
-.productDetails p.lorem {
+.productDetails p.description {
   padding: 0 25px;
   text-align: justify;
+  font-size: 1.2rem;
 }
