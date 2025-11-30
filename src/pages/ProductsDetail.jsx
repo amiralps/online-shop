@@ -2,6 +2,10 @@ import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {getProducts} from "../features/products/productSlice.js";
 import {useParams} from "react-router-dom";
+import { MdOutlineAddShoppingCart } from "react-icons/md";
+import { FaRegCircleLeft } from "react-icons/fa6";
+
+
 // Import Swiper React components
 import {Swiper, SwiperSlide} from "swiper/react";
 // import Swiper core and required modules
@@ -39,8 +43,8 @@ function ProductsDetail() {
       const scrollY = window.scrollY;
 
       // scale val
-      const scale = (1 + scrollY / -500).toFixed(3);
-      const transform = `${Math.floor(scrollY / -2.8)}px`;
+      const scale = (1 + scrollY / -330).toFixed(3);
+      const transform = `${Math.floor(scrollY / -1.89)}px`;
 
       // css variables
       document.documentElement.style.setProperty(
@@ -125,7 +129,7 @@ function ProductsDetail() {
               onClick={() => {
                 history.back();
               }}>
-              ⮜
+              <FaRegCircleLeft />
             </button>
             <h1>{product.title}</h1>
             <p>{product.description}</p>
@@ -153,7 +157,7 @@ function ProductsDetail() {
                       );
                 }}>
                 {!thisCart?.colors[colorPick].quantity
-                  ? "افزودن به سبد"
+                  ? <>{`افزودن به سبد`} <MdOutlineAddShoppingCart /></>
                   : `${thisCart.colors[colorPick].quantity} +`}
               </button>
               <span>{product.colors[colorPick].price}.000 تومان</span>
