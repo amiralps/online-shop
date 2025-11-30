@@ -157,7 +157,7 @@ function ProductsDetail() {
                       );
                 }}>
                 {!thisCart?.colors[colorPick].quantity
-                  ? <>{`افزودن به سبد`} <MdOutlineAddShoppingCart /></>
+                  ? <>{`افزودن به سبد`}<MdOutlineAddShoppingCart /></>
                   : `${thisCart.colors[colorPick].quantity} +`}
               </button>
               <span>{product.colors[colorPick].price}.000 تومان</span>

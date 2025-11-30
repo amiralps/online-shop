@@ -10,6 +10,10 @@
 }
 
 .addToBox button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
   font-size: 1rem;
   background-color: #51ff00;
   border-radius: 5px;
