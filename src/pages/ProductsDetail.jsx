@@ -2,9 +2,13 @@ import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {getProducts} from "../features/products/productSlice.js";
 import {useParams} from "react-router-dom";
-import { MdOutlineAddShoppingCart } from "react-icons/md";
-import { FaRegCircleLeft } from "react-icons/fa6";
-
+import {FaRegCircleLeft} from "react-icons/fa6";
+import {
+  TbShoppingCartPlus,
+  TbShoppingCartMinus,
+  TbShoppingCartX,
+  TbShoppingCartDown,
+} from "react-icons/tb";
 
 // Import Swiper React components
 import {Swiper, SwiperSlide} from "swiper/react";
@@ -148,18 +152,53 @@ function ProductsDetail() {
               ))}
             </ul>
             <div className={styles2.addToBox}>
-              <button
-                onClick={() => {
-                  !thisCart?.colors[colorPick].quantity
-                    ? dispatch(addItem({data: product, colorIndex: colorPick}))
-                    : dispatch(
-                        increment({data: product, colorIndex: colorPick})
-                      );
-                }}>
-                {!thisCart?.colors[colorPick].quantity
-                  ? <>{`افزودن به سبد`}<MdOutlineAddShoppingCart /></>
-                  : `${thisCart.colors[colorPick].quantity} +`}
-              </button>
+              <div className={styles2.buttons}>
+                {/* add and increase */}
+                <button
+                  className={`${styles2.putBtn}${
+                    thisCart?.colors[colorPick]?.quantity
+                      ? ` ${styles2.active}`
+                      : ""
+                  }`}
+                  onClick={() => {
+                    !thisCart?.colors[colorPick].quantity
+                      ? dispatch(
+                          addItem({data: product, colorIndex: colorPick})
+                        )
+                      : dispatch(
+                          increment({data: product, colorIndex: colorPick})
+                        );
+                  }}>
+                  <div className={styles2.add}>
+                    <p>افزودن به سبد</p>
+                    <TbShoppingCartDown />
+                  </div>
+                  <TbShoppingCartPlus className={styles2.increase} />
+                </button>
+                <h2>{thisCart?.colors[colorPick]?.quantity || 0}</h2>
+                {/* decrease and remove */}
+                <button
+                  className={`${styles2.popBtn}${
+                    thisCart?.colors[colorPick]?.quantity &&
+                    thisCart?.colors[colorPick]?.quantity <= 1
+                      ? ` ${styles2.active}`
+                      : thisCart?.colors[colorPick]?.quantity > 1
+                      ? ` ${styles2.active} ${styles2.morethan1}`
+                      : ""
+                  }`}
+                  onClick={() => {
+                    thisCart?.colors[colorPick]?.quantity > 1
+                      ? dispatch(
+                          decrement({data: product, colorIndex: colorPick})
+                        )
+                      : dispatch(
+                          removeItem({data: product, colorIndex: colorPick})
+                        );
+                  }}>
+                  <TbShoppingCartMinus className={styles2.decrease} />
+                  <TbShoppingCartX className={styles2.remove} />
+                </button>
+              </div>
               <span>{product.colors[colorPick].price}.000 تومان</span>
             </div>
             <p className={styles.description}>

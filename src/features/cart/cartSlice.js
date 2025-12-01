@@ -12,6 +12,28 @@ const cartSlice = createSlice({
   reducers: {
     removeItem(state, action) {
       const {colorIndex, data} = action.payload;
+      const productIndex = state.selectedItems.findIndex(
+        (item) => item.id == data.id
+      );
+      // console.log(colors);
+      if (state.selectedItems.find((item) => item.id == data.id)) {
+        state.selectedItems = state.selectedItems.map((item) => {
+          if (item.id === data.id) {
+            delete item.colors[colorIndex].quantity;
+          }
+          return item;
+        });
+        const quantityStatus = state.selectedItems[productIndex].colors.every(
+          (item) => {
+            return !item.quantity;
+          }
+        );
+        if (quantityStatus) {
+          state.selectedItems = state.selectedItems.filter(
+            (item) => item.id !== data.id
+          );
+        }
+      }
     },
     addItem(state, action) {
       const {colorIndex, data} = action.payload;
@@ -52,6 +74,12 @@ const cartSlice = createSlice({
     },
     decrement(state, action) {
       const {colorIndex, data} = action.payload;
+      const productIndex = state.selectedItems.findIndex((item) => {
+        return item.id === data.id;
+      });
+      if (state?.selectedItems[productIndex]?.colors[colorIndex]?.quantity > 1) {
+        state.selectedItems[productIndex].colors[colorIndex].quantity -= 1;
+      }
     },
     checkOut(state) {
       state = {
