@@ -183,7 +183,8 @@ ul {
     position: sticky;
     top: 0;
     opacity: calc(var(--scroll-scale));
-    transform: translateY(var(--scroll-transform)) scale(var(--scroll-scale));
+    transform: scale(var(--scroll-scale));
+    transform-origin: top center;
   }
 
   .productImagesPagination {

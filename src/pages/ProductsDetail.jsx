@@ -3,12 +3,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {getProducts} from "../features/products/productSlice.js";
 import {useParams} from "react-router-dom";
 import {FaRegCircleLeft} from "react-icons/fa6";
-import {
-  TbShoppingCartPlus,
-  TbShoppingCartMinus,
-  TbShoppingCartX,
-  TbShoppingCartDown,
-} from "react-icons/tb";
 
 // Import Swiper React components
 import {Swiper, SwiperSlide} from "swiper/react";
@@ -21,12 +15,7 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import styles from "../styles/ProductsDetail.module.css";
 import styles2 from "../styles/ProductsDetail2.module.css";
-import {
-  removeItem,
-  addItem,
-  increment,
-  decrement,
-} from "../features/cart/cartSlice.js";
+import Buttons from "../components/Buttons.jsx";
 
 function ProductsDetail() {
   const {id} = useParams();
@@ -47,17 +36,12 @@ function ProductsDetail() {
       const scrollY = window.scrollY;
 
       // scale val
-      const scale = (1 + scrollY / -330).toFixed(3);
-      const transform = `${Math.floor(scrollY / -1.89)}px`;
+      const scale = (1 + scrollY / -360).toFixed(3);
 
       // css variables
       document.documentElement.style.setProperty(
         "--scroll-scale",
         scale >= 0 ? scale : 0
-      );
-      document.documentElement.style.setProperty(
-        "--scroll-transform",
-        transform
       );
     };
 
@@ -152,54 +136,8 @@ function ProductsDetail() {
               ))}
             </ul>
             <div className={styles2.addToBox}>
-              <div className={styles2.buttons}>
-                {/* add and increase */}
-                <button
-                  className={`${styles2.putBtn}${
-                    thisCart?.colors[colorPick]?.quantity
-                      ? ` ${styles2.active}`
-                      : ""
-                  }`}
-                  onClick={() => {
-                    !thisCart?.colors[colorPick].quantity
-                      ? dispatch(
-                          addItem({data: product, colorIndex: colorPick})
-                        )
-                      : dispatch(
-                          increment({data: product, colorIndex: colorPick})
-                        );
-                  }}>
-                  <div className={styles2.add}>
-                    <p>افزودن به سبد</p>
-                    <TbShoppingCartDown />
-                  </div>
-                  <TbShoppingCartPlus className={styles2.increase} />
-                </button>
-                <h2>{thisCart?.colors[colorPick]?.quantity || 0}</h2>
-                {/* decrease and remove */}
-                <button
-                  className={`${styles2.popBtn}${
-                    thisCart?.colors[colorPick]?.quantity &&
-                    thisCart?.colors[colorPick]?.quantity <= 1
-                      ? ` ${styles2.active}`
-                      : thisCart?.colors[colorPick]?.quantity > 1
-                      ? ` ${styles2.active} ${styles2.morethan1}`
-                      : ""
-                  }`}
-                  onClick={() => {
-                    thisCart?.colors[colorPick]?.quantity > 1
-                      ? dispatch(
-                          decrement({data: product, colorIndex: colorPick})
-                        )
-                      : dispatch(
-                          removeItem({data: product, colorIndex: colorPick})
-                        );
-                  }}>
-                  <TbShoppingCartMinus className={styles2.decrease} />
-                  <TbShoppingCartX className={styles2.remove} />
-                </button>
-              </div>
-              <span>{product.colors[colorPick].price}.000 تومان</span>
+              <Buttons data={{thisCart, colorPick, dispatch, product}} />
+              <span>{product.colors[colorPick].price}.000</span>
             </div>
             <p className={styles.description}>
               {product.description}

@@ -1,3 +1,9 @@
+@font-face {
+    font-family: digikala;
+    src: url(/font/Digikala.eot);
+    src: url(/font/Digikala.eot?#iefix) format("eot"), url(/font/Digikala.woff2) format("woff2"), url(/font/Digikala.woff) format("woff"), url(/font/Digikala.ttf) format("truetype")
+}
+
 .addToBox {
   width: 100%;
   display: flex;
@@ -9,103 +15,40 @@
   /* box-shadow: 0 0 5px 1px #0000009d; */
 }
 
-.addToBox .buttons {
-  position: relative;
-  width: 130px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.addToBox button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  gap: 5px;
-  font-size: 1rem;
-  background-color: #51ff00;
-  border-radius: 5px;
-  border: none;
-  padding: 0 8px;
-  width: 100%;
-  height: 30px;
-  cursor: pointer;
-  transition: 0.8s width;
-  transition-delay: 0.35s;
-  overflow: hidden;
-}
-
-.addToBox button.putBtn {
-  z-index: 2;
-  right: 0;
-  top: 0;
-}
-
-.addToBox button.putBtn.active {
-  width: 40px;
-}
-
-.addToBox button.popBtn {
-  z-index: 1;
-  left: 0;
-  top: 0;
-}
-
-.addToBox button.popBtn.active {
-  width: 40px;
-}
-
-.increase {
-  position: absolute;
-  transform: translateY(150%);
-  transition: 0.5s ease-in-out;
-}
-.active .increase {
-  transform: none;
-}
-
-.decrease {
-  position: absolute;
-  transform: translateY(150%);
-  transition: .3s;
-}
-.active.morethan1 .decrease {
-  transform: none;
-}
-
-.add {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  min-width: 130px;
-  height: 100%;
-  transition: 0.5s ease-in-out;
-}
-.active .add {
-  transform: translateY(-150%);
-}
-
-.remove {
-  position: absolute;
-  transition: .3s;
-}
-.morethan1 .remove {
-  transform: translateY(-150%);
-}
-
-/* .addToBox button:hover {
-  background-color: #3cbe00;
-} */
-
-.addToBox button:active {
-  background-color: #3cbe00;
-}
-
 .addToBox span {
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.addToBox span::after {
+    content: "\F06C\00FE0E";
+    /* display: -webkit-box; */
+    /* display: -ms-flexbox; */
+    /* display: flex; */
+    /* -webkit-box-align: center; */
+    /* -ms-flex-align: center; */
+    /* align-items: center; */
+    /* -webkit-box-pack: center; */
+    /* -ms-flex-pack: center; */
+    /* justify-content: center; */
+    /* font-size: 16px; */
+    /* font-size: 1rem; */
+    /* font-weight: 400; */
+    /* letter-spacing: normal; */
+    /* line-height: 0; */
+    width: 16px;
+    height: 16px;
+    font-family: digikala;
+    font-size: 100%;
+    /* -webkit-font-smoothing: antialiased; */
+    /* -moz-osx-font-smoothing: grayscale; */
+    /* font-style: normal; */
+    /* font-variant: normal; */
+    /* font-weight: 400; */
+    /* text-decoration: none; */
+    /* text-transform: none; */
+    /* line-height: 1; */
+    /* box-sizing: inherit; */
 }
 
 .backButton {
@@ -134,17 +77,5 @@
     padding: 8px 15px;
     z-index: 5;
     /* box-shadow: 0 0 5px 1px #0000009d; */
-  }
-
-  .addToBox button {
-    font-size: 1rem;
-    background-color: #51ff00;
-    border-radius: 5px;
-    /* transition: .3s; */
-    /* width: 150px; */
-  }
-
-  .addToBox span {
-    font-size: 1rem;
   }
 }
