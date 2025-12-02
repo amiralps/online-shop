@@ -13,12 +13,9 @@ ul {
 
 .colors {
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
   gap: 10px;
   list-style-type: none;
-  min-width: 45%;
-  max-width: 80%;
 }
 
 .colors li div {
@@ -74,6 +71,9 @@ ul {
 @media (max-width: 560px) {
   .colors {
     overflow-x: scroll;
+    justify-content: space-evenly;
+    min-width: 45%;
+    max-width: 80%;
   }
 
   .colors::-webkit-scrollbar {
