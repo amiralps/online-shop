@@ -1,7 +1,10 @@
 @font-face {
-    font-family: digikala;
-    src: url(/font/Digikala.eot);
-    src: url(/font/Digikala.eot?#iefix) format("eot"), url(/font/Digikala.woff2) format("woff2"), url(/font/Digikala.woff) format("woff"), url(/font/Digikala.ttf) format("truetype")
+  font-family: digikala;
+  src: url(/font/Digikala.eot);
+  src: url(/font/Digikala.eot?#iefix) format("eot"),
+    url(/font/Digikala.woff2) format("woff2"),
+    url(/font/Digikala.woff) format("woff"),
+    url(/font/Digikala.ttf) format("truetype");
 }
 
 .addToBox {
@@ -18,37 +21,42 @@
 .addToBox span {
   font-size: 1.2rem;
   font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
-.addToBox span::after {
-    content: "\F06C\00FE0E";
-    /* display: -webkit-box; */
-    /* display: -ms-flexbox; */
-    /* display: flex; */
-    /* -webkit-box-align: center; */
-    /* -ms-flex-align: center; */
-    /* align-items: center; */
-    /* -webkit-box-pack: center; */
-    /* -ms-flex-pack: center; */
-    /* justify-content: center; */
-    /* font-size: 16px; */
-    /* font-size: 1rem; */
-    /* font-weight: 400; */
-    /* letter-spacing: normal; */
-    /* line-height: 0; */
-    width: 16px;
-    height: 16px;
-    font-family: digikala;
-    font-size: 100%;
-    /* -webkit-font-smoothing: antialiased; */
-    /* -moz-osx-font-smoothing: grayscale; */
-    /* font-style: normal; */
-    /* font-variant: normal; */
-    /* font-weight: 400; */
-    /* text-decoration: none; */
-    /* text-transform: none; */
-    /* line-height: 1; */
-    /* box-sizing: inherit; */
+.addToBox span::before {
+  content: "\F06C\00FE0E";
+  /* display: -webkit-box; */
+  /* display: -ms-flexbox; */
+  /* display: flex; */
+  /* -webkit-box-align: center; */
+  /* -ms-flex-align: center; */
+  /* align-items: center; */
+  /* -webkit-box-pack: center; */
+  /* -ms-flex-pack: center; */
+  /* justify-content: center; */
+  /* font-size: 16px; */
+  /* font-size: 1rem; */
+  /* font-weight: 400; */
+  /* letter-spacing: normal; */
+  /* line-height: 0; */
+  width: 16px;
+  height: 16px;
+  font-family: digikala;
+  font-size: 100%;
+  line-height: 0.9;
+  /* -webkit-font-smoothing: antialiased; */
+  /* -moz-osx-font-smoothing: grayscale; */
+  /* font-style: normal; */
+  /* font-variant: normal; */
+  /* font-weight: 400; */
+  /* text-decoration: none; */
+  /* text-transform: none; */
+  /* line-height: 1; */
+  /* box-sizing: inherit; */
 }
 
 .backButton {

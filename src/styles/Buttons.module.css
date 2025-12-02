@@ -13,8 +13,7 @@
   align-items: center;
   position: absolute;
   gap: 5px;
-  font-size: 1.1rem;
-  background-color: #51ff00;
+  font-size: 1.2rem;
   border-radius: 8px;
   border: none;
   /* padding: 0 8px; */
@@ -24,26 +23,34 @@
   transition: 0.4s ease-in-out width;
   transition-delay: 0.22s;
   overflow: hidden;
+  color: #fff;
 }
 
 .buttons button.putBtn {
+  background-color: #4bbe15;
   z-index: 2;
   right: 0;
   top: 0;
 }
 
-.buttons button.putBtn.active {
+.buttons button.putBtn.active,
+.buttons button.popBtn.active {
   width: 28%;
 }
 
 .buttons button.popBtn {
+  background-color: #ff0000;
   z-index: 1;
   left: 0;
   top: 0;
 }
 
-.buttons button.popBtn.active {
-  width: 28%;
+.buttons button.putBtn:active {
+  background-color: #257500;
+}
+
+.buttons button.popBtn:active {
+  background-color: #ad0000;
 }
 
 .increase {
@@ -58,7 +65,7 @@
 .decrease {
   position: absolute;
   transform: translateY(170%);
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 .active.morethan1 .decrease {
   transform: none;
@@ -73,13 +80,17 @@
   height: 100%;
   transition: 0.2s ease-in-out;
 }
+.add p {
+  font-weight: 100;
+  font-size: 1rem;
+}
 .active .add {
   transform: translateY(-170%);
 }
 
 .remove {
   position: absolute;
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 .morethan1 .remove {
   transform: translateY(-170%);
@@ -89,9 +100,6 @@
   background-color: #3cbe00;
 } */
 
-.buttons button:active {
-  background-color: #3cbe00;
-}
 
 /* @media (max-width: 560px) {
   .buttons button {

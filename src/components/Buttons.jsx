@@ -1,10 +1,10 @@
 import styles from "../styles/Buttons.module.css";
 import {
-  TbShoppingCartPlus,
-  TbShoppingCartMinus,
-  TbShoppingCartX,
   TbShoppingCartDown,
 } from "react-icons/tb";
+import { FaPlus, FaMinus } from "react-icons/fa6";
+import { LuTrash2 } from "react-icons/lu";
+
 import {
   removeItem,
   addItem,
@@ -28,7 +28,7 @@ function Buttons({data: {colorPick, thisCart, dispatch, product}}) {
           <p>افزودن به سبد</p>
           <TbShoppingCartDown />
         </div>
-        <TbShoppingCartPlus className={styles.increase} />
+        <FaPlus className={styles.increase} />
       </button>
       <h2>{thisCart?.colors[colorPick]?.quantity || 0}</h2>
       {/* decrease and remove */}
@@ -46,8 +46,8 @@ function Buttons({data: {colorPick, thisCart, dispatch, product}}) {
             ? dispatch(decrement({data: product, colorIndex: colorPick}))
             : dispatch(removeItem({data: product, colorIndex: colorPick}));
         }}>
-        <TbShoppingCartMinus className={styles.decrease} />
-        <TbShoppingCartX className={styles.remove} />
+        <FaMinus className={styles.decrease} />
+        <LuTrash2 className={styles.remove} />
       </button>
     </div>
   );
