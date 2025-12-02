@@ -85,7 +85,16 @@ function ProductsDetail() {
             </ul>
             <div className={styles2.addToBox}>
               <Buttons data={{thisCart, colorPick, dispatch, product}} />
-              <span>{product.colors[colorPick].price}.000</span>
+              <span>
+                {`${product.colors[colorPick].price}000`
+                  .split("")
+                  .reverse()
+                  .join("")
+                  .match(/.{1,3}/g)
+                  .reverse()
+                  .map((i) => i.split("").reverse().join(""))
+                  .join(",")}
+              </span>
             </div>
             <p className={styles.description}>
               {product.description}
