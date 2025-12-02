@@ -18,7 +18,7 @@ ul {
   gap: 10px;
   list-style-type: none;
   min-width: 45%;
-  width: 50%;
+  max-width: 80%;
 }
 
 .colors li div {
