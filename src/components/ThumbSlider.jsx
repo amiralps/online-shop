@@ -1,4 +1,17 @@
-function ThumbSlider() {
+import { useState } from "react";
+import styles from "../styles/ThumbSlider.module.css"
+// Import Swiper React components
+import {Swiper, SwiperSlide} from "swiper/react";
+// import Swiper core and required modules
+import {Navigation, FreeMode, Thumbs} from "swiper/modules";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+
+function ThumbSlider({data: {product}}) {
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
     <div className={styles.mySlider}>
       <Swiper
