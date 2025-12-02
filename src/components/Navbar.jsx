@@ -11,6 +11,9 @@ function Navbar() {
         <li>
           <NavLink to="products">محصولات</NavLink>
         </li>
+        <li>
+          <NavLink to="shopping-cart">سبد خرید</NavLink>
+        </li>
       </ul>
     </div>
   );

@@ -5,6 +5,7 @@ import ProductsDetail from "./pages/ProductsDetail";
 import LayOutWithNavbar from "./layout/LayOutWithNavbar";
 import LayOutWithoutNavbar from "./layout/LayOutWithoutNavbar";
 import NotFound from "./pages/NotFound";
+import ShoppingCart from "./pages/ShoppingCart";
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<LayOutWithNavbar />}>
-            <Route index element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="products" element={<Products />} />
+            <Route path="shopping-cart" element={<ShoppingCart />} />
           </Route>
           <Route element={<LayOutWithoutNavbar />}>
             <Route path="products/:id" element={<ProductsDetail />} />
