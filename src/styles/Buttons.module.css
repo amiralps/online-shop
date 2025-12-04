@@ -20,14 +20,14 @@
   width: 100%;
   height: 100%;
   cursor: pointer;
-  transition: 0.4s ease-in-out width;
+  transition: 0.2s ease-in-out width;
   transition-delay: 0.22s;
   overflow: hidden;
   color: #fff;
 }
 
 .buttons button.putBtn {
-  background-color: #4bbe15;
+  background-color: #5cc22d;
   z-index: 2;
   right: 0;
   top: 0;
@@ -39,7 +39,7 @@
 }
 
 .buttons button.popBtn {
-  background-color: #ff0000;
+  background-color: #ff4949;
   width: 99%;
   z-index: 1;
   left: 0;

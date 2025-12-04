@@ -2,7 +2,7 @@ import styles from "../styles/Buttons.module.css";
 import {
   TbShoppingCartDown,
 } from "react-icons/tb";
-import { FaPlus, FaMinus } from "react-icons/fa6";
+import { FaPlus, FaMinus, } from "react-icons/fa6";
 import { LuTrash2 } from "react-icons/lu";
 
 import {
@@ -13,7 +13,7 @@ import {
 } from "../features/cart/cartSlice.js";
 function Buttons({data: {colorPick, thisCart, dispatch, product}}) {
   return (
-    <div className={styles.buttons}>
+    <div className={`${styles.buttons} updateButtons`}>
       {/* add and increase */}
       <button
         className={`${styles.putBtn}${

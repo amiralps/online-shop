@@ -1,5 +1,6 @@
 import {NavLink} from "react-router-dom";
 import styles from "../styles/Navbar.module.css";
+import { LiaShoppingCartSolid } from "react-icons/lia";
 
 function Navbar() {
   return (
@@ -11,8 +12,8 @@ function Navbar() {
         <li>
           <NavLink to="products">محصولات</NavLink>
         </li>
-        <li>
-          <NavLink to="shopping-cart">سبد خرید</NavLink>
+        <li className="cart">
+          <NavLink to="shopping-cart"><LiaShoppingCartSolid /></NavLink>
         </li>
       </ul>
     </div>

@@ -1,5 +1,6 @@
 /* product details */
 .productDetails {
+  font-family: "tanha", sans-serif;
   width: 100%;
   display: flex;
   flex-direction: column;
