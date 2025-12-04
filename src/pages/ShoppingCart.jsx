@@ -12,17 +12,22 @@ function ShoppingCart() {
     itemsCounter,
     totalCount,
   } = useSelector((state) => state.cart);
-  if (!shoppingBox.length) return <h1>هیچ محصولی در سبدتان وجود ندارد</h1>;
+  if (!shoppingBox.length)
+    return (
+      <div className={styles.empty}>
+        <h1>هیچ محصولی در سبدتان وجود ندارد</h1>
+      </div>
+    );
   return (
     <>
-      <div>
+      <div className={styles.container}>
         <ul className={styles.pDetail}>
           {shoppingBox.map((item, itemIndex) =>
             item.colors.map((color, colorIndex) =>
               color?.quantity ? (
                 <li key={`${itemIndex + 1}${colorIndex + 1}`}>
                   <img src={item.images[0]} alt={item.title} />
-                  <div className={styles.cartDB}>
+                  <div className={styles.cartDTLBTN}>
                     <h1>{item.title}</h1>
                     <div className={styles.colorDiv}>
                       <span>رنگ : </span>

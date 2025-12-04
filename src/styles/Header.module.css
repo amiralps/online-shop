@@ -1,4 +1,4 @@
-.navbar {
+.header {
   display: flex;
   width: 100%;
   height: 55px;
@@ -9,14 +9,14 @@
   margin: 10px 0 20px;
 }
 
-.navbar ul {
+.header ul {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
 }
 
-.navbar a {
+.header a {
   text-decoration: none;
   font-weight: 600;
   background-color: #eeeeee;
@@ -56,13 +56,13 @@
     color: #fff;
   }
 
-  .navbar :global(a:not(.cart > a):hover) {
+  .header :global(a:not(.cart > a):hover) {
     background-color: #b1b1b1;
   }
 }
 
 @media (max-width: 480px) {
-  .navbar {
+  .header {
     margin: 8px auto 20px;
     width: 96%;
   }

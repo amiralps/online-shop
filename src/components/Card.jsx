@@ -1,4 +1,4 @@
-import styles from "../styles/cards.module.css";
+import styles from "../styles/Cards.module.css";
 import {Link} from "react-router-dom";
 function Card({data: {id, title, images, description}}) {
   return (
