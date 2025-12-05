@@ -18,12 +18,18 @@
 
 .header a {
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400;
   background-color: #eeeeee;
   border-radius: 5px;
   padding: 8px 15px;
   color: #000;
   transition: 0.3s;
+}
+
+.header :global(a:not(.cart > a)) {
+  font-family: "tanha", serif;
+  line-height: 2;
+  font-size: .8rem;
 }
 
 :global(.cart) {

@@ -1,9 +1,13 @@
 import {useDispatch, useSelector} from "react-redux";
 import styles from "../styles/ShoppingCart.module.css";
 import Buttons from "../components/Buttons";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
+import { changeTitle } from "../helper/helper";
 
 function ShoppingCart() {
+  useEffect(() => {
+    changeTitle("سبد خرید");
+  }, []);
   const dispatch = useDispatch();
   const {products} = useSelector((state) => state.products);
   const {

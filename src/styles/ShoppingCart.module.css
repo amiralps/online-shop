@@ -20,6 +20,7 @@
   border: 2px solid #25e6ff;
   border-radius: 15px;
   padding: 10px;
+  height: 124px;
 }
 
 .colorDiv {
@@ -45,9 +46,9 @@
 .cartDTLBTN {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 5px;
-  min-height: 150px;
+  /* min-height: 150px; */
   height: 100%;
   /* width: 100%; */
 }
@@ -75,7 +76,7 @@
 
 @media (max-width: 480px) {
   .cartDTLBTN h1 {
-    font-size: 1rem;
+    font-size: .9rem;
     line-height: 1;
   }
 
@@ -84,9 +85,17 @@
     line-height: 1;
   }
 
+  .cartDTLBTN .colorDiv > * {
+    font-size: .6rem;
+  }
+
+  .cartDTLBTN {
+    padding: 4px 0 2px;
+  }
+
   .cartDTLBTN .colorDiv div {
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
   }
 
   .cartDTLBTN :global(.updateButtons) {

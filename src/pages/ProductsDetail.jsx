@@ -8,6 +8,7 @@ import styles from "../styles/ProductsDetail.module.css";
 import styles2 from "../styles/ProductsDetail2.module.css";
 import Buttons from "../components/Buttons.jsx";
 import ThumbSlider from "../components/ThumbSlider.jsx";
+import { changeTitle } from "../helper/helper.js";
 
 function ProductsDetail() {
   const {id} = useParams();
@@ -15,6 +16,7 @@ function ProductsDetail() {
 
   const dispatch = useDispatch();
   useEffect(() => {
+    changeTitle(`عینک${id}`);
     dispatch(getProducts());
     window.addEventListener("resize", () => {
       setIsDesktop(window.innerWidth > 1024);
