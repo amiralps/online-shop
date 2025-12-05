@@ -8,7 +8,7 @@ import styles from "../styles/ProductsDetail.module.css";
 import styles2 from "../styles/ProductsDetail2.module.css";
 import Buttons from "../components/Buttons.jsx";
 import ThumbSlider from "../components/ThumbSlider.jsx";
-import { changeTitle } from "../helper/helper.js";
+import {changeTitle, priceFormat} from "../helper/helper.js";
 
 function ProductsDetail() {
   const {id} = useParams();
@@ -87,16 +87,7 @@ function ProductsDetail() {
             </ul>
             <div className={styles2.addToBox}>
               <Buttons data={{thisCart, colorPick, dispatch, product}} />
-              <span>
-                {`${product.colors[colorPick].price}000`
-                  .split("")
-                  .reverse()
-                  .join("")
-                  .match(/.{1,3}/g)
-                  .reverse()
-                  .map((i) => i.split("").reverse().join(""))
-                  .join(",")}
-              </span>
+              <span>{priceFormat(product.colors[colorPick].price)}</span>
             </div>
             <p className={styles.description}>
               {product.description}

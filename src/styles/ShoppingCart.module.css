@@ -1,8 +1,12 @@
+.container {
+  font-family: "tanha", serif;
+  padding-bottom: 60px;
+}
+
 .pDetail {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  font-family: "tanha", serif;
 }
 
 .pDetail img {
@@ -74,9 +78,37 @@
   font-size: 1.8rem;
 }
 
+.checkOutField {
+  display: flex;
+  line-height: 1.5;
+  align-items: center;
+}
+
+.price span::before {
+  content: "\F06C\00FE0E";
+  margin-right: 2px;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 0;
+  width: 16px;
+  height: 16px;
+  font-family: digikala;
+  font-size: 100%;
+  line-height: 0.9;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  text-decoration: none;
+  text-transform: none;
+  /* line-height: 1; */
+  /* box-sizing: inherit; */
+}
+
+/* mobile break point */
 @media (max-width: 480px) {
   .cartDTLBTN h1 {
-    font-size: .9rem;
+    font-size: 0.9rem;
     line-height: 1;
   }
 
@@ -86,7 +118,7 @@
   }
 
   .cartDTLBTN .colorDiv > * {
-    font-size: .6rem;
+    font-size: 0.6rem;
   }
 
   .cartDTLBTN {
@@ -127,5 +159,35 @@
 
   .empty h1 {
     font-size: 1.2rem;
+  }
+
+  .checkOutField {
+    padding: 0 8px;
+    display: flex;
+    line-height: 1.5;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    bottom: 0;
+    z-index: 10;
+    border-top: 2px solid #00000031;
+  }
+
+  .checkOutField p {
+    font-size: .78rem;
+  }
+
+  .checkOutField button {
+    font-size: .9rem;
+    font-family: "tanha", serif;
+    padding: 8px 10px;
+    border-radius: 6.5px;
+    color: #fff;
+    border: none;
+    background: #129e00;
+    line-height: 1;
   }
 }

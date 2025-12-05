@@ -9,6 +9,14 @@
   /* Safari, Android, iOS */
   /* url('webfont.svg#svgFontName') format('svg'); Legacy iOS */
 }
+@font-face {
+  font-family: digikala;
+  src: url(/font/Digikala.eot);
+  src: url(/font/Digikala.eot?#iefix) format("eot"),
+    url(/font/Digikala.woff2) format("woff2"),
+    url(/font/Digikala.woff) format("woff"),
+    url(/font/Digikala.ttf) format("truetype");
+}
 
 * {
   padding: 0;

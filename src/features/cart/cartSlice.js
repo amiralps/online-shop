@@ -20,6 +20,9 @@ const cartSlice = createSlice({
         state.selectedItems = state.selectedItems.map((item) => {
           if (item.id === data.id) {
             delete item.colors[colorIndex].quantity;
+
+            state.itemsCounter -= 1;
+            state.totalCount -= data.colors[colorIndex].price;
           }
           return item;
         });
@@ -77,12 +80,16 @@ const cartSlice = createSlice({
       const productIndex = state.selectedItems.findIndex((item) => {
         return item.id === data.id;
       });
-      if (state?.selectedItems[productIndex]?.colors[colorIndex]?.quantity > 1) {
+      if (
+        state?.selectedItems[productIndex]?.colors[colorIndex]?.quantity > 1
+      ) {
         state.selectedItems[productIndex].colors[colorIndex].quantity -= 1;
+        state.itemsCounter -= 1;
+        state.totalCount -= data.colors[colorIndex].price;
       }
     },
     checkOut(state) {
-      state = {
+      return state = {
         itemsCounter: 0,
         selectedItems: [],
         totalCount: 0,

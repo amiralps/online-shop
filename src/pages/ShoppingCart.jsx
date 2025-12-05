@@ -2,7 +2,8 @@ import {useDispatch, useSelector} from "react-redux";
 import styles from "../styles/ShoppingCart.module.css";
 import Buttons from "../components/Buttons";
 import {useEffect} from "react";
-import { changeTitle } from "../helper/helper";
+import {changeTitle, priceFormat} from "../helper/helper";
+import {checkOut} from "../features/cart/cartSlice";
 
 function ShoppingCart() {
   useEffect(() => {
@@ -54,13 +55,11 @@ function ShoppingCart() {
             )
           )}
         </ul>
-        <div>
-          <div>
-            <h1></h1>
-            <p>مجموع : {totalCount}</p>
-            <p>تعداد : {itemsCounter}</p>
-            <p>وضعیت: {checkOutStatus ? "پرداخت شده" : "پرداخت نشده"}</p>
-          </div>
+        <div className={styles.checkOutField}>
+          <button onClick={() => dispatch(checkOut())}>نهایی کردن خرید</button>
+          <p className={styles.price}>
+            قیمت نهایی : <span>{priceFormat(totalCount)}</span>
+          </p>
         </div>
       </div>
     </>
