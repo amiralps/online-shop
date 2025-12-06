@@ -34,25 +34,33 @@ function ShoppingCart() {
           {selectedItems.map((item, itemIndex) =>
             item.colors.map((color, colorIndex) =>
               color?.quantity ? (
-                <li key={`${itemIndex + 1}${colorIndex + 1}`}>
-                  <img src={item.images[0]} alt={item.title} />
-                  <div className={styles.cartDTLBTN}>
-                    <h1>{item.title}</h1>
-                    <div className={styles.colorDiv}>
-                      <span>رنگ : </span>
-                      <div style={{background: color.code}}></div>
-                      <p>{color.namecolor}</p>
+                <>
+                  <li key={`${itemIndex + 1}${colorIndex + 1}`}>
+                    <img src={item.images[0]} alt={item.title} />
+                    <div className={styles.cartDTLBTN}>
+                      <h1>{item.title}</h1>
+                      <div className={styles.colorDiv}>
+                        <span>رنگ : </span>
+                        <div style={{background: color.code}}></div>
+                        <p>{color.namecolor}</p>
+                      </div>
+                      <div className={styles.priceAndButtons}>
+                        <Buttons
+                          data={{
+                            colorPick: colorIndex,
+                            thisCart: item,
+                            dispatch,
+                            product: products.find((i) => i.id === item.id),
+                          }}
+                        />
+                        <span>{priceFormat(color.price)}</span>
+                      </div>
                     </div>
-                    <Buttons
-                      data={{
-                        colorPick: colorIndex,
-                        thisCart: item,
-                        dispatch,
-                        product: products.find((i) => i.id === item.id),
-                      }}
-                    />
-                  </div>
-                </li>
+                  </li>
+                  {!((itemIndex + 1 == selectedItems.length) && (colorIndex + 1 == item.colors.length)) ? (
+                    <div className={styles.break}></div>
+                  ) : null}
+                </>
               ) : (
                 ""
               )

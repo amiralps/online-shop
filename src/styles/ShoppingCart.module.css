@@ -7,6 +7,7 @@
 .pDetail {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 15px;
   width: 65%;
 }
@@ -22,8 +23,9 @@
 
 .pDetail li {
   display: flex;
+  width: 100%;
   gap: 12px;
-  border: 2px solid #25e6ff;
+  /* border: 2px solid #25e6ff; */
   border-radius: 15px;
   padding: 10px;
   height: 175px;
@@ -56,7 +58,7 @@
   gap: 5px;
   /* min-height: 150px; */
   height: 100%;
-  /* width: 100%; */
+  width: 70%;
 }
 
 .cartDTLBTN h1 {
@@ -95,7 +97,8 @@
   justify-content: space-between;
 }
 
-.price span::before {
+.price span::before,
+.priceAndButtons span::before {
   content: "\F06C\00FE0E";
   margin-right: 2px;
   font-weight: 400;
@@ -139,19 +142,35 @@
     inset -2px -2px 10px 1px rgba(255, 255, 255, 0.8);
 }
 
+.priceAndButtons {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.break {
+  width: 90%;
+  height: 2px;
+  border-radius: 50%;
+  background: #6e6e6e48;
+}
+
 /* desktop/tablet break point */
 @media (min-width: 481px) {
   .checkOutField {
     flex-direction: column-reverse;
-    padding: 40px 50px;
+    padding: 40px 20px;
     position: sticky;
     justify-content: center;
     gap: 20px;
-    min-height: 350px;
+    min-height: 150px;
     height: fit-content;
     background: #b6b6b6;
     top: 20px;
-    border-radius: 30px;
+    border-radius: 20px;
   }
 
   .container {
