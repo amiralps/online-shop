@@ -1,7 +1,7 @@
 import {useDispatch, useSelector} from "react-redux";
 import styles from "../styles/ShoppingCart.module.css";
 import Buttons from "../components/Buttons";
-import {useEffect, useState} from "react";
+import {Fragment, useEffect, useState} from "react";
 import {changeTitle, priceFormat, resizeHandler} from "../helper/helper";
 import {checkOut as doCheckOut} from "../features/cart/cartSlice";
 
@@ -34,8 +34,8 @@ function ShoppingCart() {
           {selectedItems.map((item, itemIndex) =>
             item.colors.map((color, colorIndex) =>
               color?.quantity ? (
-                <>
-                  <li key={`${itemIndex + 1}${colorIndex + 1}`}>
+                <Fragment key={`${itemIndex + 1}${colorIndex + 1}`}>
+                  <li>
                     <img src={item.images[0]} alt={item.title} />
                     <div className={styles.cartDTLBTN}>
                       <h1>{item.title}</h1>
@@ -57,10 +57,13 @@ function ShoppingCart() {
                       </div>
                     </div>
                   </li>
-                  {!((itemIndex + 1 == selectedItems.length) && (colorIndex + 1 == item.colors.length)) ? (
+                  {!(
+                    itemIndex == selectedItems.length - 1 &&
+                    colorIndex == item.colors.length - 1
+                  ) ? (
                     <div className={styles.break}></div>
                   ) : null}
-                </>
+                </Fragment>
               ) : (
                 ""
               )

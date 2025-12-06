@@ -56,6 +56,7 @@ const cartSlice = createSlice({
         state.itemsCounter += 1;
         state.totalCount += data.colors[colorIndex].price;
       } else {
+        state.productsCount += 1;
         state.selectedItems[productIndex].colors[colorIndex].quantity = 1;
         state.itemsCounter += 1;
         state.totalCount += data.colors[colorIndex].price;
@@ -89,12 +90,10 @@ const cartSlice = createSlice({
       }
     },
     checkOut(state) {
-      return state = {
-        itemsCounter: 0,
-        selectedItems: [],
-        totalCount: 0,
-        checkOut: false,
-      };
+      state.itemsCounter = 0;
+      state.selectedItems = [];
+      state.totalCount = 0;
+      state.checkOut = false;
     },
   },
 });
