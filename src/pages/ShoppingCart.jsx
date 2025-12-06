@@ -6,7 +6,7 @@ import {changeTitle, priceFormat, resizeHandler} from "../helper/helper";
 import {checkOut as doCheckOut} from "../features/cart/cartSlice";
 
 function ShoppingCart() {
-  const [isDesktop, setIsDesktop] = useState(resizeHandler())
+  const [isDesktop, setIsDesktop] = useState(resizeHandler());
   useEffect(() => {
     changeTitle("سبد خرید");
     window.addEventListener("resize", () => {
@@ -18,11 +18,9 @@ function ShoppingCart() {
   }, []);
   const dispatch = useDispatch();
   const {products} = useSelector((state) => state.products);
-  const {
-    checkOut,
-    selectedItems,
-    totalCount,
-  } = useSelector((state) => state.cart);
+  const {checkOut, selectedItems, totalCount} = useSelector(
+    (state) => state.cart
+  );
   if (!selectedItems.length)
     return (
       <div className={styles.empty}>
@@ -63,10 +61,16 @@ function ShoppingCart() {
         </ul>
         <div className={styles.checkOutField}>
           <button onClick={() => dispatch(doCheckOut())}>تکمیل سفارش</button>
-          <p className={styles.price}>
-            جمع سبد خرید : <span>{priceFormat(totalCount)}</span>
-          </p>
-          {isDesktop && <p>وضعیت : {checkOut ? "پرداخت شده" : "در انتظار پرداخت"}</p>}
+          <div className={styles.price}>
+            <p>جمع سبد خرید</p>
+            <span>{priceFormat(totalCount)}</span>
+          </div>
+          {isDesktop && (
+            <div>
+              <p>وضعیت</p>
+              <span>{checkOut ? "پرداخت شده" : "در انتظار پرداخت"}</span>
+            </div>
+          )}
         </div>
       </div>
     </>
