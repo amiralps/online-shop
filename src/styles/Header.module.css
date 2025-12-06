@@ -74,8 +74,9 @@
   font-size: .8rem;
   background-color: #ff0000;
   line-height: 1;
-  padding: 1px 4px;
+  padding: 2px 4px;
   border-radius: 4px;
+  color: #fff;
 }
 :global(.cart) > a {
   position: relative;

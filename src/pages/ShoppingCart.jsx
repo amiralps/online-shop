@@ -3,7 +3,7 @@ import styles from "../styles/ShoppingCart.module.css";
 import Buttons from "../components/Buttons";
 import {useEffect, useState} from "react";
 import {changeTitle, priceFormat, resizeHandler} from "../helper/helper";
-import {checkOut} from "../features/cart/cartSlice";
+import {checkOut as doCheckOut} from "../features/cart/cartSlice";
 
 function ShoppingCart() {
   const [isDesktop, setIsDesktop] = useState(resizeHandler())
@@ -62,7 +62,7 @@ function ShoppingCart() {
           )}
         </ul>
         <div className={styles.checkOutField}>
-          <button onClick={() => dispatch(checkOut())}>تکمیل سفارش</button>
+          <button onClick={() => dispatch(doCheckOut())}>تکمیل سفارش</button>
           <p className={styles.price}>
             جمع سبد خرید : <span>{priceFormat(totalCount)}</span>
           </p>
