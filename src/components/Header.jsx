@@ -1,8 +1,14 @@
 import {NavLink} from "react-router-dom";
 import styles from "../styles/Header.module.css";
 import {LiaShoppingCartSolid} from "react-icons/lia";
+import { useSelector } from "react-redux";
 
 function Header() {
+  const {
+    selectedItems,
+    itemsCounter,
+    totalCount,
+  } = useSelector((state) => state.cart);
   return (
     <>
       <div className={styles.header}>
@@ -16,6 +22,7 @@ function Header() {
           <li className="cart">
             <NavLink to="shopping-cart">
               <LiaShoppingCartSolid />
+              <div>{itemsCounter}</div>
             </NavLink>
           </li>
         </ul>

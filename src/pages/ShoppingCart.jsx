@@ -1,23 +1,29 @@
 import {useDispatch, useSelector} from "react-redux";
 import styles from "../styles/ShoppingCart.module.css";
 import Buttons from "../components/Buttons";
-import {useEffect} from "react";
-import {changeTitle, priceFormat} from "../helper/helper";
+import {useEffect, useState} from "react";
+import {changeTitle, priceFormat, resizeHandler} from "../helper/helper";
 import {checkOut} from "../features/cart/cartSlice";
 
 function ShoppingCart() {
+  const [isDesktop, setIsDesktop] = useState(resizeHandler())
   useEffect(() => {
     changeTitle("سبد خرید");
+    window.addEventListener("resize", () => {
+      setIsDesktop(resizeHandler());
+    });
+    return window.removeEventListener("resize", () => {
+      setIsDesktop(resizeHandler());
+    });
   }, []);
   const dispatch = useDispatch();
   const {products} = useSelector((state) => state.products);
   const {
-    checkOut: checkOutStatus,
-    selectedItems: shoppingBox,
-    itemsCounter,
+    checkOut,
+    selectedItems,
     totalCount,
   } = useSelector((state) => state.cart);
-  if (!shoppingBox.length)
+  if (!selectedItems.length)
     return (
       <div className={styles.empty}>
         <h1>هیچ محصولی در سبدتان وجود ندارد</h1>
@@ -27,7 +33,7 @@ function ShoppingCart() {
     <>
       <div className={styles.container}>
         <ul className={styles.pDetail}>
-          {shoppingBox.map((item, itemIndex) =>
+          {selectedItems.map((item, itemIndex) =>
             item.colors.map((color, colorIndex) =>
               color?.quantity ? (
                 <li key={`${itemIndex + 1}${colorIndex + 1}`}>
@@ -56,10 +62,11 @@ function ShoppingCart() {
           )}
         </ul>
         <div className={styles.checkOutField}>
-          <button onClick={() => dispatch(checkOut())}>نهایی کردن خرید</button>
+          <button onClick={() => dispatch(checkOut())}>تکمیل سفارش</button>
           <p className={styles.price}>
-            قیمت نهایی : <span>{priceFormat(totalCount)}</span>
+            جمع سبد خرید : <span>{priceFormat(totalCount)}</span>
           </p>
+          {isDesktop && <p>وضعیت : {checkOut ? "پرداخت شده" : "در انتظار پرداخت"}</p>}
         </div>
       </div>
     </>
