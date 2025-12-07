@@ -57,12 +57,7 @@ function ShoppingCart() {
                       </div>
                     </div>
                   </li>
-                  {!(
-                    itemIndex == selectedItems.length - 1 &&
-                    colorIndex == item.colors.length - 1
-                  ) ? (
-                    <div className={styles.break}></div>
-                  ) : null}
+                  <div className={styles.break}></div>
                 </Fragment>
               ) : (
                 ""

@@ -28,7 +28,7 @@
   width: 100%;
 }
 
-.break {
+.break:not(:last-child) {
   width: 95%;
   height: 2px;
   background: #6969693b;
