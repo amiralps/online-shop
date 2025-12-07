@@ -5,3 +5,15 @@
   align-items: center;
   justify-content: center;
 }
+
+.mysvg {
+  width: 100px;
+  height: 100px;
+  stroke-dasharray: 500,500;
+  stroke-dashoffset: 0;
+}
+
+.mysvg:hover path {
+  stroke-dasharray: 500,500;
+  stroke-dashoffset: 200;
+}
