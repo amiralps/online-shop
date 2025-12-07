@@ -28,11 +28,23 @@
   width: 100%;
 }
 
+.pDetail li a {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  height: fit-content;
+  width: fit-content;
+  line-height: 0;
+}
+
 .break:not(:last-child) {
   width: 95%;
   height: 2px;
   background: #6969693b;
   border-radius: 50%;
+}
+.break:last-child {
+  display: none;
 }
 
 .colorDiv {

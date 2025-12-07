@@ -4,6 +4,7 @@ import Buttons from "../components/Buttons";
 import {Fragment, useEffect, useState} from "react";
 import {changeTitle, priceFormat, resizeHandler} from "../helper/helper";
 import {checkOut as doCheckOut} from "../features/cart/cartSlice";
+import {Link} from "react-router-dom";
 
 function ShoppingCart() {
   const [isDesktop, setIsDesktop] = useState(resizeHandler());
@@ -36,7 +37,9 @@ function ShoppingCart() {
               color?.quantity ? (
                 <Fragment key={`${itemIndex + 1}${colorIndex + 1}`}>
                   <li>
-                    <img src={item.images[0]} alt={item.title} />
+                    <Link to={`/products/${item.id}`}>
+                      <img src={item.images[0]} alt={item.title} />
+                    </Link>
                     <div className={styles.cartDTLBTN}>
                       <h1>{item.title}</h1>
                       <div className={styles.colorDiv}>
