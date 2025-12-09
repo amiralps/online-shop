@@ -28,6 +28,12 @@
 body {
   padding: 4px 20px;
 }
+html {
+  transition: 0.4s background-color;
+}
+.Dark {
+  background: #000;
+}
 
 @media (max-width: 480px) {
   body {

@@ -13,7 +13,7 @@ function Header() {
   const {selectedItems, itemsCounter, totalCount} = useSelector(
     (state) => state.cart
   );
-  document.querySelector(".main").classList = `main ${theme}`;
+  document.querySelector("html").classList = `${theme}`;
   return (
     <>
       <div className={styles.header}>

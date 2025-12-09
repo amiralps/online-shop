@@ -6,6 +6,12 @@
   justify-content: center;
   font-family: "tanha", sans-serif;
 }
+.container h1 {
+  transition: .4s color;
+}
+:global(.Dark) .container h1 {
+  color: #fff;
+}
 
 .mysvg {
   width: 100px;
