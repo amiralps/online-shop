@@ -4,7 +4,7 @@ import "./styles/styles.css";
 import {Provider as ReduxProvider} from "react-redux";
 import store from "./app/store.js";
 
-createRoot(document.getElementById("root")).render(
+createRoot(document.querySelector(".main")).render(
   <ReduxProvider store={store}>
     <App />
   </ReduxProvider>
