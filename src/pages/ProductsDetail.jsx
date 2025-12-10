@@ -1,14 +1,17 @@
 import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {getProducts} from "../features/products/productSlice.js";
-import {useParams} from "react-router-dom";
-import {FaRegCircleLeft} from "react-icons/fa6";
+import {Link, useParams} from "react-router-dom";
+import {IoCloseCircleOutline} from "react-icons/io5";
+import { GoHeart, GoHeartFill } from "react-icons/go";
+
 
 import styles from "../styles/ProductsDetail.module.css";
 import styles2 from "../styles/ProductsDetail2.module.css";
 import Buttons from "../components/Buttons.jsx";
 import ThumbSlider from "../components/ThumbSlider.jsx";
 import {changeTitle, priceFormat} from "../helper/helper.js";
+import { LiaShoppingCartSolid } from "react-icons/lia";
 
 function ProductsDetail() {
   const {id} = useParams();
@@ -60,15 +63,26 @@ function ProductsDetail() {
     <>
       <div>
         <div className={styles.productDAS}>
-          <ThumbSlider data={{product}} />
-          <div className={styles.productDetails}>
+          <div className={styles2.back_box_favorite}>
             <button
               className={styles2.backButton}
               onClick={() => {
                 history.back();
               }}>
-              <FaRegCircleLeft />
+              <IoCloseCircleOutline />
             </button>
+            <div className={styles2.box_favorite}>
+              <Link to="/shopping-cart">
+                <LiaShoppingCartSolid />
+              </Link>
+              <button>
+                <GoHeart />
+                {/* <GoHeartFill /> */}
+              </button>
+            </div>
+          </div>
+          <ThumbSlider data={{product}} />
+          <div className={styles.productDetails}>
             <h1>{product.title}</h1>
             <p>{product.description}</p>
             <p>رنگ : {product.colors[colorPick].namecolor}</p>

@@ -107,6 +107,7 @@
     opacity: calc(var(--scroll-scale));
     transform: scale(var(--scroll-scale));
     transform-origin: top center;
+    margin-bottom: 15px;
   }
 
   .productImagesPagination {

@@ -113,7 +113,7 @@
 :global(.Dark) .empty h1 {
   color: #fff;
 }
-:global(.Light) .empty h1 {
+.empty h1 {
   color: #000;
 }
 

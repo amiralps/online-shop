@@ -4,7 +4,6 @@
   align-items: center;
   gap: 40px;
   justify-content: start;
-  background-color: #ffffff;
   padding: 8px 15px;
   /* box-shadow: 0 0 5px 1px #0000009d; */
 }
@@ -17,7 +16,7 @@
   gap: 5px;
 }
 
-.addToBox span::before {
+.addToBox span::after {
   content: "\F06C\00FE0E";
   /* display: -webkit-box; */
   /* display: -ms-flexbox; */
@@ -49,17 +48,37 @@
   /* box-sizing: inherit; */
 }
 
+.back_box_favorite {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  padding: 0 10px;
+  width: 100%;
+  top: 10px;
+  left: 0;
+  /* background-color: #000c3d; */
+  /* height: 50px; */
+  z-index: 3;
+}
+:global(.Dark) .back_box_favorite .backButton {
+  background-color: #000c3d;
+}
+.back_box_favorite .backButton {
+  background-color: #cdffff;
+  border-radius: 10px;
+}
 .backButton {
-  position: absolute;
   border-radius: 50%;
-  top: 15px;
-  left: 15px;
   line-height: 0;
   background: transparent;
   cursor: pointer;
   border: none;
   color: #00000083;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
+}
+:global(.Dark) .backButton {
+  color: #ffffffc0;
 }
 
 @media (max-width: 560px) {
@@ -69,11 +88,15 @@
     align-items: center;
     justify-content: space-between;
     position: fixed;
-    border-top: 2px solid #0000001e;
+    border-top: 2px solid #00000046;
     background-color: #ffffff;
     bottom: 0;
     padding: 8px 15px;
     z-index: 5;
     /* box-shadow: 0 0 5px 1px #0000009d; */
+  }
+  :global(.Dark) .addToBox {
+    border-top: 2px solid #ffffff4b;
+    background-color: #00071f;
   }
 }

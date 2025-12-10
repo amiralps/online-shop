@@ -86,13 +86,14 @@
   line-height: 0;
   font-weight: 900;
   font-size: 1.6rem;
+  text-align: center;
 
   text-decoration: none;
   border-radius: 10px;
   transition: 0.3s;
 }
 
-:global(.Light .cart a.active) {
+:global(.cart a.active) {
   background: #16db00;
   color: #ffffff;
 }
@@ -106,7 +107,7 @@
 }
 
 @media (min-width: 1024px) and (hover: hover) {
-  :global(.Light) .header :global(.cart) a:hover {
+  .header :global(.cart) a:hover {
     background: #16db00;
     color: #fff;
   }
@@ -115,7 +116,7 @@
     color: #F6F6F6;
   }
 
-  :global(.Light) .header .rightdiv h3 a:hover {
+  .header .rightdiv h3 a:hover {
     color: #084052;
   }
   :global(.Dark) .header .rightdiv h3 a:hover {
@@ -170,7 +171,7 @@
   position: absolute;
   transition: .35s;
 }
-:global(.Light) .themeBtn {
+.themeBtn {
   background: #EEEEEE;
   color: #070F2B;
 }
@@ -178,7 +179,7 @@
   background: #070F2B;
   color: #EEEEEE;
 }
-:global(.Light) .themeBtn .moon,
+.themeBtn .moon:not(:global(.Dark) .themeBtn .moon),
 :global(.Dark) .themeBtn .sun {
   transform: scale(0) rotate(360deg);
   opacity: 0;

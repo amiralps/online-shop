@@ -32,7 +32,7 @@ html {
   transition: 0.4s background-color;
 }
 .Dark {
-  background: #01071f;
+  background: #000c3d;
 }
 
 @media (max-width: 480px) {

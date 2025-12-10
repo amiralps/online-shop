@@ -2,18 +2,19 @@ import {Link, NavLink} from "react-router-dom";
 import styles from "../styles/Header.module.css";
 import {LiaShoppingCartSolid} from "react-icons/lia";
 import {useSelector} from "react-redux";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {RiMoonClearLine} from "react-icons/ri";
 import {BsFillSunFill} from "react-icons/bs";
 
 function Header() {
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") === "Dark" ? "Dark" : "Light"
-  );
   const {selectedItems, itemsCounter, totalCount} = useSelector(
     (state) => state.cart
   );
-  document.querySelector("html").classList = `${theme}`;
+  useEffect(() => {
+    localStorage.getItem("theme") === "Dark"
+      ? document.querySelector("html").classList.add("Dark")
+      : null;
+  }, []);
   return (
     <>
       <div className={styles.header}>
@@ -38,7 +39,7 @@ function Header() {
         <div className={styles.leftdiv}>
           <ul>
             <li className="cart">
-              <NavLink to="shopping-cart">
+              <NavLink to="/shopping-cart">
                 <LiaShoppingCartSolid />
                 {itemsCounter ? <div>{itemsCounter}</div> : ""}
               </NavLink>
@@ -47,12 +48,13 @@ function Header() {
               <button
                 className={styles.themeBtn}
                 onClick={() => {
-                  theme === "Dark"
-                    ? localStorage.setItem("theme", "Light")
-                    : localStorage.setItem("theme", "Dark");
-                  setTheme(
-                    localStorage.getItem("theme") === "Dark" ? "Dark" : "Light"
-                  );
+                  if (localStorage.getItem("theme") === "Dark") {
+                    localStorage.removeItem("theme");
+                    document.querySelector("html").classList.remove("Dark");
+                  } else {
+                    localStorage.setItem("theme", "Dark");
+                    document.querySelector("html").classList.add("Dark");
+                  }
                 }}>
                 <RiMoonClearLine className={styles.moon} />
                 <BsFillSunFill className={styles.sun} />
