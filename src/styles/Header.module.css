@@ -4,9 +4,10 @@
   height: 55px;
   align-items: center;
   /* justify-content: space-between; */
-  background-color: #676d8b;
+  background-color: #00ADB5;
   border-radius: 10px;
   margin: 10px 0 20px;
+  transition: .4s background-color;
 }
 
 .header .centerdiv {
@@ -34,33 +35,37 @@
   gap: 5px;
   flex-direction: column;
   text-decoration: none;
-  color: #fff;
+  color: #F6F6F6;
   transition: 0.3s;
 }
 .header .rightdiv img {
   /* width: 50px; */
   height: 30px;
-  color: red;
 }
 
 .header ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+}
+.header .centerdiv ul {
+  gap: 10px;
+}
+.header .leftdiv ul {
+  gap: 5px;
 }
 
-.header .centerdiv a:not(:global(.cart a)) {
+.header .centerdiv a {
   text-decoration: none;
   font-weight: 400;
-  background-color: #eeeeee;
+  background-color: #F6F6F6;
   border-radius: 5px;
   padding: 8px 15px;
   color: #000;
   transition: 0.3s;
 }
 
-.header .centerdiv a:not(:global(.cart > a)) {
+.header .centerdiv a {
   font-family: "tanha", serif;
   line-height: 2;
   font-size: 0.8rem;
@@ -76,47 +81,60 @@
   background: #ffffff;
   color: #2cbd00;
   padding: 4px;
+  width: 35px;
+  height: 35px;
   line-height: 0;
   font-weight: 900;
   font-size: 1.6rem;
 
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: 0.3s;
 }
 
-:global(.cart a.active) {
+:global(.Light .cart a.active) {
   background: #16db00;
+  color: #ffffff;
+}
+:global(.Dark .cart a.active) {
+  background: #0d8100;
   color: #fff;
 }
 
-.centerdiv :global(a.active:not(.cart > a)) {
-  background-color: #c9c9c9;
+.centerdiv :global(a.active) {
+  background-color: #bfddf7;
 }
 
-@media (hover: hover) {
-  .centerdiv :global(.cart) a:hover {
+@media (min-width: 1024px) and (hover: hover) {
+  :global(.Light) .header :global(.cart) a:hover {
     background: #16db00;
     color: #fff;
   }
-
-  .header .rightdiv h3 a:hover {
-    color: #16c9ff;
+  :global(.Dark) .header :global(.cart) a:hover {
+    background: #0c7c00;
+    color: #F6F6F6;
   }
 
-  .header .centerdiv :global(a:not(.cart > a):hover) {
-    background-color: #b1b1b1;
+  :global(.Light) .header .rightdiv h3 a:hover {
+    color: #084052;
+  }
+  :global(.Dark) .header .rightdiv h3 a:hover {
+    color: #46d4ff;
+  }
+
+  .header .centerdiv a:not(:global(a.active)):hover {
+    background-color: #9bb9d3;
   }
 }
 
 :global(.cart) > a > div {
   position: absolute;
-  bottom: -4px;
-  right: -4px;
+  bottom: -5px;
+  right: -5px;
   font-size: 0.8rem;
   background-color: #ff0000;
-  line-height: 1;
-  padding: 2px 4px;
+  line-height: .8;
+  padding: 3px;
   border-radius: 4px;
   color: #fff;
 }
@@ -153,19 +171,19 @@
   transition: .35s;
 }
 :global(.Light) .themeBtn {
-  background: #ffffff;
-  color: #2b2828;
+  background: #EEEEEE;
+  color: #070F2B;
 }
 :global(.Dark) .themeBtn {
-  background: #2b2b2b;
-  color: #fff;
+  background: #070F2B;
+  color: #EEEEEE;
 }
 :global(.Light) .themeBtn .moon,
 :global(.Dark) .themeBtn .sun {
   transform: scale(0) rotate(360deg);
   opacity: 0;
 }
-:global(.Dark) .themeBtn {
-  background: #2b2b2b;
-  color: #fff;
+:global(.Dark) .header {
+  background: #365486;
+  /* color: #fff; */
 }

@@ -26,6 +26,11 @@
   padding: 10px;
   height: 175px;
   width: 100%;
+  transition: .4s color;
+}
+:global(.Dark) .pDetail li,
+:global(.Dark) .checkOutField {
+  color: #e9e9e9;
 }
 
 .pDetail li a {
@@ -40,8 +45,12 @@
 .break:not(:last-child) {
   width: 95%;
   height: 2px;
-  background: #6969693b;
-  border-radius: 50%;
+  background: #6969696b;
+  border-radius: 50px;
+  transition: .4s background-color;
+}
+:global(.Dark) .break:not(:last-child) {
+  background: #ffffff69;
 }
 .break:last-child {
   display: none;
@@ -53,12 +62,15 @@
   justify-content: start;
   gap: 4px;
 }
-
+:global(.Dark) .colorDiv div {
+  border: solid 1px #b3b3b3;
+}
 .colorDiv div {
   width: 18px;
   height: 18px;
   border-radius: 50%;
   border: solid 1px #00000073;
+  transition: .4s border;
 }
 
 .cartDTLBTN :global(.updateButtons) {
@@ -94,9 +106,15 @@
   height: 70vh;
   font-family: "tanha", serif;
 }
-
 .empty h1 {
   font-size: 1.8rem;
+  transition: .4s color;
+}
+:global(.Dark) .empty h1 {
+  color: #fff;
+}
+:global(.Light) .empty h1 {
+  color: #000;
 }
 
 .checkOutField {
@@ -104,6 +122,7 @@
   line-height: 1.5;
   align-items: center;
   width: 30%;
+  transition: .4s background;
 }
 .checkOutField div {
   display: flex;
@@ -113,6 +132,9 @@
   justify-content: space-between;
 }
 
+.price span {
+  transition: .4s color;
+}
 .price span::before,
 .priceAndButtons span::before {
   content: "\F06C\00FE0E";
@@ -181,6 +203,12 @@
     border: 2px solid #c9c9c9;
     top: 20px;
     border-radius: 20px;
+    transition: .4s;
+    transition-property: background,color,border-color;
+  }
+  :global(.Dark) .checkOutField {
+    background: #01071f;
+    border: 2px solid #7c7c7c;
   }
 
   .container {
@@ -265,6 +293,13 @@
     bottom: 0;
     z-index: 10;
     border-top: 2px solid #00000031;
+    
+    transition: .4s;
+    transition-property: background,color,border-color;
+  }
+  :global(.Dark) .checkOutField {
+    background: #000a2e;
+    border-top: 2px solid #ffffff56;
   }
   .checkOutField div {
     display: flex;
@@ -276,6 +311,10 @@
   .checkOutField p {
     font-size: 0.78rem;
     color: #000000a9;
+    transition: .4s color;
+  }
+  :global(.Dark) .checkOutField p {
+    color: #ffffff73;
   }
 
   .checkOutField button {

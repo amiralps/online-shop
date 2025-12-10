@@ -52,6 +52,7 @@ ul {
 
 .link {
   text-decoration: none;
+  overflow: hidden;
 }
 
 @media (min-width: 1025px) {

@@ -33,28 +33,32 @@ function Header() {
             <li>
               <NavLink to="products">محصولات</NavLink>
             </li>
+          </ul>
+        </div>
+        <div className={styles.leftdiv}>
+          <ul>
             <li className="cart">
               <NavLink to="shopping-cart">
                 <LiaShoppingCartSolid />
                 {itemsCounter ? <div>{itemsCounter}</div> : ""}
               </NavLink>
             </li>
+            <li>
+              <button
+                className={styles.themeBtn}
+                onClick={() => {
+                  theme === "Dark"
+                    ? localStorage.setItem("theme", "Light")
+                    : localStorage.setItem("theme", "Dark");
+                  setTheme(
+                    localStorage.getItem("theme") === "Dark" ? "Dark" : "Light"
+                  );
+                }}>
+                <RiMoonClearLine className={styles.moon} />
+                <BsFillSunFill className={styles.sun} />
+              </button>
+            </li>
           </ul>
-        </div>
-        <div className={styles.leftdiv}>
-          <button
-            className={styles.themeBtn}
-            onClick={() => {
-              theme === "Dark"
-                ? localStorage.setItem("theme", "Light")
-                : localStorage.setItem("theme", "Dark");
-              setTheme(
-                localStorage.getItem("theme") === "Dark" ? "Dark" : "Light"
-              );
-            }}>
-            <RiMoonClearLine className={styles.moon} />
-            <BsFillSunFill className={styles.sun} />
-          </button>
         </div>
       </div>
     </>
