@@ -117,7 +117,11 @@ const cartSlice = createSlice({
       state.selectedItems = [];
       state.totalCount = 0;
       state.checkOut = false;
-      localStorage.removeItem("productsState");
+      if (!state.favoriteItems) {
+        localStorage.removeItem("productsState");
+      } else {
+        localStorage.setItem("productsState", JSON.stringify(state))
+      }
     },
   },
 });
