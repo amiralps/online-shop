@@ -41,7 +41,7 @@ ul {
   padding: 3px 5px;
   border-radius: 8px;
   border: solid 2px #fff;
-  transition: .3s border-color;
+  transition: 0.3s border-color;
 }
 :global(.Dark) .colors li {
   border-color: #000c3d;
@@ -84,6 +84,12 @@ ul {
   width: 100%;
   /* gap: 30px; */
 }
+
+@media (min-width: 560px) {
+  .productDAS {
+    gap: 30px;
+  }
+}
 /* product DAS(Dtails And Sliders) END */
 
 @media (max-width: 560px) {
@@ -120,10 +126,13 @@ ul {
     box-shadow: 0 -4px 10px 1px #ffffff80;
     background-color: #000c3d;
   }
+
+  .productDetails p.description {
+    padding: 0 25px;
+  }
 }
 
 .productDetails p.description {
-  padding: 0 25px;
   text-align: justify;
   font-size: 1rem;
 }

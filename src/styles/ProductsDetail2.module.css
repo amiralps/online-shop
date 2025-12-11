@@ -4,7 +4,6 @@
   align-items: center;
   gap: 40px;
   justify-content: start;
-  padding: 8px 15px;
   /* box-shadow: 0 0 5px 1px #0000009d; */
 }
 
@@ -62,13 +61,46 @@
   z-index: 3;
 }
 :global(.Dark) .back_box_favorite .backButton {
-  background-color: #000c3d;
+  color: #fff;
 }
+.box_favorite {
+  background: #cecccf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 8px;
+  gap: 10px;
+  border-radius: 8px;
+}
+:global(.Dark) .box_favorite {
+  background: #bef3ef;
+}
+.box_favorite button {
+  /* background: #000; */
+  border: none;
+  font-size: 1.4rem;
+  line-height: 0;
+  color: #ff0000;
+  background: transparent;
+  transition: .1s;
+  cursor: pointer;
+}
+.box_favorite a {
+  color: #00df0b;
+  font-size: 1.6rem;
+  line-height: 0;
+  text-decoration: none;
+  transition: .1s;
+}
+.box_favorite button:active,
+.box_favorite a:active {
+  transform: scale(.8);
+}
+:global(.Dark) .box_favorite a {
+  color: #005a05;
+}
+
 .back_box_favorite .backButton {
-  background-color: #cdffff;
-  border-radius: 10px;
-}
-.backButton {
   border-radius: 50%;
   line-height: 0;
   background: transparent;
@@ -76,6 +108,7 @@
   border: none;
   color: #00000083;
   font-size: 2.5rem;
+  padding: 0;
 }
 :global(.Dark) .backButton {
   color: #ffffffc0;

@@ -1,6 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-const initialState = {
+const initialState = JSON.parse(localStorage.getItem("productsState")) || {
   itemsCounter: 0,
   selectedItems: [],
   totalCount: 0,
@@ -37,6 +37,11 @@ const cartSlice = createSlice({
           );
         }
       }
+      if (!state.selectedItems.length) {
+        localStorage.removeItem("productsState");
+      } else {
+        localStorage.setItem("productsState", JSON.stringify(state));
+      }
     },
     addItem(state, action) {
       const {colorIndex, data} = action.payload;
@@ -56,11 +61,11 @@ const cartSlice = createSlice({
         state.itemsCounter += 1;
         state.totalCount += data.colors[colorIndex].price;
       } else {
-        state.productsCount += 1;
         state.selectedItems[productIndex].colors[colorIndex].quantity = 1;
         state.itemsCounter += 1;
         state.totalCount += data.colors[colorIndex].price;
       }
+      localStorage.setItem("productsState", JSON.stringify(state));
     },
     increment(state, action) {
       const {colorIndex, data} = action.payload;
@@ -75,6 +80,7 @@ const cartSlice = createSlice({
         state.itemsCounter += 1;
         state.totalCount += data.colors[colorIndex].price;
       }
+      localStorage.setItem("productsState", JSON.stringify(state));
     },
     decrement(state, action) {
       const {colorIndex, data} = action.payload;
@@ -88,12 +94,14 @@ const cartSlice = createSlice({
         state.itemsCounter -= 1;
         state.totalCount -= data.colors[colorIndex].price;
       }
+      localStorage.setItem("productsState", JSON.stringify(state));
     },
     checkOut(state) {
       state.itemsCounter = 0;
       state.selectedItems = [];
       state.totalCount = 0;
       state.checkOut = false;
+      localStorage.removeItem("productsState");
     },
   },
 });
