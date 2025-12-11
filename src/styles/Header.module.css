@@ -148,6 +148,10 @@
     margin: 8px auto 20px;
     width: 96%;
   }
+
+  .rightdiv h3 a {
+    font-size: .8rem;
+  }
 }
 
 .themeBtn {
