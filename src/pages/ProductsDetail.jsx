@@ -3,15 +3,15 @@ import {useDispatch, useSelector} from "react-redux";
 import {getProducts} from "../features/products/productSlice.js";
 import {Link, useParams} from "react-router-dom";
 import {IoCloseCircleOutline} from "react-icons/io5";
-import { GoHeart, GoHeartFill } from "react-icons/go";
-
+import {GoHeart, GoHeartFill} from "react-icons/go";
 
 import styles from "../styles/ProductsDetail.module.css";
 import styles2 from "../styles/ProductsDetail2.module.css";
 import Buttons from "../components/Buttons.jsx";
 import ThumbSlider from "../components/ThumbSlider.jsx";
 import {changeTitle, priceFormat} from "../helper/helper.js";
-import { LiaShoppingCartSolid } from "react-icons/lia";
+import {LiaShoppingCartSolid} from "react-icons/lia";
+import {favorite} from "../features/cart/cartSlice.js";
 
 function ProductsDetail() {
   const {id} = useParams();
@@ -19,7 +19,7 @@ function ProductsDetail() {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    changeTitle(`عینک${id}`);
+    changeTitle(`عینک - ${id}`);
     dispatch(getProducts());
     window.addEventListener("resize", () => {
       setIsDesktop(window.innerWidth > 1024);
@@ -75,9 +75,20 @@ function ProductsDetail() {
               <Link to="/shopping-cart">
                 <LiaShoppingCartSolid />
               </Link>
-              <button>
+              {console.log(!cartStatus.favoriteItems.find(
+                    (item) => item.id === product.id
+                  ))}
+              <button
+                className={
+                  !cartStatus.favoriteItems.find(
+                    (item) => item.id === product.id
+                  )
+                    ? null
+                    : styles2.inFavorites
+                }
+                onClick={() => dispatch(favorite(product))}>
                 <GoHeart />
-                {/* <GoHeartFill /> */}
+                <GoHeartFill className={styles2.fillHeart} />
               </button>
             </div>
           </div>

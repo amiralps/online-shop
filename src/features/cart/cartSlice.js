@@ -4,6 +4,7 @@ const initialState = JSON.parse(localStorage.getItem("productsState")) || {
   itemsCounter: 0,
   selectedItems: [],
   totalCount: 0,
+  favoriteItems: [],
   checkOut: false,
 };
 const cartSlice = createSlice({
@@ -37,7 +38,7 @@ const cartSlice = createSlice({
           );
         }
       }
-      if (!state.selectedItems.length) {
+      if (!state.selectedItems.length && !state.favoriteItems.length) {
         localStorage.removeItem("productsState");
       } else {
         localStorage.setItem("productsState", JSON.stringify(state));
@@ -96,6 +97,21 @@ const cartSlice = createSlice({
       }
       localStorage.setItem("productsState", JSON.stringify(state));
     },
+    favorite(state, action) {
+      const data = action.payload;
+      if (!state.favoriteItems.find((item) => item.id === data.id)) {
+        state.favoriteItems.push(data);
+      } else {
+        state.favoriteItems = state.favoriteItems.filter(
+          (item) => item.id !== data.id
+        );
+      }
+      if (!state.favoriteItems.length && !state.selectedItems.length) {
+        localStorage.removeItem("productsState");
+      } else {
+        localStorage.setItem("productsState", JSON.stringify(state));
+      }
+    },
     checkOut(state) {
       state.itemsCounter = 0;
       state.selectedItems = [];
@@ -107,5 +123,5 @@ const cartSlice = createSlice({
 });
 
 export default cartSlice.reducer;
-export const {removeItem, addItem, increment, decrement, checkOut} =
+export const {removeItem, addItem, increment, decrement, favorite, checkOut} =
   cartSlice.actions;

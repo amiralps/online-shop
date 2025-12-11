@@ -5,8 +5,10 @@ import {Fragment, useEffect, useState} from "react";
 import {changeTitle, priceFormat, resizeHandler} from "../helper/helper";
 import {checkOut as doCheckOut} from "../features/cart/cartSlice";
 import {Link} from "react-router-dom";
+import {getProducts} from "../features/products/productSlice";
 
 function ShoppingCart() {
+  const dispatch = useDispatch();
   const [isDesktop, setIsDesktop] = useState(resizeHandler());
   useEffect(() => {
     changeTitle("سبد خرید");
@@ -17,11 +19,17 @@ function ShoppingCart() {
       setIsDesktop(resizeHandler());
     });
   }, []);
-  const dispatch = useDispatch();
-  const {products} = useSelector((state) => state.products);
+  const {products, loading, error} = useSelector((state) => state.products);
+  useEffect(() => {
+    if (!products.length) {
+      dispatch(getProducts());
+    }
+  }, []);
+  // console.log(products, loading, error)
   const {checkOut, selectedItems, totalCount} = useSelector(
     (state) => state.cart
   );
+  if (loading || !products.length) return <h1>Loading ...</h1>;
   if (!selectedItems.length)
     return (
       <div className={styles.empty}>

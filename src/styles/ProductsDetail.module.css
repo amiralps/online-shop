@@ -85,14 +85,14 @@ ul {
   /* gap: 30px; */
 }
 
-@media (min-width: 560px) {
+@media (min-width: 900px) {
   .productDAS {
     gap: 30px;
   }
 }
 /* product DAS(Dtails And Sliders) END */
 
-@media (max-width: 560px) {
+@media (max-width: 900px) {
   .colors {
     overflow-x: scroll;
     justify-content: space-evenly;

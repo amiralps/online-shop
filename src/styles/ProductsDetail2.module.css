@@ -60,11 +60,9 @@
   /* height: 50px; */
   z-index: 3;
 }
-:global(.Dark) .back_box_favorite .backButton {
-  color: #fff;
-}
 .box_favorite {
-  background: #cecccf;
+  background: #ffffff;
+  border: 2px solid #888888;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,31 +71,52 @@
   border-radius: 8px;
 }
 :global(.Dark) .box_favorite {
-  background: #bef3ef;
+  background: #000c3d;
+  border-color: #bdbdbd;
 }
 .box_favorite button {
   /* background: #000; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   font-size: 1.4rem;
   line-height: 0;
-  color: #ff0000;
+  color: #eb0000;
   background: transparent;
   transition: .1s;
   cursor: pointer;
+  position: relative;
+  width: 20px;
+  height: 20px;
 }
+:global(.Dark) .box_favorite button {
+  color: #ff3b3b;
+}
+.box_favorite button > svg {
+  position: absolute;
+}
+.box_favorite button .fillHeart {
+  transform: scale(0);
+  transition: .6s ease;
+}
+.box_favorite button.inFavorites .fillHeart {
+  transform: none;
+}
+
 .box_favorite a {
-  color: #00df0b;
+  color: #00da0b;
   font-size: 1.6rem;
   line-height: 0;
   text-decoration: none;
   transition: .1s;
 }
+:global(.Dark) .box_favorite a {
+  color: #00d60b;
+}
 .box_favorite button:active,
 .box_favorite a:active {
-  transform: scale(.8);
-}
-:global(.Dark) .box_favorite a {
-  color: #005a05;
+  transform: scale(.75);
 }
 
 .back_box_favorite .backButton {
@@ -106,15 +125,17 @@
   background: transparent;
   cursor: pointer;
   border: none;
-  color: #00000083;
+  color: #636363;
+  background: #fff;
   font-size: 2.5rem;
   padding: 0;
 }
-:global(.Dark) .backButton {
-  color: #ffffffc0;
+:global(.Dark) .back_box_favorite .backButton {
+  color: #e4e4e4;
+  background: #000c3d;
 }
 
-@media (max-width: 560px) {
+@media (max-width: 900px) {
   .addToBox {
     width: 100%;
     display: flex;

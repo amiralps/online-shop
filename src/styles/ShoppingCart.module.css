@@ -190,7 +190,7 @@
 }
 
 /* desktop/tablet break point */
-@media (min-width: 481px) {
+@media (min-width: 901px) {
   .checkOutField {
     flex-direction: column-reverse;
     padding: 40px 20px;
@@ -216,7 +216,7 @@
   }
 }
 /* mobile break point */
-@media (max-width: 480px) {
+@media (max-width: 900px) {
   .container {
     display: block;
   }

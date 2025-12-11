@@ -8,7 +8,7 @@ const getProducts = createAsyncThunk("products/getProducts", () => {
 const productSlice = createSlice({
   name: "products",
   initialState: {
-    products: {},
+    products: [],
     loading: false,
     error: "",
   },

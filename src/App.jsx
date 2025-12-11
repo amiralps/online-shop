@@ -6,8 +6,21 @@ import LayOutWithHF from "./layout/LayOutWithHF";
 import LayOutWithoutHF from "./layout/LayOutWithoutHF";
 import NotFound from "./pages/NotFound";
 import ShoppingCart from "./pages/ShoppingCart";
+import {useEffect} from "react";
 
 function App() {
+  useEffect(() => {
+    if (localStorage.getItem("theme") === "Dark") {
+      document.querySelector("html").classList.add("Dark");
+    }
+    /* Detect touch/mouse
+    try {
+      document.createEvent("TouchEvent");
+      console.log("yes")
+    } catch(e) {
+      console.log("no")
+    } */
+  }, []);
   return (
     <>
       <BrowserRouter>

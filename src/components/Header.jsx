@@ -2,7 +2,6 @@ import {Link, NavLink} from "react-router-dom";
 import styles from "../styles/Header.module.css";
 import {LiaShoppingCartSolid} from "react-icons/lia";
 import {useSelector} from "react-redux";
-import {useEffect, useState} from "react";
 import {RiMoonClearLine} from "react-icons/ri";
 import {BsFillSunFill} from "react-icons/bs";
 
@@ -10,11 +9,6 @@ function Header() {
   const {selectedItems, itemsCounter, totalCount} = useSelector(
     (state) => state.cart
   );
-  useEffect(() => {
-    localStorage.getItem("theme") === "Dark"
-      ? document.querySelector("html").classList.add("Dark")
-      : null;
-  }, []);
   return (
     <>
       <div className={styles.header}>

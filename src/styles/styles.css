@@ -35,7 +35,7 @@ html {
   background: #000c3d;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 900px) {
   body {
     padding: 0;
   }

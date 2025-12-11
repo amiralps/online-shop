@@ -78,7 +78,7 @@ ul {
   }
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 900px) {
   .card {
     width: 160px;
     height: 220px;
