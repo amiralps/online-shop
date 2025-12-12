@@ -2,6 +2,7 @@ import {useEffect} from "react";
 import {changeTitle} from "../helper/helper";
 import styles from "../styles/Home.module.css";
 function Home() {
+  // console.log(Lottie)
   useEffect(() => {
     changeTitle("عینک اپتیک");
   }, []);
