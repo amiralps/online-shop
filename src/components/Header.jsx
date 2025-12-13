@@ -11,11 +11,11 @@ function Header() {
   function themeHandler() {
     if (theme === "Dark") {
       localStorage.removeItem("theme");
-      document.querySelector("html").classList.remove("Dark");
+      document.documentElement.classList.remove("Dark");
       setTheme("Light");
     } else {
       localStorage.setItem("theme", "Dark");
-      document.querySelector("html").classList.add("Dark");
+      document.documentElement.classList.add("Dark");
       setTheme("Dark");
     }
   }
