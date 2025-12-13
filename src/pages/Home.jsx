@@ -14,10 +14,10 @@ function Home() {
           fill: "forwards",
           count: "infinite",
           ease: "linear",
-          strokeWidth: "8"
+          strokeWidth: "6"
         }}
       />
-      <h1>عینک اپتیک</h1>
+      <h1>عینک اُپتیک</h1>
     </div>
   );
 }

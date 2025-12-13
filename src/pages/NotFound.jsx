@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { changeTitle } from "../helper/helper";
 
 function NotFound() {

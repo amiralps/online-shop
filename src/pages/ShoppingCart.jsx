@@ -6,6 +6,7 @@ import {changeTitle, priceFormat, resizeHandler} from "../helper/helper";
 import {checkOut as doCheckOut} from "../features/cart/cartSlice";
 import {Link} from "react-router-dom";
 import {getProducts} from "../features/products/productSlice";
+import Loading from "../components/Loading";
 
 function ShoppingCart() {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ function ShoppingCart() {
   const {checkOut, selectedItems, totalCount} = useSelector(
     (state) => state.cart
   );
-  if (loading || !products.length) return <h1>Loading ...</h1>;
+  if (loading || !products.length) return <Loading />;
   if (!selectedItems.length)
     return (
       <div className={styles.empty}>

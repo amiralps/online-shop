@@ -33,7 +33,7 @@
 }
 
 
-/* @keyframes mysvgDark {
+@keyframes mysvgDark {
   0% {
     stroke-dasharray: 1500, 1500;
     stroke-dashoffset: 1500;
@@ -53,7 +53,7 @@
     stroke-dashoffset: 1500;
 	fill: #000000;
   }
-} */
+}
 @keyframes mysvg {
   0% {
     stroke-dasharray: 1500, 1500;

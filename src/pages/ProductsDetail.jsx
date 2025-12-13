@@ -12,6 +12,7 @@ import ThumbSlider from "../components/ThumbSlider.jsx";
 import {changeTitle, priceFormat} from "../helper/helper.js";
 import {LiaShoppingCartSolid} from "react-icons/lia";
 import {favorite} from "../features/cart/cartSlice.js";
+import Loading from "../components/Loading.jsx";
 
 function ProductsDetail() {
   const {id} = useParams();
@@ -50,7 +51,7 @@ function ProductsDetail() {
   const [colorPick, setColorPick] = useState(0);
   const thisCart = cartStatus.selectedItems.find((item) => item.id == id);
   if (error) return <h1>{error}</h1>;
-  if (!products.length || loading) return <h1>Loading ...</h1>;
+  if (!products.length || loading) return <Loading />;
   const product = products.find((i) => i.id == id);
   if (!product)
     return (

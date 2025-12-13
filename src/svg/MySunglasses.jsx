@@ -18,7 +18,7 @@ function MySunglasses({data}) {
           animationFillMode: data.fill,
           animationIterationCount: data.count,
           animationTimingFunction: data.ease,
-          strokeWidth: data.strokeWidth,
+          strokeWidth: data.strokeWidth
         }}
         strokeWidth="3"
         stroke="currentColor"

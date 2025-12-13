@@ -6,11 +6,11 @@ import LayOutWithHF from "./layout/LayOutWithHF";
 import LayOutWithoutHF from "./layout/LayOutWithoutHF";
 import NotFound from "./pages/NotFound";
 import ShoppingCart from "./pages/ShoppingCart";
-import {useEffect} from "react";
 
 function App() {
   if (localStorage.getItem("theme") === "Dark") {
     document.querySelector("html").classList.add("Dark");
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000c3d')
   }
   /* Detect touch/mouse
     try {
@@ -25,11 +25,11 @@ function App() {
         <Routes>
           <Route element={<LayOutWithHF />}>
             <Route path="/" element={<Home />} />
-            <Route path="products" element={<Products />} />
-            <Route path="shopping-cart" element={<ShoppingCart />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/shopping-cart" element={<ShoppingCart />} />
           </Route>
           <Route element={<LayOutWithoutHF />}>
-            <Route path="products/:id" element={<ProductsDetail />} />
+            <Route path="/products/:id" element={<ProductsDetail />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
