@@ -1,14 +1,23 @@
 import {useEffect} from "react";
 import {changeTitle} from "../helper/helper";
 import styles from "../styles/Home.module.css";
+import MySunglasses from "../svg/MySunglasses";
 function Home() {
-  // console.log(Lottie)
   useEffect(() => {
     changeTitle("عینک اپتیک");
   }, []);
   return (
     <div className={styles.container}>
-      <h1>خانه</h1>
+      <MySunglasses
+        data={{
+          duration: "6s",
+          fill: "forwards",
+          count: "infinite",
+          ease: "linear",
+          strokeWidth: "8"
+        }}
+      />
+      <h1>عینک اپتیک</h1>
     </div>
   );
 }

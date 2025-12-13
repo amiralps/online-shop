@@ -2,25 +2,15 @@
   width: 100%;
   height: calc(100dvh - 100px);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: "tanha", sans-serif;
 }
 .container h1 {
-  transition: .4s color;
+  transition: 0.4s color;
 }
+
 :global(.Dark) .container h1 {
   color: #fff;
-}
-
-.mysvg {
-  width: 100px;
-  height: 100px;
-  stroke-dasharray: 500,500;
-  stroke-dashoffset: 0;
-}
-
-.mysvg:hover path {
-  stroke-dasharray: 500,500;
-  stroke-dashoffset: 200;
 }

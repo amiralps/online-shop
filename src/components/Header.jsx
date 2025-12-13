@@ -4,8 +4,21 @@ import {LiaShoppingCartSolid} from "react-icons/lia";
 import {useSelector} from "react-redux";
 import {RiMoonClearLine} from "react-icons/ri";
 import {BsFillSunFill} from "react-icons/bs";
+import {useState} from "react";
 
 function Header() {
+  const [theme, setTheme] = useState(localStorage.getItem("theme"));
+  function themeHandler() {
+    if (theme === "Dark") {
+      localStorage.removeItem("theme");
+      document.querySelector("html").classList.remove("Dark");
+      setTheme("Light");
+    } else {
+      localStorage.setItem("theme", "Dark");
+      document.querySelector("html").classList.add("Dark");
+      setTheme("Dark");
+    }
+  }
   const {selectedItems, itemsCounter, totalCount} = useSelector(
     (state) => state.cart
   );
@@ -42,13 +55,14 @@ function Header() {
               <button
                 className={styles.themeBtn}
                 onClick={() => {
-                  if (localStorage.getItem("theme") === "Dark") {
-                    localStorage.removeItem("theme");
-                    document.querySelector("html").classList.remove("Dark");
-                  } else {
-                    localStorage.setItem("theme", "Dark");
-                    document.querySelector("html").classList.add("Dark");
-                  }
+                  themeHandler()
+                  // if (localStorage.getItem("theme") === "Dark") {
+                  //   localStorage.removeItem("theme");
+                  //   document.querySelector("html").classList.remove("Dark");
+                  // } else {
+                  //   localStorage.setItem("theme", "Dark");
+                  //   document.querySelector("html").classList.add("Dark");
+                  // }
                 }}>
                 <RiMoonClearLine className={styles.moon} />
                 <BsFillSunFill className={styles.sun} />
