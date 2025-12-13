@@ -10,7 +10,7 @@ function Header() {
   const [theme, setTheme] = useState(localStorage.getItem("theme"));
   function themeHandler() {
     if (theme === "Dark") {
-      localStorage.removeItem("theme");
+      localStorage.setItem("theme", "Light");
       document.documentElement.classList.remove("Dark");
       setTheme("Light");
     } else {

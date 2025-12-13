@@ -10,12 +10,18 @@
     <div class="main"></div>
     <script>
       (function () {
-        const theme = localStorage.getItem("theme");
-        if (theme === "Dark") {
+        const saved = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+
+        if (saved === "Dark" || (!saved && prefersDark)) {
           document.documentElement.classList.add("Dark");
+          localStorage.setItem("theme", "Dark");
         }
       })();
     </script>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
