@@ -12,12 +12,10 @@ function Header() {
     if (theme === "Dark") {
       localStorage.removeItem("theme");
       document.querySelector("html").classList.remove("Dark");
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
       setTheme("Light");
     } else {
       localStorage.setItem("theme", "Dark");
       document.querySelector("html").classList.add("Dark");
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000c3d')
       setTheme("Dark");
     }
   }

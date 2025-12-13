@@ -8,10 +8,6 @@ import NotFound from "./pages/NotFound";
 import ShoppingCart from "./pages/ShoppingCart";
 
 function App() {
-  if (localStorage.getItem("theme") === "Dark") {
-    document.querySelector("html").classList.add("Dark");
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000c3d')
-  }
   /* Detect touch/mouse
     try {
       document.createEvent("TouchEvent");
