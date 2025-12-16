@@ -25,19 +25,19 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-body {
+.main {
   padding: 4px 20px;
   background-color: inherit;
 }
-/* html {
+html {
   transition: 0.4s background-color;
-} */
+}
 .Dark {
   background: #000c3d;
 }
 
 @media (max-width: 900px) {
-  body {
+  .main {
     padding: 0;
   }
 }
