@@ -10,7 +10,7 @@
   z-index: 1000;
   cursor: pointer;
   background: #ffffff;
-  transition: .3s background;
+  transition: 0.3s background;
 }
 :global(.Dark) .menu {
   background: #000c3f;
@@ -77,35 +77,35 @@
   right: 0px;
 }
 .list ul {
-	display: flex;
-	flex-direction: column;
-	align-items: start;
-	justify-content: start;
-	/* padding: 21px 20px 0 0; */
-	width: 100%;
-	/* background: #000; */
-	color: #ffffff;
-	gap: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  /* padding: 21px 20px 0 0; */
+  width: 100%;
+  /* background: #000; */
+  color: #ffffff;
+  gap: 6px;
 }
 .list ul li a {
-	color: #000000;
-	text-decoration: none;
-	font-family: "tanha", serif;
-	background: #ffffffcc;
-	font-size: 1.2rem;
-	padding: 0 10px;
-	width: 150px;
-	border-radius: 6px;
-  transition: .3s;
+  color: #000000;
+  text-decoration: none;
+  font-family: "tanha", serif;
+  background: #ffffffcc;
+  font-size: 1.2rem;
+  padding: 0 10px;
+  width: 150px;
+  border-radius: 6px;
+  transition: 0.3s;
 }
 .list ul li a:global(.active:not(.cart .active)) {
-	color: #c6d5ff;
-	background: #00308acc;
-	padding: 0 15px;
+  color: #c6d5ff;
+  background: #00308acc;
+  padding: 0 15px;
 }
 .list ul li {
-	display: flex;
-	/* width: 500px; */
+  display: flex;
+  /* width: 500px; */
 }
 .list ul li:nth-child(1) {
   padding-right: 38px;
@@ -127,8 +127,9 @@
   width: 30px;
   height: 30px;
   border-radius: 8px;
-  transition: .3s;
+  transition: 0.3s;
   position: relative;
+  display: flex;
 }
 .login svg {
   position: absolute;
@@ -139,4 +140,31 @@
 :global(.Dark) .login {
   background: #000c3d;
   color: #ffffffcc;
+}
+
+@media (min-width: 900px) {
+  .login {
+    background: #fff;
+    font-size: 1.5rem;
+    line-height: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    transition: 0.3s;
+    position: relative;
+    cursor: pointer;
+  }
+  .login:hover {
+    background: #cfd9ff;
+  }
+  .login svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  :global(.Dark) .login:hover {
+    background: #00218b !important;
+    color: #ffffffcc;
+  }
 }

@@ -66,6 +66,11 @@ function Header() {
             </div>
             <div className={styles.leftdiv}>
               <ul>
+                <li>
+                  <Link to={"/login"} className={TMStyle.login}>
+                    <HiOutlineLogin />
+                  </Link>
+                </li>
                 <li className="cart">
                   <NavLink to="/shopping-cart">
                     <LiaShoppingCartSolid />
@@ -94,7 +99,11 @@ function Header() {
           </>
         ) : (
           <>
-            <div className={TMStyle.login}><HiOutlineLogin /></div>
+            <div>
+              <Link to={"/login"} className={TMStyle.login}>
+                <HiOutlineLogin />
+              </Link>
+            </div>
             <div className={styles.logo}>
               <h3>
                 <Link to={"/"}>

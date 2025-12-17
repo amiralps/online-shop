@@ -6,6 +6,7 @@ import LayOutWithHF from "./layout/LayOutWithHF";
 import LayOutWithoutHF from "./layout/LayOutWithoutHF";
 import NotFound from "./pages/NotFound";
 import ShoppingCart from "./pages/ShoppingCart";
+import Login from "./pages/Login";
 
 function App() {
   /* Detect touch/mouse
@@ -25,6 +26,7 @@ function App() {
             <Route path="/shopping-cart" element={<ShoppingCart />} />
           </Route>
           <Route element={<LayOutWithoutHF />}>
+          <Route path="/login" element={<Login />} />
             <Route path="/products/:id" element={<ProductsDetail />} />
             <Route path="*" element={<NotFound />} />
           </Route>
