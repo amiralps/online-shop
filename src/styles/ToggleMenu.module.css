@@ -73,7 +73,7 @@
 :global(.Dark) .list {
   background: #00000088;
 }
-.menu.open + .leftContainer + .list {
+.menu.open ~ .list {
   right: 0px;
 }
 .list ul {
@@ -127,10 +127,14 @@
   width: 30px;
   height: 30px;
   border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   transition: .3s;
+  position: relative;
+}
+.login svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 :global(.Dark) .login {
   background: #000c3d;
