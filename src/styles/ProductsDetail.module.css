@@ -40,11 +40,8 @@ ul {
   cursor: pointer;
   padding: 3px 5px;
   border-radius: 8px;
-  border: solid 2px #fff;
+  border: solid 2px transparent;
   transition: 0.3s border-color;
-}
-:global(.Dark) .colors li {
-  border-color: #000c3d;
 }
 
 .colors li.active {
@@ -58,9 +55,6 @@ ul {
   .colors li {
     padding: 3px;
     border-radius: 50%;
-  }
-  :global(.Dark) .colors li {
-    border-color: #000c3d;
   }
 
   .colors li div {
