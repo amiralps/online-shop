@@ -6,6 +6,8 @@ import {useSelector} from "react-redux";
 import {RiMoonClearLine} from "react-icons/ri";
 import {BsFillSunFill} from "react-icons/bs";
 import {useEffect, useRef, useState} from "react";
+import {HiHome} from "react-icons/hi2";
+import {AiFillProduct} from "react-icons/ai";
 
 function Header() {
   const toggleMenu = useRef(null);
@@ -20,6 +22,11 @@ function Header() {
       localStorage.setItem("theme", "Dark");
       document.documentElement.classList.add("Dark");
       setTheme("Dark");
+    }
+  }
+  function classRemover() {
+    if (toggleMenu.current.className.includes(TMStyle.open)) {
+      toggleMenu.current.classList.remove(TMStyle.open);
     }
   }
   useEffect(() => {
@@ -99,13 +106,48 @@ function Header() {
             <div
               className={TMStyle.leftContainer}
               onClick={() => {
-                toggleMenu.current.classList.remove(TMStyle.open);
+                classRemover();
               }}></div>
             <div className={TMStyle.list}>
               <ul>
-                <li><NavLink to={"/"} >خانه</NavLink></li>
-                <li><NavLink to={"/products"} >محصولات</NavLink></li>
-                <li><NavLink to={"shopping-cart"} >سبد خرید</NavLink></li>
+                <li>
+                  <button
+                    className={styles.themeBtn}
+                    onClick={() => {
+                      themeHandler();
+                    }}>
+                    <RiMoonClearLine className={styles.moon} />
+                    <BsFillSunFill className={styles.sun} />
+                  </button>
+                  <div className="cart">
+                    <NavLink
+                      to="/shopping-cart"
+                      onClick={() => {
+                        classRemover();
+                      }}>
+                      <LiaShoppingCartSolid />
+                      {itemsCounter ? <div>{itemsCounter}</div> : ""}
+                    </NavLink>
+                  </div>
+                </li>
+                <li className={TMStyle.URLs}>
+                  <NavLink
+                    to={"/"}
+                    onClick={() => {
+                      classRemover();
+                    }}>
+                    <HiHome /> خانه
+                  </NavLink>
+                </li>
+                <li className={TMStyle.URLs}>
+                  <NavLink
+                    to={"/products"}
+                    onClick={() => {
+                      classRemover();
+                    }}>
+                    <AiFillProduct /> محصولات
+                  </NavLink>
+                </li>
                 {/* <li><NavLink to={""} ></NavLink></li> */}
               </ul>
             </div>

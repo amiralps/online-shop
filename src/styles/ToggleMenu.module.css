@@ -9,6 +9,8 @@
   position: relative;
   z-index: 1000;
   cursor: pointer;
+  background: #ffffff;
+  transition: .3s background;
 }
 :global(.Dark) .menu {
   background: #000c3f;
@@ -20,7 +22,7 @@
   position: absolute;
   width: 60%;
   height: 3px;
-  background: #ffffff;
+  background: #000000c2;
   border-radius: 15px;
   transition: 0.3s;
 }
@@ -54,7 +56,7 @@
 }
 .list {
   backdrop-filter: blur(6px);
-  background: #0000003d;
+  background: #00000077;
   position: fixed;
   top: 0;
   /* left: -250px; */
@@ -65,10 +67,11 @@
   transition: 0.4s;
   /* display: flex;
   justify-content: center; */
-  /* padding: 20px 0 0 0; */
+  padding: 21px 20px;
+  border-radius: 25px 0 0 25px;
 }
 :global(.Dark) .list {
-  background: #ffffff3d;
+  background: #00000088;
 }
 .menu.open + .leftContainer + .list {
   right: 0px;
@@ -78,7 +81,7 @@
 	flex-direction: column;
 	align-items: start;
 	justify-content: start;
-	padding: 80px 20px 0 0;
+	/* padding: 21px 20px 0 0; */
 	width: 100%;
 	/* background: #000; */
 	color: #ffffff;
@@ -88,13 +91,31 @@
 	color: #000000;
 	text-decoration: none;
 	font-family: "tanha", serif;
-	background: #ffffff7a;
+	background: #ffffffcc;
 	font-size: 1.2rem;
 	padding: 0 10px;
 	width: 150px;
 	border-radius: 6px;
+  transition: .3s;
+}
+.list ul li a:global(.active:not(.cart .active)) {
+	color: #c6d5ff;
+	background: #00308acc;
+	padding: 0 15px;
 }
 .list ul li {
 	display: flex;
 	/* width: 500px; */
+}
+.list ul li:nth-child(1) {
+  padding-right: 38px;
+  margin-bottom: 55px;
+  justify-content: space-between;
+  width: calc(100% - 50px);
+}
+
+.URLs a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
