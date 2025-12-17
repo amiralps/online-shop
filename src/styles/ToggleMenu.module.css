@@ -119,3 +119,20 @@
   align-items: center;
   gap: 10px;
 }
+
+.login {
+  background: #fff;
+  font-size: 1.3rem;
+  line-height: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .3s;
+}
+:global(.Dark) .login {
+  background: #000c3d;
+  color: #ffffffcc;
+}

@@ -228,12 +228,28 @@
     height: 30px;
     margin-left: -50px !important;
   }
-  
+
   :global(.cart) a svg {
     padding: 0 !important;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%) !important;
-}
+    transform: translate(-50%, -50%) !important;
+  }
+
+  :global(.cart) > a > div {
+    bottom: -8px;
+    right: -8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 15px;
+    min-height: 15px;
+    font-size: 0.7rem;
+    background-color: #ff0000;
+    line-height: 0;
+    padding: 3px;
+    border-radius: 4px;
+    color: #fff;
+  }
 }

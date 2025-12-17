@@ -7,6 +7,7 @@ import {RiMoonClearLine} from "react-icons/ri";
 import {BsFillSunFill} from "react-icons/bs";
 import {useEffect, useRef, useState} from "react";
 import {HiHome} from "react-icons/hi2";
+import {HiOutlineLogin} from "react-icons/hi";
 import {AiFillProduct} from "react-icons/ai";
 
 function Header() {
@@ -42,17 +43,17 @@ function Header() {
   );
   return (
     <>
-      <div className={styles.header}>
-        <div className={styles.logo}>
-          <h3>
-            <Link to={"/"}>
-              <img src="/policy-sunglasses.svg" alt="logo" />
-              عینک اپتیک
-            </Link>
-          </h3>
-        </div>
+      <header className={styles.header}>
         {!isMobile ? (
           <>
+            <div className={styles.logo}>
+              <h3>
+                <Link to={"/"}>
+                  <img src="/policy-sunglasses.svg" alt="logo" />
+                  عینک اپتیک
+                </Link>
+              </h3>
+            </div>
             <div className={styles.centerdiv}>
               <ul>
                 <li>
@@ -93,6 +94,15 @@ function Header() {
           </>
         ) : (
           <>
+            <div className={TMStyle.login}><HiOutlineLogin /></div>
+            <div className={styles.logo}>
+              <h3>
+                <Link to={"/"}>
+                  <img src="/policy-sunglasses.svg" alt="logo" />
+                  عینک اپتیک
+                </Link>
+              </h3>
+            </div>
             <div
               className={TMStyle.menu}
               ref={toggleMenu}
@@ -153,7 +163,7 @@ function Header() {
             </div>
           </>
         )}
-      </div>
+      </header>
     </>
   );
 }
