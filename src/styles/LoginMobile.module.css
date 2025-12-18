@@ -40,13 +40,14 @@
   flex-direction: column;
 }
 .switcher > div div {
-  transition: .3s;
+  transition: .4s ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 10px 0;
   gap: 10px;
+  transition-delay: 1.5s;
 }
 .switcher > div div button {
   min-width: 65px;
@@ -66,10 +67,12 @@
 }
 .signIn .switcher :global(.signIn) {
   opacity: 0;
+  transition-delay: 0s;
 }
 .signUp .switcher {
   transform: translateY(64%);
 }
 .signUp .switcher :global(.signUp) {
   opacity: 0;
+  transition-delay: 0s;
 }
