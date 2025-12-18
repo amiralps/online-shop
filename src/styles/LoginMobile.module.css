@@ -63,7 +63,7 @@
   transform: translateY(-64%);
 }
 .switcher :global(.signIn) {
-  padding: 4px 0;
+  /* padding: 4px 0; */
 }
 .signIn .switcher :global(.signIn) {
   opacity: 0;
