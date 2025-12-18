@@ -1,0 +1,71 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100dvw;
+  height: 100dvh;
+  overflow: hidden;
+}
+.main * {
+  font-family: "tanha", serif;
+}
+
+.orgForm {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.switcher {
+  position: absolute;
+  background: #6589ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400%;
+  height: 250%;
+  border-radius: 50%;
+  /* overflow: hidden; */
+  transition: 1.4s ease-in-out;
+}
+.switcher > div {
+  position: fixed;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px 0;
+}
+.switcher > div div {
+  transition: .3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.switcher > div div button {
+  min-width: 65px;
+  padding: 0 10px 3px;
+  border-radius: 8px;
+  border: none;
+}
+.switcher > div div button:active {
+  transform: scale(.95);
+}
+
+.signIn .switcher {
+  transform: translateY(-64%);
+}
+.signIn .switcher :global(.signIn) {
+  opacity: 0;
+}
+.signUp .switcher {
+  transform: translateY(64%);
+}
+.signUp .switcher :global(.signUp) {
+  opacity: 0;
+}

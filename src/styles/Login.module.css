@@ -68,6 +68,9 @@
   padding: 20px;
   width: 50%;
   min-height: 50%;
+  transition: .5s ease-in-out;
+  /* opacity: 1; */
+  transition-delay: .3s;
 }
 .orgForm form button {
 	background: transparent;
@@ -81,7 +84,8 @@
 	color: #fff;
 }
 .orgForm form h1 {
-	margin-bottom: 30px;
+	margin-bottom: 40px;
+  margin-top: -30px;
 	text-align: center;
 }
 :global(.Dark) .orgForm form h1 {
@@ -135,6 +139,7 @@ label {
   cursor: text;
   transform: translateY(-30px);
   transition: 0.3s;
+  height: 20px;
 }
 :global(.Dark) label {
   color: #ffffff;
@@ -179,24 +184,40 @@ label {
   padding: 0 20px;
   gap: 20px;
 }
+:global(.Dark) .switcher > div div h2 {
+  color: #fff;
+}
 .switcher > div div button {
   width: fit-content;
   padding: 5px;
   border-radius: 8px;
+  min-width: 80px;
   border: none;
 }
 .switcher > div div button:active {
   transform: scale(0.95);
 }
-.switcher.signUp {
+.signUp .switcher {
   left: 0;
-  border-radius: 38px 180px 180px 38px;
+  border-radius: 38px 15px 15px 38px;
 }
-.switcher.signIn {
+.signIn .switcher {
   left: 50%;
-  border-radius: 180px 38px 38px 180px;
+  border-radius: 15px 38px 38px 15px;
 }
 
-.switcher.signUp > div {
+.signUp .switcher > div {
   transform: translateX(50%);
+}
+
+.signIn .signUpForm {
+  transform: translateX(120%);
+  /* opacity: 0; */
+  transition-delay: 0s;
+}
+
+.signUp .signInForm {
+  transform: translateX(-120%);
+  /* opacity: 0; */
+  transition-delay: 0s;
 }
