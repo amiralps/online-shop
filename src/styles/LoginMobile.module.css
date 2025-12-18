@@ -38,7 +38,7 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  padding: 15px 0;
+  padding: 10px 0;
 }
 .switcher > div div {
   transition: .3s;
@@ -46,6 +46,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 10px;
 }
 .switcher > div div button {
   min-width: 65px;
