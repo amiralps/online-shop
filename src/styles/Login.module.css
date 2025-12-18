@@ -1,0 +1,202 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100dvw - 40px);
+  height: calc(100dvh - 8px);
+}
+
+.myForm {
+  /* background: #fff; */
+  width: 60%;
+  height: 80%;
+  border-radius: 40px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.myForm * {
+  font-family: "tanha", serif;
+}
+
+.orgForm {
+  width: 99%;
+  height: 98.4%;
+  background: #ffffff;
+  z-index: 2;
+  border-radius: 38px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+:global(.Dark) .orgForm {
+  background: #020025;
+}
+
+.border {
+  width: 300px;
+  height: 250%;
+  background: linear-gradient(#ff0000, #ff0000, #0000ff, #0000ff);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: neonBorder 6s linear forwards infinite;
+  z-index: 1;
+}
+:global(.Dark) .border {
+  background: linear-gradient(#ff0000, #ff0000, #00ff37, #008817);
+}
+
+@keyframes neonBorder {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.orgForm form {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  width: 50%;
+  min-height: 50%;
+}
+.orgForm form button {
+	background: transparent;
+	border: 1px solid #000;
+	border-radius: 5px;
+	padding: 1px 10px 5px;
+	font-size: .9rem;
+}
+:global(.Dark) .orgForm form button {
+	border: 2px solid #ffffff;
+	color: #fff;
+}
+.orgForm form h1 {
+	margin-bottom: 30px;
+	text-align: center;
+}
+:global(.Dark) .orgForm form h1 {
+	color: #fff;
+}
+.orgForm form div {
+  display: flex;
+  /* justify-content: center;
+	align-items: center; */
+  flex-direction: column;
+  align-items: end;
+}
+.orgForm form input {
+  width: 200px;
+  outline: none;
+  border: 1.5px solid transparent;
+  background: #cacaca;
+  transition: 0.3s ease-in-out;
+  border-radius: 15px;
+  height: 30px;
+  padding: 0 10px;
+  direction: ltr;
+}
+:global(.Dark) .orgForm form input {
+  background: #0066da;
+  color: #fff;
+}
+.orgForm form input:focus {
+  border-color: #8b8b8b;
+  background: #fff;
+}
+.orgForm form input:focus {
+  border-color: #000;
+  background: #fff;
+}
+:global(.Dark) .orgForm form input:focus {
+  border-color: #ffffff;
+  background: #020025;
+}
+.orgForm form input:focus + label {
+  transform: translateY(-48px);
+  cursor: default;
+  background: #fff;
+}
+:global(.Dark) .orgForm form input:focus + label {
+  background: #020025;
+}
+label {
+  color: #000000;
+  margin-left: 15px;
+  cursor: text;
+  transform: translateY(-30px);
+  transition: 0.3s;
+}
+:global(.Dark) label {
+  color: #ffffff;
+}
+.switcher {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 50%;
+  background: linear-gradient(155deg, #b9e5ff, #2261c0, #15003b);
+  border-radius: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  transition: 0.5s ease-in-out;
+  overflow: hidden;
+}
+:global(.Dark) .switcher {
+  background: linear-gradient(155deg, #0380c9, #003f9e, #20005c);
+}
+
+.myForm button {
+  cursor: pointer;
+}
+
+.switcher > div {
+  width: 200%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+  transition-delay: 0.4s;
+}
+.switcher > div div {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 20px;
+  gap: 20px;
+}
+.switcher > div div button {
+  width: fit-content;
+  padding: 5px;
+  border-radius: 8px;
+  border: none;
+}
+.switcher > div div button:active {
+  transform: scale(0.95);
+}
+.switcher.signUp {
+  left: 0;
+  border-radius: 38px 180px 180px 38px;
+}
+.switcher.signIn {
+  left: 50%;
+  border-radius: 180px 38px 38px 180px;
+}
+
+.switcher.signUp > div {
+  transform: translateX(50%);
+}
