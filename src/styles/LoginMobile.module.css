@@ -68,6 +68,7 @@
 .signIn .switcher :global(.signIn) {
   opacity: 0;
   transition-delay: 0s;
+  transition: .15s ease-in-out;
 }
 .signUp .switcher {
   transform: translateY(64%);
@@ -75,4 +76,5 @@
 .signUp .switcher :global(.signUp) {
   opacity: 0;
   transition-delay: 0s;
+  transition: .15s ease-in-out;
 }
