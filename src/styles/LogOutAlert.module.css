@@ -1,0 +1,90 @@
+.alert {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	background: #d8effc;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 300px;
+	height: 200px;
+	z-index: 10000;
+	border-radius: 35px;
+	padding: 20px;
+	gap: 40px;
+	box-shadow: 5px 5px 30px 0 #0000003f;
+	border: #000 solid 2px;
+	transition: .4s;
+	opacity: 0;
+	visibility: hidden;
+}
+.alert.on {
+	transform: translate(-50%, -50%) scale(1);
+	opacity: 1;
+	visibility: visible;
+}
+:global(.Dark) .alert {
+	background: #00258b;
+	box-shadow: 5px 5px 30px 0 #ffffff3f;
+	border-color: #fff;
+}
+.alert * {
+	font-family: "tanha", serif;
+}
+.alert .buttons {
+	display: flex;
+	gap: 10px;
+	width: 100%;
+	padding: 0 20px;
+}
+.alert h3 {
+	font-size: 1.2rem;
+	margin-top: 20px;
+}
+:global(.Dark) .alert h3 {
+	color: #fff;
+}
+.alert button {
+	border: none;
+	min-width: 50px;
+	border-radius: 7px;
+	cursor: pointer;
+	padding: 2px;
+	color: #000000;
+}
+:global(.Dark) .alert button {
+	color: #ffffff;
+}
+.alert button:active {
+	transform: scale(.95);
+}
+.alert button:nth-child(1) {
+	background: #ff3535;
+}
+.alert button:nth-child(2) {
+	background: #41ff3b;
+}
+:global(.Dark) .alert button:nth-child(1) {
+	background: #880000;
+}
+:global(.Dark) .alert button:nth-child(2) {
+	background: #048100;
+}
+
+.backDiv {
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+	width: 100dvw;
+	height: 100dvh;
+	visibility: hidden;
+	background: transparent;
+	transition: .4s;
+}
+.alert.on + .backDiv {
+	visibility: visible;
+	background: #00000091;
+}

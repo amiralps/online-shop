@@ -10,8 +10,10 @@ import {HiHome} from "react-icons/hi2";
 import {HiOutlineLogin, HiOutlineLogout} from "react-icons/hi";
 import {AiFillProduct} from "react-icons/ai";
 import {logOut} from "../features/login/loginSlice";
+import LogOutAlert from "./LogOutAlert";
 
 function Header() {
+  const [alert, setAlert] = useState("off");
   const dispatch = useDispatch();
   const {userLogin} = useSelector((state) => state.login);
   const toggleMenu = useRef(null);
@@ -78,7 +80,7 @@ function Header() {
                     <button
                       className={TMStyle.logout}
                       onClick={() => {
-                        dispatch(logOut());
+                        setAlert("on");
                       }}>
                       <HiOutlineLogout />
                     </button>
@@ -121,7 +123,7 @@ function Header() {
                 <button
                   className={TMStyle.logout}
                   onClick={() => {
-                    dispatch(logOut());
+                    setAlert("on");
                   }}>
                   <HiOutlineLogout />
                 </button>
@@ -196,6 +198,7 @@ function Header() {
           </>
         )}
       </header>
+      <LogOutAlert data={{alert, setAlert, dispatch, logOut}} />
     </>
   );
 }
