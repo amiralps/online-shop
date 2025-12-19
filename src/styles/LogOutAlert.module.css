@@ -2,7 +2,7 @@
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%) scale(0);
+	transform: translate(-50%, -50%) scale(0.8);
 	background: #d8effc;
 	display: flex;
 	flex-direction: column;
@@ -16,7 +16,7 @@
 	gap: 40px;
 	box-shadow: 5px 5px 30px 0 #0000003f;
 	border: #000 solid 2px;
-	transition: .4s;
+	transition: .2s ease-in-out;
 	opacity: 0;
 	visibility: hidden;
 }
@@ -82,7 +82,7 @@
 	height: 100dvh;
 	visibility: hidden;
 	background: transparent;
-	transition: .4s;
+	transition: .2s;
 }
 .alert.on + .backDiv {
 	visibility: visible;
