@@ -153,7 +153,7 @@
 }
 :global(.Dark) .orgForm form input:focus {
   border-color: #ffffff;
-  background: #020025;
+  background: #000c3d;
 }
 .orgForm form input:focus + label {
   transform: translateY(-48px);
@@ -161,7 +161,7 @@
   background: #fff;
 }
 :global(.Dark) .orgForm form input:focus + label {
-  background: #020025;
+  background: #000c3d;
 }
 label {
   color: #000000;
