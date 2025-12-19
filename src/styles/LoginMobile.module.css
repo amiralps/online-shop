@@ -102,9 +102,10 @@
   transform: translate(-50%, -50%);
 }
 .orgForm form button {
+  min-width: 60px;
 	background: transparent;
 	border: 1px solid #000;
-	border-radius: 5px;
+	border-radius: 10px;
 	padding: 1px 10px 5px;
 	font-size: .9rem;
   cursor: pointer;
