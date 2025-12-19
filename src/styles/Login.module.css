@@ -110,7 +110,7 @@
   outline: none;
   border: 1.5px solid transparent;
   background: #cacaca;
-  transition: 0.3s ease-in-out;
+  transition: .3s ease-in-out;
   border-radius: 15px;
   height: 30px;
   padding: 0 10px;
@@ -121,14 +121,28 @@
   color: #fff;
 }
 .orgForm form input:focus,
+.orgForm form input:-webkit-autofill,
+.orgForm form input:-webkit-autofill:hover,
+.orgForm form input:-webkit-autofill:active,
+.orgForm form input:-webkit-autofill:focus,
 .orgForm form input.fill {
   border-color: #8b8b8b;
   background: #f3f3f3;
+  -webkit-text-fill-color: #000;
+  -webkit-background-clip: text;
 }
 :global(.Dark) .orgForm form input:focus,
+:global(.Dark) .orgForm form input:-webkit-autofill,
+:global(.Dark) .orgForm form input:-webkit-autofill:hover,
+:global(.Dark) .orgForm form input:-webkit-autofill:active,
+:global(.Dark) .orgForm form input:-webkit-autofill:focus,
 :global(.Dark) .orgForm form input.fill {
   border-color: #ffffff;
+  color: #fff;
   background: #020025;
+  /* box-shadow: inset 0 0 0 30px #020025; */
+  -webkit-text-fill-color: #fff;
+  -webkit-background-clip: text;
 }
 .orgForm form input:focus + label,
 .orgForm form input.fill + label {
@@ -147,6 +161,8 @@ label {
   transform: translateY(-30px);
   transition: 0.3s;
   height: 20px;
+  user-select: none;
+  cursor: text !important;
 }
 :global(.Dark) label {
   color: #ffffff;

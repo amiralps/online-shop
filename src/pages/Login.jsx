@@ -1,12 +1,19 @@
 import {useEffect, useState} from "react";
 import styles from "../styles/Login.module.css";
 import styles2 from "../styles/LoginMobile.module.css";
+import {useNavigate} from "react-router-dom";
 function Login() {
+  const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
   const [loginMethod, setLoginMethod] = useState("signIn");
-  const [loginInput, setLoginInput] = useState({name: "", password: ""});
+  const [loginInputs, setLoginInputs] = useState({name: "", password: ""});
   function loginHandler(e) {
+    const {name, password} = loginInputs;
     e.preventDefault();
+    if (name && password) {
+      localStorage.setItem("user", JSON.stringify({...loginInputs}));
+    }
+    navigate("/", {replace: true});
   }
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -37,24 +44,26 @@ function Login() {
               <h1>فرم ورود</h1>
               <div>
                 <input
-                  className={loginInput.name ? styles.fill : null}
-                  value={loginInput.name}
+                  spellCheck={false}
+                  className={loginInputs.name ? styles.fill : null}
+                  value={loginInputs.name}
                   type="text"
                   id="loginName"
                   onChange={(e) => {
-                    setLoginInput({...loginInput, name: e.target.value});
+                    setLoginInputs({...loginInputs, name: e.target.value});
                   }}
                 />
                 <label htmlFor="loginName">نام کاربری یا ایمیل</label>
               </div>
               <div>
                 <input
-                  className={loginInput.password ? styles.fill : null}
-                  value={loginInput.password}
+                  // autocomplete="off"
+                  className={loginInputs.password ? styles.fill : null}
+                  value={loginInputs.password}
                   type="password"
                   id="loginPassword"
                   onChange={(e) => {
-                    setLoginInput({...loginInput, password: e.target.value});
+                    setLoginInputs({...loginInputs, password: e.target.value});
                   }}
                 />
                 <label htmlFor="loginPassword">رمز عبور</label>
@@ -73,7 +82,7 @@ function Login() {
                   <button
                     onClick={() => {
                       setLoginMethod("signUp");
-                      setLoginInput({password: "", name: ""});
+                      setLoginInputs({password: "", name: ""});
                     }}>
                     ثبت نام
                   </button>
@@ -110,24 +119,25 @@ function Login() {
             <h1>فرم ورود</h1>
             <div>
               <input
-                className={loginInput.name ? styles2.fill : null}
-                value={loginInput.name}
+                spellCheck={false}
+                className={loginInputs.name ? styles2.fill : null}
+                value={loginInputs.name}
                 type="text"
                 id="loginName"
                 onChange={(e) => {
-                  setLoginInput({...loginInput, name: e.target.value});
+                  setLoginInputs({...loginInputs, name: e.target.value});
                 }}
               />
               <label htmlFor="loginName">نام کاربری یا ایمیل</label>
             </div>
             <div>
               <input
-                className={loginInput.password ? styles2.fill : null}
-                value={loginInput.password}
+                className={loginInputs.password ? styles2.fill : null}
+                value={loginInputs.password}
                 type="password"
                 id="loginPassword"
                 onChange={(e) => {
-                  setLoginInput({...loginInput, password: e.target.value});
+                  setLoginInputs({...loginInputs, password: e.target.value});
                 }}
               />
               <label htmlFor="loginPassword">رمز عبور</label>
@@ -155,7 +165,7 @@ function Login() {
                 <button
                   onClick={() => {
                     setLoginMethod("signUp");
-                    setLoginInput({password: "", name: ""});
+                    setLoginInputs({password: "", name: ""});
                   }}>
                   ثبت نام
                 </button>
