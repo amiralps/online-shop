@@ -62,7 +62,7 @@
 
 .orgForm form {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 20px;
@@ -85,9 +85,15 @@
 	color: #fff;
 }
 .orgForm form h1 {
-	margin-bottom: 40px;
   margin-top: -30px;
 	text-align: center;
+  line-height: 0;
+}
+.orgForm form:nth-child(2) h1 {
+	margin-bottom: 50px;
+  margin-top: -40px;
+	text-align: center;
+  line-height: 1;
 }
 :global(.Dark) .orgForm form h1 {
 	color: #fff;
