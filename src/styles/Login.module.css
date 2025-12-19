@@ -8,7 +8,7 @@
 
 .myForm {
   /* background: #fff; */
-  width: 645px;
+  width: 725px;
   height: 480px;
   border-radius: 40px;
   position: relative;
@@ -24,7 +24,7 @@
 .orgForm {
   width: 99%;
   height: 98.4%;
-  background: #ffffff;
+  background: #f3f3f3;
   z-index: 2;
   border-radius: 38px;
   display: flex;
@@ -73,9 +73,10 @@
   transition-delay: .3s;
 }
 .orgForm form button {
+  min-width: 65px;
 	background: transparent;
 	border: 1px solid #000;
-	border-radius: 5px;
+	border-radius: 10px;
 	padding: 1px 10px 5px;
 	font-size: .9rem;
 }
@@ -115,11 +116,7 @@
 }
 .orgForm form input:focus {
   border-color: #8b8b8b;
-  background: #fff;
-}
-.orgForm form input:focus {
-  border-color: #000;
-  background: #fff;
+  background: #f3f3f3;
 }
 :global(.Dark) .orgForm form input:focus {
   border-color: #ffffff;
@@ -128,7 +125,7 @@
 .orgForm form input:focus + label {
   transform: translateY(-48px);
   cursor: default;
-  background: #fff;
+  background: #f3f3f3;
 }
 :global(.Dark) .orgForm form input:focus + label {
   background: #020025;
