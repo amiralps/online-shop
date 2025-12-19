@@ -5,7 +5,9 @@ function Login() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
   const [loginMethod, setLoginMethod] = useState("signIn");
   const [loginInput, setLoginInput] = useState({name: "", password: ""});
-
+  function loginHandler(e) {
+    e.preventDefault();
+  }
   useEffect(() => {
     window.addEventListener("resize", () => {
       setIsMobile(window.innerWidth <= 900);
@@ -35,6 +37,7 @@ function Login() {
               <h1>فرم ورود</h1>
               <div>
                 <input
+                  className={loginInput.name ? styles.fill : null}
                   value={loginInput.name}
                   type="text"
                   id="loginName"
@@ -46,6 +49,7 @@ function Login() {
               </div>
               <div>
                 <input
+                  className={loginInput.password ? styles.fill : null}
                   value={loginInput.password}
                   type="password"
                   id="loginPassword"
@@ -57,7 +61,7 @@ function Login() {
               </div>
               <button
                 onClick={(e) => {
-                  e.preventDefault();
+                  loginHandler(e);
                 }}>
                 ورود
               </button>
@@ -69,6 +73,7 @@ function Login() {
                   <button
                     onClick={() => {
                       setLoginMethod("signUp");
+                      setLoginInput({password: "", name: ""});
                     }}>
                     ثبت نام
                   </button>
@@ -105,6 +110,7 @@ function Login() {
             <h1>فرم ورود</h1>
             <div>
               <input
+                className={loginInput.name ? styles2.fill : null}
                 value={loginInput.name}
                 type="text"
                 id="loginName"
@@ -116,6 +122,7 @@ function Login() {
             </div>
             <div>
               <input
+                className={loginInput.password ? styles2.fill : null}
                 value={loginInput.password}
                 type="password"
                 id="loginPassword"
@@ -127,7 +134,7 @@ function Login() {
             </div>
             <button
               onClick={(e) => {
-                e.preventDefault();
+                loginHandler(e);
               }}>
               ورود
             </button>
@@ -148,6 +155,7 @@ function Login() {
                 <button
                   onClick={() => {
                     setLoginMethod("signUp");
+                    setLoginInput({password: "", name: ""});
                   }}>
                   ثبت نام
                 </button>

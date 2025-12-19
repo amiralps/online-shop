@@ -144,24 +144,29 @@
   background: #0066da;
   color: #fff;
 }
-.orgForm form input:focus {
+.orgForm form input:focus,
+.orgForm form input.fill {
   border-color: #8b8b8b;
   background: #fff;
 }
-.orgForm form input:focus {
+.orgForm form input:focus,
+.orgForm form input.fill {
   border-color: #000;
   background: #fff;
 }
-:global(.Dark) .orgForm form input:focus {
+:global(.Dark) .orgForm form input:focus,
+:global(.Dark) .orgForm form input.fill {
   border-color: #ffffff;
   background: #000c3d;
 }
-.orgForm form input:focus + label {
+.orgForm form input:focus + label,
+.orgForm form input.fill + label {
   transform: translateY(-48px);
   cursor: default;
   background: #fff;
 }
-:global(.Dark) .orgForm form input:focus + label {
+:global(.Dark) .orgForm form input:focus + label,
+:global(.Dark) .orgForm form input.fill + label {
   background: #000c3d;
 }
 label {
