@@ -120,7 +120,7 @@
   gap: 10px;
 }
 
-.login {
+.login,.logout {
   background: #fff;
   font-size: 1.3rem;
   line-height: 0;
@@ -130,20 +130,24 @@
   transition: 0.3s;
   position: relative;
   display: flex;
+  border: none;
 }
-.login svg {
+.login svg,
+.logout svg {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-:global(.Dark) .login {
+:global(.Dark) .login,
+:global(.Dark) .logout {
   background: #000c3d;
   color: #ffffffcc;
 }
 
 @media (min-width: 900px) {
-  .login {
+  .login,
+  .logout {
     background: #fff;
     font-size: 1.5rem;
     line-height: 0;
@@ -154,16 +158,19 @@
     position: relative;
     cursor: pointer;
   }
-  .login:hover {
+  .login:hover,
+  .logout:hover {
     background: #cfd9ff;
   }
-  .login svg {
+  .login svg,
+  .logout svg {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  :global(.Dark) .login:hover {
+  :global(.Dark) .login:hover,
+  :global(.Dark) .logout:hover {
     background: #00218b !important;
     color: #ffffffcc;
   }

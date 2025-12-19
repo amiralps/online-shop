@@ -2,15 +2,18 @@ import {Link, NavLink} from "react-router-dom";
 import styles from "../styles/Header.module.css";
 import TMStyle from "../styles/ToggleMenu.module.css";
 import {LiaShoppingCartSolid} from "react-icons/lia";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {RiMoonClearLine} from "react-icons/ri";
 import {BsFillSunFill} from "react-icons/bs";
 import {useEffect, useRef, useState} from "react";
 import {HiHome} from "react-icons/hi2";
-import {HiOutlineLogin} from "react-icons/hi";
+import {HiOutlineLogin, HiOutlineLogout} from "react-icons/hi";
 import {AiFillProduct} from "react-icons/ai";
+import {logOut} from "../features/login/loginSlice";
 
 function Header() {
+  const dispatch = useDispatch();
+  const {userLogin} = useSelector((state) => state.login);
   const toggleMenu = useRef(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
   const [theme, setTheme] = useState(localStorage.getItem("theme"));
@@ -67,9 +70,19 @@ function Header() {
             <div className={styles.leftdiv}>
               <ul>
                 <li>
-                  <Link to={"/login"} className={TMStyle.login}>
-                    <HiOutlineLogin />
-                  </Link>
+                  {!userLogin ? (
+                    <Link to={"/login"} className={TMStyle.login}>
+                      <HiOutlineLogin />
+                    </Link>
+                  ) : (
+                    <button
+                      className={TMStyle.logout}
+                      onClick={() => {
+                        dispatch(logOut());
+                      }}>
+                      <HiOutlineLogout />
+                    </button>
+                  )}
                 </li>
                 <li className="cart">
                   <NavLink to="/shopping-cart">
@@ -100,9 +113,19 @@ function Header() {
         ) : (
           <>
             <div>
-              <Link to={"/login"} className={TMStyle.login}>
-                <HiOutlineLogin />
-              </Link>
+              {!userLogin ? (
+                <Link to={"/login"} className={TMStyle.login}>
+                  <HiOutlineLogin />
+                </Link>
+              ) : (
+                <button
+                  className={TMStyle.logout}
+                  onClick={() => {
+                    dispatch(logOut());
+                  }}>
+                  <HiOutlineLogout />
+                </button>
+              )}
             </div>
             <div className={styles.logo}>
               <h3>

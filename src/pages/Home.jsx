@@ -26,6 +26,7 @@ function Home() {
             <span>زیبا</span>
             <span>مقاوم</span>
             <span>به صرفه</span>
+            <span>زیبا</span>
           </div>
         </div>
       </div>

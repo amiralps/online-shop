@@ -48,7 +48,8 @@
 .items div span {
   line-height: 20px;
 }
-.items div span:nth-child(1) {
+.items div span:nth-child(1),
+.items div span:nth-child(4) {
   color: #0059ff;
 }
 .items div span:nth-child(2) {
@@ -59,28 +60,28 @@
 }
 @keyframes mywords {
   0% {
-    transform: translateY(18px);
-  }
-  8% {
     transform: translateY(0);
   }
-  25% {
+  5% {
     transform: translateY(0);
   }
-  44% {
+  24% {
+    transform: translateY(-35px);
+  }
+  40% {
     transform: translateY(-35px);
   }
   58% {
-    transform: translateY(-35px);
-  }
-  74% {
     transform: translateY(-70px);
   }
-  90% {
+  71% {
     transform: translateY(-70px);
+  }
+  88% {
+    transform: translateY(-105px);
   }
   100% {
-    transform: translateY(-88px);
+    transform: translateY(-105px);
   }
 }
 

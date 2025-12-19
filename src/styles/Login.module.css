@@ -143,6 +143,7 @@
   /* box-shadow: inset 0 0 0 30px #020025; */
   -webkit-text-fill-color: #fff;
   -webkit-background-clip: text;
+  caret-color: #fff;
 }
 .orgForm form input:focus + label,
 .orgForm form input.fill + label {
