@@ -12,38 +12,38 @@
   gap: 5px;
 }
 :global(.Dark) .footer {
-	color: #fff;
+  color: #fff;
   background-color: #365486;
 }
 .footer ul {
   list-style-type: none;
 }
 .footer ul li a {
-	display: flex;
-	align-items: center;
-	text-decoration: none;
-	color: #000;
-	gap: 5px;
-	transition: .2s ease-in-out;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  gap: 5px;
+  transition: 0.2s ease-in-out;
 }
 :global(.Dark) .footer ul li a {
-	color: #ffffff;
+  color: #ffffff;
 }
 .footer ul li a:hover {
-	color: #002999;
+  color: #002999;
 }
 :global(.Dark) .footer ul li a:hover {
-	color: #001033;
+  color: #001033;
 }
 .footer ul li a svg {
-	transition: .2s ease-in-out;
-	color: #000;
+  transition: 0.2s ease-in-out;
+  color: #000;
 }
 :global(.Dark) .footer ul li a svg {
-	color: #c5c5c5;
+  color: #c5c5c5;
 }
 .footer ul li a:hover svg {
-	transform: translateX(-5px);
+  transform: translateX(-5px);
 }
 
 .footer * {
@@ -75,7 +75,7 @@
   align-items: center;
 }
 .company h1 {
-	margin-top: -10px;
+  margin-top: -10px;
 }
 .company p {
   text-align: justify;
@@ -83,20 +83,20 @@
 }
 
 .copyRight {
-	width: 100%;
-	/* display: flex;
+  width: 100%;
+  /* display: flex;
 	justify-content: start;
 	align-items: start; */
-	padding: 0 20px;
+  padding: 0 20px;
 }
 .copyRight p span {
-	color: #0015ce;
+  color: #0015ce;
 }
 :global(.Dark) .copyRight p span {
-	color: #858585;
+  color: #858585;
 }
 .copyRight p svg {
-	transform: translateY(3px);
+  transform: translateY(3px);
 }
 
 @media (max-width: 900px) {
@@ -115,5 +115,9 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+  }
+  .copyRight p {
+    text-align: justify;
+    text-align-last: center;
   }
 }
