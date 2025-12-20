@@ -20,6 +20,16 @@
   transition: 0.3s;
 }
 
+.li {
+  opacity: 0;
+  transition: .3s ease-in-out;
+  visibility: hidden;
+}
+.li.opened {
+  opacity: 1;
+  visibility: visible;
+}
+
 .card h1,
 .card p {
   /* background-color: #ffffff59; */

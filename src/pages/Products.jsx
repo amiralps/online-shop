@@ -15,11 +15,11 @@ function Products() {
   if (error) return <h1>{error}</h1>;
   if (!products.length || loading) return <Loading />;
   return (
-    <div className={styles.products}>
+    <ul className={styles.products}>
       {products.map((item) => (
         <Card key={item.id} data={item} />
       ))}
-    </div>
+    </ul>
   );
 }
 export default Products;
