@@ -1,7 +1,8 @@
+import styles from "../styles/Footer.module.css"
 function Footer() {
   return (
-    <footer>
-      <div className="container">
+    <footer className={styles.footer}>
+      <div className={styles.container}>
         <div>
           <h1></h1>
           <ul>
@@ -22,7 +23,7 @@ function Footer() {
           </ul>
         </div>
       </div>
-      <div><h4>designed by AmirAlps</h4></div>
+      <div className={styles.tag}><h4>designed by AmirAlps</h4></div>
     </footer>
   );
 }
