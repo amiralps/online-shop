@@ -1,5 +1,7 @@
 import {Link} from "react-router-dom";
 import styles from "../styles/Footer.module.css";
+import {FaAngleLeft, FaRegCopyright} from "react-icons/fa";
+
 function Footer() {
   return (
     <footer className={styles.footer}>
@@ -16,16 +18,28 @@ function Footer() {
           <h3>راهنمای سایت</h3>
           <ul>
             <li>
-              <Link to={"/"}>خانه</Link>
+              <Link to={"/"}>
+                <FaAngleLeft />
+                خانه
+              </Link>
             </li>
             <li>
-              <Link to={"/products"}>محصولات</Link>
+              <Link to={"/products"}>
+                <FaAngleLeft />
+                محصولات
+              </Link>
             </li>
             <li>
-              <Link to={"/shopping-cart"}>سبد خرید</Link>
+              <Link to={"/shopping-cart"}>
+                <FaAngleLeft />
+                سبد خرید
+              </Link>
             </li>
             <li>
-              <Link to={"/"}>علاقه مندی</Link>
+              <Link to={"/"}>
+                <FaAngleLeft />
+                علاقه مندی
+              </Link>
             </li>
           </ul>
         </div>
@@ -33,16 +47,31 @@ function Footer() {
           <h3>تماس با ما</h3>
           <ul>
             <li>
-              <Link to={"tel:+989960530222"}>تماس</Link>
+              <Link to={"tel:+989960530222"}>
+                <FaAngleLeft />
+                گرفتن تماس
+              </Link>
             </li>
             <li>
-              <Link to={"mail:amiralps@gmail.com"}>ایمیل</Link>
+              <Link to={"mailto:amiralps@gmail.com"}>
+                <FaAngleLeft />
+                ارسال ایمیل
+              </Link>
             </li>
             <li>
-              <Link to={"sms:+989960530222?body=سلام وقت بخیر"}>پیامک</Link>
+              <Link to={"sms:+989960530222"}>
+                <FaAngleLeft />
+                ارسال پیامک
+              </Link>
             </li>
           </ul>
         </div>
+      </div>
+      <div className={styles.copyRight}>
+        <p>
+          <FaRegCopyright /> کلیه حقوق متعلق به <span>عینک اپتیک</span> میباشد و
+          هرگونه کپی برداری مجازات قانونی به دنبال خواهد داشت
+        </p>
       </div>
       <div className={styles.tag}>
         <h4>designed by AmirAlps</h4>
