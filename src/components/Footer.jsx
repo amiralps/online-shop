@@ -33,7 +33,7 @@ function Footer() {
           <h3>تماس با ما</h3>
           <ul>
             <li>
-              <Link to={"tel:09960530251"}>تماس</Link>
+              <Link to={"tel:09991111213"}>تماس</Link>
             </li>
           </ul>
         </div>
