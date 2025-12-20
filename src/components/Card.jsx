@@ -7,7 +7,7 @@ function Card({data: {id, title, images, colors}}) {
   function scroller() {
     if (
       window.pageYOffset + window.innerHeight >
-      (card.current.offsetTop + card.current.offsetHeight) - 100
+      (card.current.offsetTop + card.current.offsetHeight) - 120
     ) {
       card.current.classList.add(styles.opened);
     } else {
