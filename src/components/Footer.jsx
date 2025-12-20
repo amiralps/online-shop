@@ -33,7 +33,13 @@ function Footer() {
           <h3>تماس با ما</h3>
           <ul>
             <li>
-              <Link to={"tel:09991111213"}>تماس</Link>
+              <Link to={"tel:+989960530222"}>تماس</Link>
+            </li>
+            <li>
+              <Link to={"mail:amiralps@gmail.com"}>ایمیل</Link>
+            </li>
+            <li>
+              <Link to={"sms:+989960530222?body=سلام وقت بخیر"}>پیامک</Link>
             </li>
           </ul>
         </div>
