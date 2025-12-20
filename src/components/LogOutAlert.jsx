@@ -1,6 +1,6 @@
 import {useRef} from "react";
 import styles from "../styles/LogOutAlert.module.css";
-function LogOutAlert({data: {alert, setAlert, dispatch, logOut}}) {
+function LogOutAlert({data: {alert, setAlert, dispatch, logOut, disableScroll, enableScroll}}) {
   const alertDiv = useRef(null);
   return (
     <>
@@ -13,12 +13,14 @@ function LogOutAlert({data: {alert, setAlert, dispatch, logOut}}) {
             onClick={() => {
               dispatch(logOut());
               setAlert("off");
+              enableScroll()
             }}>
             بله
           </button>
           <button
             onClick={() => {
               setAlert("off");
+              enableScroll()
             }}>
             انصراف
           </button>
@@ -28,6 +30,7 @@ function LogOutAlert({data: {alert, setAlert, dispatch, logOut}}) {
         className={styles.backDiv}
         onClick={() => {
           setAlert("off");
+          enableScroll()
           //   alertDiv.current.classList.remove("on");
         }}></div>
     </>

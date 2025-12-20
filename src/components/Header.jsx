@@ -33,7 +33,14 @@ function Header() {
   function classRemover() {
     if (toggleMenu.current.className.includes(TMStyle.open)) {
       toggleMenu.current.classList.remove(TMStyle.open);
+    document.documentElement.classList.remove("disable-scroll")
     }
+  }
+  function disableScroll() {
+    document.documentElement.classList.add("disable-scroll")
+  }
+  function enableScroll() {
+    document.documentElement.classList.remove("disable-scroll")
   }
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -81,6 +88,7 @@ function Header() {
                       className={TMStyle.logout}
                       onClick={() => {
                         setAlert("on");
+                        disableScroll();
                       }}>
                       <HiOutlineLogout />
                     </button>
@@ -124,6 +132,7 @@ function Header() {
                   className={TMStyle.logout}
                   onClick={() => {
                     setAlert("on");
+                    disableScroll();
                   }}>
                   <HiOutlineLogout />
                 </button>
@@ -141,7 +150,13 @@ function Header() {
               className={TMStyle.menu}
               ref={toggleMenu}
               onClick={() => {
-                toggleMenu.current.classList.toggle(TMStyle.open);
+                if (toggleMenu.current.className.includes(TMStyle.open)) {
+                  toggleMenu.current.classList.remove(TMStyle.open);
+                  enableScroll()
+                } else {
+                  toggleMenu.current.classList.add(TMStyle.open);
+                  disableScroll()
+                }
               }}>
               <div></div>
               <div></div>
@@ -198,7 +213,9 @@ function Header() {
           </>
         )}
       </header>
-      <LogOutAlert data={{alert, setAlert, dispatch, logOut}} />
+      <LogOutAlert
+        data={{alert, setAlert, dispatch, logOut, disableScroll, enableScroll}}
+      />
     </>
   );
 }

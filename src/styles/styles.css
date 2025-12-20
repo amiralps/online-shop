@@ -32,6 +32,9 @@
 html {
   transition: 0.4s background-color;
 }
+.disable-scroll {
+  overflow: hidden;
+}
 .Dark {
   background: #000c3d;
 }
