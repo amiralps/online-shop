@@ -1,29 +1,46 @@
-import styles from "../styles/Footer.module.css"
+import {Link} from "react-router-dom";
+import styles from "../styles/Footer.module.css";
 function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        <div>
-          <h1></h1>
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-          <p></p>
+        <div className={styles.company}>
+          <h1>عینک اپتیک</h1>
+          <p>
+            در این سایت شما میتونید بدون واسطه و با اطمینان کامل و تضمین سلامت
+            کالا خریدتون رو انجام بدید ، همچنین در صورت مغایرت یا خرابی ، کالا
+            را مرجوع کنید
+          </p>
         </div>
-        <div>
-          <h3></h3>
+        <div className={styles.links}>
+          <h3>راهنمای سایت</h3>
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>
+              <Link to={"/"}>خانه</Link>
+            </li>
+            <li>
+              <Link to={"/products"}>محصولات</Link>
+            </li>
+            <li>
+              <Link to={"/shopping-cart"}>سبد خرید</Link>
+            </li>
+            <li>
+              <Link to={"/"}>علاقه مندی</Link>
+            </li>
+          </ul>
+        </div>
+        <div className={styles.aboutUs}>
+          <h3>تماس با ما</h3>
+          <ul>
+            <li>
+              <Link to={"tel:09960530251"}>تماس</Link>
+            </li>
           </ul>
         </div>
       </div>
-      <div className={styles.tag}><h4>designed by AmirAlps</h4></div>
+      <div className={styles.tag}>
+        <h4>designed by AmirAlps</h4>
+      </div>
     </footer>
   );
 }

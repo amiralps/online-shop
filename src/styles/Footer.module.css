@@ -1,45 +1,64 @@
 .footer {
-	width: 100%;
-	height: 200px;
-	border-radius: 20px;
-	margin: 20px 0 10px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	flex-direction: column;
-	overflow: hidden;
+  width: 100%;
+  height: fit-content;
+  border-radius: 20px;
+  margin: 20px 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+.footer * {
+  font-family: "tanha", serif;
 }
 .footer .container {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: space-between;
-	background: linear-gradient(35deg, #413eff, #f940ff);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #00adb5;
+  gap: 20px;
+  padding: 0 20px;
 }
 :global(.Dark) .footer .container {
-	background: linear-gradient(35deg, #080038, #3b003d);
+  background-color: #365486;
 }
 .footer .container div {
-	width: 30%;
-	height: 100%;
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
 }
 .tag {
-	background: #999600;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  background: #999600;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.company p {
+	text-align: justify;
 }
 
-
-
-
-
-
-
 @media (max-width: 900px) {
-	.footer {
-		width: 96%;
-		margin: 20px auto 8px;
-	}
+  .footer {
+    width: 96%;
+    margin: 20px auto 8px;
+    height: fit-content;
+    justify-content: center;
+  }
+  .footer .container {
+    flex-direction: column;
+    justify-content: center;
+	padding: 0 20px;
+	gap: 20px;
+  }
+  .footer .container div {
+    justify-content: center;
+    align-items: center;
+	width: 100%;
+  }
 }

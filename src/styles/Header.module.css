@@ -179,7 +179,7 @@
   opacity: 0;
 }
 :global(.Dark) .header {
-  background: #365486;
+  background-color: #365486;
   /* color: #fff; */
 }
 
