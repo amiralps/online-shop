@@ -117,7 +117,7 @@
 }
 :global(.Dark) :global(.scrollTop) {
   background: #001b3d;
-  box-shadow: inset -5px -5px 15px -8px #fff;
+  box-shadow: inset -5px -5px 15px -8px #ffffff81;
 }
 :global(.scrollTop).on {
   visibility: visible;

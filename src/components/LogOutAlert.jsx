@@ -1,6 +1,6 @@
 import {useRef} from "react";
 import styles from "../styles/LogOutAlert.module.css";
-function LogOutAlert({data: {alert, setAlert, dispatch, logOut, disableScroll, enableScroll}}) {
+function LogOutAlert({data: {alert, setAlert, dispatch, logOut, disableScroll, enableScroll, scrollTop}}) {
   const alertDiv = useRef(null);
   return (
     <>
@@ -14,6 +14,7 @@ function LogOutAlert({data: {alert, setAlert, dispatch, logOut, disableScroll, e
               dispatch(logOut());
               setAlert("off");
               enableScroll()
+              scrollTop()
             }}>
             بله
           </button>

@@ -30,17 +30,21 @@ function Header() {
       setTheme("Dark");
     }
   }
+  function scrollTop() {
+    window.scrollTo({top: 0, behavior: "instant"});
+  }
   function classRemover() {
     if (toggleMenu.current.className.includes(TMStyle.open)) {
+      scrollTop();
       toggleMenu.current.classList.remove(TMStyle.open);
-    document.documentElement.classList.remove("disable-scroll")
+      document.documentElement.classList.remove("disable-scroll");
     }
   }
   function disableScroll() {
-    document.documentElement.classList.add("disable-scroll")
+    document.documentElement.classList.add("disable-scroll");
   }
   function enableScroll() {
-    document.documentElement.classList.remove("disable-scroll")
+    document.documentElement.classList.remove("disable-scroll");
   }
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -60,7 +64,9 @@ function Header() {
           <>
             <div className={styles.logo}>
               <h3>
-                <Link to={"/"}>
+                <Link onClick={() => {
+                  scrollTop()
+                }} to={"/"}>
                   <img src="/policy-sunglasses.svg" alt="logo" />
                   عینک اپتیک
                 </Link>
@@ -69,10 +75,14 @@ function Header() {
             <div className={styles.centerdiv}>
               <ul>
                 <li>
-                  <NavLink to="/">خانه</NavLink>
+                  <NavLink onClick={() => {
+                    scrollTop()
+                  }} to="/">خانه</NavLink>
                 </li>
                 <li>
-                  <NavLink to="products">محصولات</NavLink>
+                  <NavLink onClick={() => {
+                    scrollTop()
+                  }} to="products">محصولات</NavLink>
                 </li>
               </ul>
             </div>
@@ -95,7 +105,9 @@ function Header() {
                   )}
                 </li>
                 <li className="cart">
-                  <NavLink to="/shopping-cart">
+                  <NavLink onClick={() => {
+                    scrollTop()
+                  }} to="/shopping-cart">
                     <LiaShoppingCartSolid />
                     {itemsCounter ? <div>{itemsCounter}</div> : ""}
                   </NavLink>
@@ -152,10 +164,10 @@ function Header() {
               onClick={() => {
                 if (toggleMenu.current.className.includes(TMStyle.open)) {
                   toggleMenu.current.classList.remove(TMStyle.open);
-                  enableScroll()
+                  enableScroll();
                 } else {
                   toggleMenu.current.classList.add(TMStyle.open);
-                  disableScroll()
+                  disableScroll();
                 }
               }}>
               <div></div>
@@ -214,7 +226,15 @@ function Header() {
         )}
       </header>
       <LogOutAlert
-        data={{alert, setAlert, dispatch, logOut, disableScroll, enableScroll}}
+        data={{
+          alert,
+          setAlert,
+          dispatch,
+          logOut,
+          disableScroll,
+          enableScroll,
+          scrollTop,
+        }}
       />
     </>
   );

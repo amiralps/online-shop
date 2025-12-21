@@ -22,7 +22,7 @@
 
 .li {
   opacity: 0;
-  transition: .3s ease-in-out;
+  transition: .4s ease-in-out;
   visibility: hidden;
 }
 .li:global(.right) {
