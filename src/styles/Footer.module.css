@@ -108,7 +108,7 @@
   border-radius: 50%;
   font-size: 2rem;
   cursor: pointer;
-  transform: scale(.8);
+  transform: translateY(50px) scale(.8);
   visibility: hidden;
   opacity: 0;
   transition: .3s ease-in-out;
@@ -125,7 +125,7 @@
   transform: none;
 }
 :global(.scrollTop).on:active {
-  transform: scale(.9);
+  transform: scale(.88);
   transition: 0s;
 }
 :global(.scrollTop) svg {
