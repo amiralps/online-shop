@@ -89,25 +89,19 @@ function Footer() {
             <h3>تماس با ما</h3>
             <ul>
               <li>
-                <Link onClick={() => {
-                  scrollTop()
-                }} to={"tel:+989960530222"}>
+                <Link to={"tel:+989960530222"}>
                   <FaAngleLeft />
                   گرفتن تماس
                 </Link>
               </li>
               <li>
-                <Link onClick={() => {
-                  scrollTop()
-                }} to={"mailto:amiralps@gmail.com"}>
+                <Link to={"mailto:amiralps@gmail.com"}>
                   <FaAngleLeft />
                   ارسال ایمیل
                 </Link>
               </li>
               <li>
-                <Link onClick={() => {
-                  scrollTop()
-                }} to={"sms:+989960530222"}>
+                <Link to={"sms:+989960530222"}>
                   <FaAngleLeft />
                   ارسال پیامک
                 </Link>
