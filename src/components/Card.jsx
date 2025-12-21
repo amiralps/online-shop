@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 function Card({data: {id, title, images, colors}}) {
   const card = useRef(null);
   function scroller() {
+    console.dir(document.body)
     if (
       window.pageYOffset + window.innerHeight >
       card.current.offsetTop + card.current.offsetHeight - 0
@@ -49,10 +50,10 @@ function Card({data: {id, title, images, colors}}) {
       card.current.classList.add("center")
     }
     scroller();
-    window.addEventListener("scroll", () => {
+    document.body.addEventListener("scroll", () => {
       scroller();
     });
-    window.removeEventListener("scroll", () => {
+    document.body.removeEventListener("scroll", () => {
       scroller();
     });
   }, []);
