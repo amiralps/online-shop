@@ -6,8 +6,8 @@ function Card({data: {id, title, images, colors}}) {
   const card = useRef(null);
   function scroller() {
     if (
-      window.pageYOffset + window.innerHeight >
-      card.current.offsetTop + card.current.offsetHeight - 0
+      document.documentElement.scrollTop + document.documentElement.clientHeight >
+      card.current.offsetTop + card.current.offsetHeight - 80
     ) {
       card.current.classList.add(styles.opened);
     } else {
