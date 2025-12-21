@@ -14,6 +14,32 @@ function Card({data: {id, title, images, colors}}) {
       card.current.classList.remove(styles.opened);
     }
   }
+  const directMotion = () => {
+    if (
+      card.current.offsetLeft >
+      document.documentElement.offsetWidth -
+        (card.current.offsetLeft + card.current.offsetWidth)
+    ) {
+      card.current.classList.remove("right");
+      card.current.classList.remove("left");
+      card.current.classList.remove("center");
+      card.current.classList.add("right");
+    } else if (
+      card.current.offsetLeft <
+      document.documentElement.offsetWidth -
+        (card.current.offsetLeft + card.current.offsetWidth)
+    ) {
+      card.current.classList.remove("right");
+      card.current.classList.remove("left");
+      card.current.classList.remove("center");
+      card.current.classList.add("left");
+    } else {
+      card.current.classList.remove("right");
+      card.current.classList.remove("left");
+      card.current.classList.remove("center");
+      card.current.classList.add("center");
+    }
+  };
   useEffect(() => {
     // console.dir(card.current)
     // console.log(
@@ -24,36 +50,21 @@ function Card({data: {id, title, images, colors}}) {
     //   document.documentElement.offsetWidth -
     //     (card.current.offsetLeft + card.current.offsetWidth)
     // );
-    if (
-      card.current.offsetLeft >
-      document.documentElement.offsetWidth -
-        (card.current.offsetLeft + card.current.offsetWidth)
-    ) {
-      card.current.classList.remove("right")
-      card.current.classList.remove("left")
-      card.current.classList.remove("center")
-      card.current.classList.add("right");
-    } else if (
-      card.current.offsetLeft <
-      document.documentElement.offsetWidth -
-        (card.current.offsetLeft + card.current.offsetWidth)
-    ) {
-      card.current.classList.remove("right")
-      card.current.classList.remove("left")
-      card.current.classList.remove("center")
-      card.current.classList.add("left")
-    } else {
-      card.current.classList.remove("right")
-      card.current.classList.remove("left")
-      card.current.classList.remove("center")
-      card.current.classList.add("center")
-    }
+    directMotion();
     scroller();
     window.addEventListener("scroll", () => {
       scroller();
     });
     window.removeEventListener("scroll", () => {
       scroller();
+    });
+    window.addEventListener("resize", () => {
+      directMotion();
+      scroller()
+    });
+    window.removeEventListener("resize", () => {
+      directMotion();
+      scroller()
     });
   }, []);
   return (
