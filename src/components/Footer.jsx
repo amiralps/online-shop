@@ -21,6 +21,9 @@ function Footer() {
   // function enableScroll() {
   //   window.onscroll = function () {};
   // }
+  function scrollTop() {
+    window.scrollTo({top: 0, behavior: "instant"});
+  }
   useEffect(() => {
     window.onscroll = () => {
       setScroll(window.pageYOffset);
@@ -49,25 +52,33 @@ function Footer() {
             <h3>راهنمای سایت</h3>
             <ul>
               <li>
-                <Link to={"/"}>
+                <Link onClick={() => {
+                  scrollTop()
+                }} to={"/"}>
                   <FaAngleLeft />
                   خانه
                 </Link>
               </li>
               <li>
-                <Link to={"/products"}>
+                <Link onClick={() => {
+                  scrollTop()
+                }} to={"/products"}>
                   <FaAngleLeft />
                   محصولات
                 </Link>
               </li>
               <li>
-                <Link to={"/shopping-cart"}>
+                <Link onClick={() => {
+                  scrollTop()
+                }} to={"/shopping-cart"}>
                   <FaAngleLeft />
                   سبد خرید
                 </Link>
               </li>
               <li>
-                <Link to={"/"}>
+                <Link onClick={() => {
+                  scrollTop()
+                }} to={"/"}>
                   <FaAngleLeft />
                   علاقه مندی
                 </Link>
@@ -78,19 +89,25 @@ function Footer() {
             <h3>تماس با ما</h3>
             <ul>
               <li>
-                <Link to={"tel:+989960530222"}>
+                <Link onClick={() => {
+                  scrollTop()
+                }} to={"tel:+989960530222"}>
                   <FaAngleLeft />
                   گرفتن تماس
                 </Link>
               </li>
               <li>
-                <Link to={"mailto:amiralps@gmail.com"}>
+                <Link onClick={() => {
+                  scrollTop()
+                }} to={"mailto:amiralps@gmail.com"}>
                   <FaAngleLeft />
                   ارسال ایمیل
                 </Link>
               </li>
               <li>
-                <Link to={"sms:+989960530222"}>
+                <Link onClick={() => {
+                  scrollTop()
+                }} to={"sms:+989960530222"}>
                   <FaAngleLeft />
                   ارسال پیامک
                 </Link>
