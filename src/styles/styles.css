@@ -30,18 +30,31 @@
   background-color: inherit;
   overflow: hidden;
 }
-html {
+body {
   transition: 0.4s background-color;
 }
 .disable-scroll {
   overflow: hidden;
 }
-.Dark {
+.Dark body {
   background: #000c3d;
 }
 
 @media (max-width: 900px) {
   .main {
     padding: 0;
+  }
+  html {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  body {
+    height: 100%;
+    position: fixed;
+    /* prevent overscroll bounce*/
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    /* iOS velocity scrolling */
   }
 }
