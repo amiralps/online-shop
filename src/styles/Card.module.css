@@ -25,9 +25,19 @@
   transition: .3s ease-in-out;
   visibility: hidden;
 }
+.li:global(.right) {
+  transform: translateX(50px);
+}
+.li:global(.center) {
+  transform: translateY(50px);
+}
+.li:global(.left) {
+  transform: translateX(-50px);
+}
 .li.opened {
   opacity: 1;
   visibility: visible;
+  transform: none;
 }
 
 .card h1,

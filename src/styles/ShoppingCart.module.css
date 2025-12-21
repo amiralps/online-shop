@@ -1,6 +1,6 @@
 .container {
   font-family: "tanha", serif;
-  padding-bottom: 60px;
+  min-height: 100vh;
   display: flex;
 }
 
@@ -219,6 +219,12 @@
 @media (max-width: 900px) {
   .container {
     display: block;
+  }
+  .container ~ footer {
+    margin-bottom: 60px;
+  }
+  .container ~ :global(.scrollTop) {
+    bottom: 60px;
   }
 
   .cartDTLBTN h1 {

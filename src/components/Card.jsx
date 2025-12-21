@@ -7,7 +7,7 @@ function Card({data: {id, title, images, colors}}) {
   function scroller() {
     if (
       window.pageYOffset + window.innerHeight >
-      (card.current.offsetTop + card.current.offsetHeight) - 150
+      card.current.offsetTop + card.current.offsetHeight - 0
     ) {
       card.current.classList.add(styles.opened);
     } else {
@@ -15,8 +15,39 @@ function Card({data: {id, title, images, colors}}) {
     }
   }
   useEffect(() => {
-    // console.log("left : ",card.current.parentElement.offsetLeft,"right : ", window.innerWidth - (card.current.parentElement.offsetLeft + card.current.parentElement.offsetWidth))
-    // console.log(card.current)
+    // console.dir(card.current)
+    // console.log(
+    //   "left : ",
+    //   card.current.offsetLeft,
+    //   ",",
+    //   "right : ",
+    //   document.documentElement.offsetWidth -
+    //     (card.current.offsetLeft + card.current.offsetWidth)
+    // );
+    if (
+      card.current.offsetLeft >
+      document.documentElement.offsetWidth -
+        (card.current.offsetLeft + card.current.offsetWidth)
+    ) {
+      card.current.classList.remove("right")
+      card.current.classList.remove("left")
+      card.current.classList.remove("center")
+      card.current.classList.add("right");
+    } else if (
+      card.current.offsetLeft <
+      document.documentElement.offsetWidth -
+        (card.current.offsetLeft + card.current.offsetWidth)
+    ) {
+      card.current.classList.remove("right")
+      card.current.classList.remove("left")
+      card.current.classList.remove("center")
+      card.current.classList.add("left")
+    } else {
+      card.current.classList.remove("right")
+      card.current.classList.remove("left")
+      card.current.classList.remove("center")
+      card.current.classList.add("center")
+    }
     scroller();
     window.addEventListener("scroll", () => {
       scroller();

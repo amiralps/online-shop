@@ -98,7 +98,7 @@
 .copyRight p svg {
   transform: translateY(3px);
 }
-.scrollTop {
+:global(.scrollTop) {
   width: 50px;
   height: 50px;
   background: #308aff;
@@ -115,20 +115,20 @@
   z-index: 1000;
   box-shadow: inset -5px -5px 15px -8px #000;
 }
-:global(.Dark) .scrollTop {
+:global(.Dark) :global(.scrollTop) {
   background: #001b3d;
   box-shadow: inset -5px -5px 15px -8px #fff;
 }
-.scrollTop.on {
+:global(.scrollTop).on {
   visibility: visible;
   opacity: 1;
   transform: none;
 }
-.scrollTop.on:active {
+:global(.scrollTop).on:active {
   transform: scale(.9);
   transition: 0s;
 }
-.scrollTop svg {
+:global(.scrollTop) svg {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -157,7 +157,7 @@
     text-align: justify;
     text-align-last: center;
   }
-  .scrollTop {
+  :global(.scrollTop) {
     bottom: 25px;
     right: 25px;
   }

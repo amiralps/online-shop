@@ -32,7 +32,7 @@ function Footer() {
         onClick={() => {
           window.scrollTo({top: 0, behavior: "smooth"});
         }}
-        className={`${styles.scrollTop} ${scroll > 300 ? styles.on : ""}`}>
+        className={`scrollTop ${scroll > 300 ? styles.on : ""}`}>
         <IoIosArrowUp />
       </div>
       <footer className={styles.footer}>
