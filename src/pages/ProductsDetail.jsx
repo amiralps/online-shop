@@ -77,9 +77,6 @@ function ProductsDetail() {
               <Link to="/shopping-cart">
                 <LiaShoppingCartSolid />
               </Link>
-              {console.log(
-                !cartStatus.favoriteItems.find((item) => item.id === product.id)
-              )}
               <button
                 className={
                   !cartStatus.favoriteItems.find(

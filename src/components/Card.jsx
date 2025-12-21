@@ -1,43 +1,48 @@
-import {useEffect, useRef} from "react";
+import {memo, useEffect, useRef} from "react";
 import {priceFormat} from "../helper/helper";
 import styles from "../styles/Card.module.css";
 import {Link} from "react-router-dom";
 function Card({data: {id, title, images, colors}}) {
   const card = useRef(null);
   function scroller() {
-    if (
-      document.documentElement.scrollTop + document.documentElement.clientHeight >
-      card.current.offsetTop + card.current.offsetHeight - 80
-    ) {
-      card.current.classList.add(styles.opened);
-    } else {
-      card.current.classList.remove(styles.opened);
+    if (card.current) {
+      if (
+        document.documentElement.scrollTop +
+          document.documentElement.clientHeight >
+        card.current.offsetTop + card.current.offsetHeight - 80
+      ) {
+        card.current.classList.add(styles.opened);
+      } else {
+        card.current.classList.remove(styles.opened);
+      }
     }
   }
   const directMotion = () => {
-    if (
-      card.current.offsetLeft >
-      document.documentElement.offsetWidth -
-        (card.current.offsetLeft + card.current.offsetWidth)
-    ) {
-      card.current.classList.remove("right");
-      card.current.classList.remove("left");
-      card.current.classList.remove("center");
-      card.current.classList.add("right");
-    } else if (
-      card.current.offsetLeft <
-      document.documentElement.offsetWidth -
-        (card.current.offsetLeft + card.current.offsetWidth)
-    ) {
-      card.current.classList.remove("right");
-      card.current.classList.remove("left");
-      card.current.classList.remove("center");
-      card.current.classList.add("left");
-    } else {
-      card.current.classList.remove("right");
-      card.current.classList.remove("left");
-      card.current.classList.remove("center");
-      card.current.classList.add("center");
+    if (card.current) {
+      if (
+        card.current.offsetLeft >
+        document.documentElement.offsetWidth -
+          (card.current.offsetLeft + card.current.offsetWidth)
+      ) {
+        card.current.classList.remove("right");
+        card.current.classList.remove("left");
+        card.current.classList.remove("center");
+        card.current.classList.add("right");
+      } else if (
+        card.current.offsetLeft <
+        document.documentElement.offsetWidth -
+          (card.current.offsetLeft + card.current.offsetWidth)
+      ) {
+        card.current.classList.remove("right");
+        card.current.classList.remove("left");
+        card.current.classList.remove("center");
+        card.current.classList.add("left");
+      } else {
+        card.current.classList.remove("right");
+        card.current.classList.remove("left");
+        card.current.classList.remove("center");
+        card.current.classList.add("center");
+      }
     }
   };
   useEffect(() => {
@@ -60,11 +65,11 @@ function Card({data: {id, title, images, colors}}) {
     });
     window.addEventListener("resize", () => {
       directMotion();
-      scroller()
+      scroller();
     });
     window.removeEventListener("resize", () => {
       directMotion();
-      scroller()
+      scroller();
     });
   }, []);
   return (
@@ -81,4 +86,4 @@ function Card({data: {id, title, images, colors}}) {
     </>
   );
 }
-export default Card;
+export default memo(Card);
