@@ -18,6 +18,7 @@
   min-width: 100%;
   height: 100%;
   transition: 0.3s;
+  /* aspect-ratio: 1 / 1; */
 }
 
 .li {
@@ -26,13 +27,13 @@
   visibility: hidden;
 }
 .li:global(.right) {
-  transform: translateX(50px);
+  transform: translateX(50px) rotate(5deg);
 }
 .li:global(.center) {
   transform: translateY(50px);
 }
 .li:global(.left) {
-  transform: translateX(-50px);
+  transform: translateX(-50px) rotate(-5deg);
 }
 .li.opened {
   opacity: 1;

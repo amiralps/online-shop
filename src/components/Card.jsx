@@ -4,8 +4,12 @@ import styles from "../styles/Card.module.css";
 import {Link} from "react-router-dom";
 function Card({data: {id, title, images, colors}}) {
   const card = useRef(null);
+
   function scroller() {
     if (card.current) {
+      // if (window.pageYOffset > 0) {
+      //   sessionStorage.setItem("scrollPoint", window.pageYOffset);
+      // }
       if (
         document.documentElement.scrollTop +
           document.documentElement.clientHeight >
@@ -46,6 +50,10 @@ function Card({data: {id, title, images, colors}}) {
     }
   };
   useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "auto";
+    }
+
     // console.dir(card.current)
     // console.log(
     //   "left : ",
@@ -71,6 +79,9 @@ function Card({data: {id, title, images, colors}}) {
       directMotion();
       scroller();
     });
+    // document.documentElement.scrollTo({
+    //   top: sessionStorage.getItem("scrollPoint"),
+    // });
   }, []);
   return (
     <>
@@ -86,4 +97,4 @@ function Card({data: {id, title, images, colors}}) {
     </>
   );
 }
-export default memo(Card);
+export default Card;

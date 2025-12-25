@@ -82,7 +82,7 @@ function Header() {
                 <li>
                   <NavLink onClick={() => {
                     scrollTop()
-                  }} to="products">محصولات</NavLink>
+                  }} to="/products">محصولات</NavLink>
                 </li>
               </ul>
             </div>

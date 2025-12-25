@@ -32,20 +32,26 @@ function ProductsDetail() {
   useEffect(() => {
     document.documentElement.style.setProperty("--scroll-scale", 1);
     const scrollHandler = () => {
-      const scrollY = window.scrollY;
+      if (location.href.includes(`/products/${id}`)) {
+        const scrollY = window.scrollY;
 
-      // scale val
-      const scale = (1 + scrollY / -360).toFixed(3);
+        // scale val
+        const scale = (1 + scrollY / -360).toFixed(3);
 
-      // css variables
-      document.documentElement.style.setProperty(
-        "--scroll-scale",
-        scale >= 0 ? scale : 0
-      );
+        // css variables
+        document.documentElement.style.setProperty(
+          "--scroll-scale",
+          scale >= 0 ? scale : 0
+        );
+      }
     };
 
-    window.addEventListener("scroll", scrollHandler);
-    return () => window.removeEventListener("scroll", scrollHandler);
+    window.addEventListener("scroll", () => {
+      scrollHandler();
+    });
+    window.removeEventListener("scroll", () => {
+      scrollHandler();
+    });
   }, []);
   const cartStatus = useSelector((state) => state.cart);
   const {error, loading, products} = useSelector((state) => state.products);
@@ -63,94 +69,90 @@ function ProductsDetail() {
     );
   return (
     <>
-      <div>
-        <div className={styles.productDAS}>
-          <div className={styles2.back_box_favorite}>
+      <div className={styles.productDAS}>
+        <div className={styles2.back_box_favorite}>
+          <button
+            className={styles2.backButton}
+            onClick={() => {
+              history.back();
+            }}>
+            <IoCloseCircleOutline />
+          </button>
+          <div className={styles2.box_favorite}>
+            <Link to="/shopping-cart">
+              <LiaShoppingCartSolid />
+            </Link>
             <button
-              className={styles2.backButton}
-              onClick={() => {
-                history.back();
-              }}>
-              <IoCloseCircleOutline />
+              className={
+                !cartStatus.favoriteItems.find((item) => item.id === product.id)
+                  ? null
+                  : styles2.inFavorites
+              }
+              onClick={() => dispatch(favorite(product))}>
+              <GoHeart />
+              <GoHeartFill className={styles2.fillHeart} />
             </button>
-            <div className={styles2.box_favorite}>
-              <Link to="/shopping-cart">
-                <LiaShoppingCartSolid />
-              </Link>
-              <button
-                className={
-                  !cartStatus.favoriteItems.find(
-                    (item) => item.id === product.id
-                  )
-                    ? null
-                    : styles2.inFavorites
-                }
-                onClick={() => dispatch(favorite(product))}>
-                <GoHeart />
-                <GoHeartFill className={styles2.fillHeart} />
-              </button>
-            </div>
           </div>
-          <ThumbSlider data={{product}} />
-          <div className={styles.productDetails}>
-            <h1>{product.title}</h1>
-            <p>{product.description}</p>
-            <p>رنگ : {product.colors[colorPick].namecolor}</p>
-            <ul className={styles.colors}>
-              {product.colors.map((item, index) => (
-                <li
-                  key={index}
-                  onClick={() => {
-                    setColorPick(index);
-                  }}
-                  className={colorPick == index ? styles.active : null}>
-                  <div style={{backgroundColor: item.code}}></div>
-                  {!isDesktop ? <p>{item.namecolor}</p> : null}
-                </li>
-              ))}
-            </ul>
-            <div className={styles2.addToBox}>
-              <Buttons data={{thisCart, colorPick, dispatch, product}} />
-              <span>{priceFormat(product.colors[colorPick].price)}</span>
-            </div>
-            <p className={styles.description}>
-              {product.description}
-              <br />
-              {product.description}
-              <br />
-              {product.description}
-              <br />
-              {product.description}
-              <br />
-              {product.description}
-              <br />
-              {product.description}
-              <br />
-              {product.description}
-              <br />
-              {product.description}
-              <br />
-              {product.description}
-              <br />
-              {product.description}
-              <br />
-              {product.description}
-              <br />
-              {product.description}
-              <br />
-              {product.description}
-              <br />
-              {product.description}
-              <br />
-              {product.description}
-              <br />
-              {product.description}
-              <br />
-              {product.description}
-              <br />
-              {product.description}
-            </p>
+        </div>
+        <ThumbSlider data={{product}} />
+        <div className={styles.productDetails}>
+          <h1>{product.title}</h1>
+          <p>{product.description}</p>
+          <p>رنگ : {product.colors[colorPick].namecolor}</p>
+          <ul className={styles.colors}>
+            {product.colors.map((item, index) => (
+              <li
+                key={index}
+                onClick={() => {
+                  setColorPick(index);
+                }}
+                className={colorPick == index ? styles.active : null}>
+                <div style={{backgroundColor: item.code}}></div>
+                {!isDesktop ? <p>{item.namecolor}</p> : null}
+              </li>
+            ))}
+          </ul>
+          <div className={styles2.addToBox}>
+            <Buttons data={{thisCart, colorPick, dispatch, product}} />
+            <span>{priceFormat(product.colors[colorPick].price)}</span>
           </div>
+          <p className={styles.description}>
+            {product.description}
+            <br />
+            {product.description}
+            <br />
+            {product.description}
+            <br />
+            {product.description}
+            <br />
+            {product.description}
+            <br />
+            {product.description}
+            <br />
+            {product.description}
+            <br />
+            {product.description}
+            <br />
+            {product.description}
+            <br />
+            {product.description}
+            <br />
+            {product.description}
+            <br />
+            {product.description}
+            <br />
+            {product.description}
+            <br />
+            {product.description}
+            <br />
+            {product.description}
+            <br />
+            {product.description}
+            <br />
+            {product.description}
+            <br />
+            {product.description}
+          </p>
         </div>
       </div>
     </>
