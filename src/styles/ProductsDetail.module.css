@@ -73,7 +73,6 @@
 /* product DAS(Dtails And Sliders) START */
 .productDAS {
   padding: 20px 50px;
-  position: relative;
   display: flex;
   width: 100%;
   /* gap: 30px; */
@@ -100,6 +99,7 @@
 
   .productDAS {
     flex-direction: column;
+    position: relative;
     /* width: 100%; */
     padding: 0;
     /* gap: 15px; */
@@ -115,7 +115,7 @@
     gap: 20px;
     background-color: #fff;
     z-index: 2;
-  margin-top: 370px;
+    /* margin-top: 370px; */
   }
   :global(.Dark) .productDetails {
     box-shadow: 0 -4px 10px 1px #ffffff80;

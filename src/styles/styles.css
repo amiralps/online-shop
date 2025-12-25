@@ -28,7 +28,7 @@
 .main {
   padding: 4px 20px;
   background-color: inherit;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 html {
   transition: 0.4s background-color;

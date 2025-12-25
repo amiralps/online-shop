@@ -50,9 +50,6 @@ function Card({data: {id, title, images, colors}}) {
     }
   };
   useEffect(() => {
-    if ("scrollRestoration" in window.history) {
-      window.history.scrollRestoration = "auto";
-    }
 
     // console.dir(card.current)
     // console.log(
@@ -79,6 +76,9 @@ function Card({data: {id, title, images, colors}}) {
       directMotion();
       scroller();
     });
+    if (card.current) {
+      card.current.style.transition = ".5s ease-in-out";
+    }
     // document.documentElement.scrollTo({
     //   top: sessionStorage.getItem("scrollPoint"),
     // });
