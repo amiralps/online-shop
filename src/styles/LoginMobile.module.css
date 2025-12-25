@@ -159,6 +159,7 @@
   box-shadow: inset 0 0 0 30px #fff;
   -webkit-text-fill-color: #000;
   -webkit-background-clip: text;
+  caret-color: #000;
 }
 :global(.Dark) .orgForm form input:focus,
 :global(.Dark) .orgForm form input.fill {
@@ -176,6 +177,7 @@
   box-shadow: inset 0 0 0 30px #000c3d;
   -webkit-text-fill-color: #fff;
   -webkit-background-clip: text;
+  caret-color: #fff;
 }
 .orgForm form input:focus + label,
 .orgForm form input.fill + label {
