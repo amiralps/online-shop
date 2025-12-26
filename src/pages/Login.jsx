@@ -1,14 +1,15 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import NotFound from "./NotFound.jsx";
 import styles from "../styles/Login.module.css";
 import styles2 from "../styles/LoginMobile.module.css";
 import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {logIn} from "../features/login/loginSlice.js";
+import { resizer } from "../helper/helper.js";
 function Login() {
+  const isMobile = resizer()
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
   const [loginMethod, setLoginMethod] = useState("signIn");
   const [loginInputs, setLoginInputs] = useState({name: "", password: ""});
   const {userLogin} = useSelector((state) => state.login);
@@ -20,14 +21,6 @@ function Login() {
       navigate("/", {replace: true});
     }
   }
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      setIsMobile(window.innerWidth <= 900);
-    });
-    return window.removeEventListener("resize", () => {
-      setIsMobile(window.innerWidth <= 900);
-    });
-  }, []);
   if (userLogin) return <NotFound />;
   return (
     <main className={!isMobile ? styles.main : styles2.main}>

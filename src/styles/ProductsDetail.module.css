@@ -78,7 +78,7 @@
   /* gap: 30px; */
 }
 
-@media (min-width: 900px) {
+@media (min-width: 901px) {
   .productDAS {
     gap: 30px;
   }

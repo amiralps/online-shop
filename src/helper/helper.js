@@ -1,4 +1,4 @@
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 
 export const changeTitle = (str = "") => {
   document.title = str;
@@ -15,6 +15,19 @@ export const priceFormat = (price = "1") => {
     .join(",");
 };
 
-export const resizeHandler = (width = 1024) => {
-  return window.innerWidth > width;
-};
+export const resizer = (maxWidth = 900) => {
+  const [result, setResult] = useState(window.innerWidth <= maxWidth)
+  const resize = () => {
+    const width = window.innerWidth;
+    setResult(width <= maxWidth)
+  }
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      resize()
+    })
+    window.removeEventListener("resize", () => {
+      resize()
+    })
+  },[])
+  return result
+}

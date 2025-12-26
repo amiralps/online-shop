@@ -1,8 +1,8 @@
 import {useDispatch, useSelector} from "react-redux";
 import styles from "../styles/ShoppingCart.module.css";
 import Buttons from "../components/Buttons";
-import {Fragment, useEffect, useState} from "react";
-import {changeTitle, priceFormat, resizeHandler} from "../helper/helper";
+import {Fragment, useEffect} from "react";
+import {changeTitle, priceFormat, resizer} from "../helper/helper";
 import {checkOut as doCheckOut} from "../features/cart/cartSlice";
 import {Link} from "react-router-dom";
 import {getProducts} from "../features/products/productSlice";
@@ -10,15 +10,9 @@ import Loading from "../components/Loading";
 
 function ShoppingCart() {
   const dispatch = useDispatch();
-  const [isDesktop, setIsDesktop] = useState(resizeHandler());
+  const isMobile = resizer();
   useEffect(() => {
     changeTitle("سبد خرید");
-    window.addEventListener("resize", () => {
-      setIsDesktop(resizeHandler());
-    });
-    return window.removeEventListener("resize", () => {
-      setIsDesktop(resizeHandler());
-    });
   }, []);
   const {products, loading, error} = useSelector((state) => state.products);
   useEffect(() => {
@@ -83,7 +77,7 @@ function ShoppingCart() {
             <p>جمع سبد خرید</p>
             <span>{priceFormat(totalCount)}</span>
           </div>
-          {isDesktop && (
+          {!isMobile && (
             <div>
               <p>وضعیت</p>
               <span>{checkOut ? "پرداخت شده" : "در انتظار پرداخت"}</span>

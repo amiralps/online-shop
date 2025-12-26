@@ -1,4 +1,4 @@
-import {memo, useEffect, useRef} from "react";
+import {useEffect, useRef} from "react";
 import {priceFormat} from "../helper/helper";
 import styles from "../styles/Card.module.css";
 import {Link} from "react-router-dom";

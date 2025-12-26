@@ -9,25 +9,23 @@ import styles from "../styles/ProductsDetail.module.css";
 import styles2 from "../styles/ProductsDetail2.module.css";
 import Buttons from "../components/Buttons.jsx";
 import ThumbSlider from "../components/ThumbSlider.jsx";
-import {changeTitle, priceFormat} from "../helper/helper.js";
+import {changeTitle, priceFormat, resizer} from "../helper/helper.js";
 import {LiaShoppingCartSolid} from "react-icons/lia";
 import {favorite} from "../features/cart/cartSlice.js";
 import Loading from "../components/Loading.jsx";
 
 function ProductsDetail() {
   const {id} = useParams();
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024);
+  const isMobile = resizer();
 
   const dispatch = useDispatch();
+  const cartStatus = useSelector((state) => state.cart);
+  const {error, loading, products} = useSelector((state) => state.products);
   useEffect(() => {
     changeTitle(`عینک - ${id}`);
-    dispatch(getProducts());
-    window.addEventListener("resize", () => {
-      setIsDesktop(window.innerWidth > 1024);
-    });
-    return window.removeEventListener("resize", () => {
-      setIsDesktop(window.innerWidth > 1024);
-    });
+    if (!products.length) {
+      dispatch(getProducts());
+    }
   }, []);
   useEffect(() => {
     document.documentElement.style.setProperty("--scroll-scale", 1);
@@ -53,8 +51,6 @@ function ProductsDetail() {
       scrollHandler();
     });
   }, []);
-  const cartStatus = useSelector((state) => state.cart);
-  const {error, loading, products} = useSelector((state) => state.products);
   const [colorPick, setColorPick] = useState(0);
   const thisCart = cartStatus.selectedItems.find((item) => item.id == id);
   if (error) return <h1>{error}</h1>;
@@ -108,7 +104,7 @@ function ProductsDetail() {
                 }}
                 className={colorPick == index ? styles.active : null}>
                 <div style={{backgroundColor: item.code}}></div>
-                {!isDesktop ? <p>{item.namecolor}</p> : null}
+                {isMobile ? <p>{item.namecolor}</p> : null}
               </li>
             ))}
           </ul>

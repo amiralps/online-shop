@@ -5,19 +5,20 @@ import {LiaShoppingCartSolid} from "react-icons/lia";
 import {useDispatch, useSelector} from "react-redux";
 import {RiMoonClearLine} from "react-icons/ri";
 import {BsFillSunFill} from "react-icons/bs";
-import {useEffect, useRef, useState} from "react";
+import {useRef, useState} from "react";
 import {HiHome} from "react-icons/hi2";
 import {HiOutlineLogin, HiOutlineLogout} from "react-icons/hi";
 import {AiFillProduct} from "react-icons/ai";
 import {logOut} from "../features/login/loginSlice";
 import LogOutAlert from "./LogOutAlert";
+import { resizer } from "../helper/helper";
 
 function Header() {
   const [alert, setAlert] = useState("off");
   const dispatch = useDispatch();
   const {userLogin} = useSelector((state) => state.login);
   const toggleMenu = useRef(null);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
+  const isMobile = resizer();
   const [theme, setTheme] = useState(localStorage.getItem("theme"));
   function themeHandler() {
     if (theme === "Dark") {
@@ -46,14 +47,6 @@ function Header() {
   function enableScroll() {
     document.documentElement.classList.remove("disable-scroll");
   }
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      setIsMobile(window.innerWidth <= 900);
-    });
-    return window.removeEventListener("resize", () => {
-      setIsMobile(window.innerWidth <= 900);
-    });
-  }, []);
   const {selectedItems, itemsCounter, totalCount} = useSelector(
     (state) => state.cart
   );
