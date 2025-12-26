@@ -50,7 +50,6 @@ function Card({data: {id, title, images, colors}}) {
     }
   };
   useEffect(() => {
-
     // console.dir(card.current)
     // console.log(
     //   "left : ",
@@ -60,8 +59,15 @@ function Card({data: {id, title, images, colors}}) {
     //   document.documentElement.offsetWidth -
     //     (card.current.offsetLeft + card.current.offsetWidth)
     // );
-    directMotion();
-    scroller();
+    let show;
+    clearTimeout(show);
+    show = setTimeout(() => {
+      directMotion();
+      scroller();
+      if (card.current) {
+        card.current.style.transition = ".5s ease-in-out";
+      }
+    }, 100);
     window.addEventListener("scroll", () => {
       scroller();
     });
@@ -76,9 +82,6 @@ function Card({data: {id, title, images, colors}}) {
       directMotion();
       scroller();
     });
-    if (card.current) {
-      card.current.style.transition = ".5s ease-in-out";
-    }
     // document.documentElement.scrollTo({
     //   top: sessionStorage.getItem("scrollPoint"),
     // });
