@@ -50,6 +50,7 @@ function ProductsDetail() {
     window.removeEventListener("scroll", () => {
       scrollHandler();
     });
+    window.scrollTo({top: 0})
   }, []);
   const [colorPick, setColorPick] = useState(0);
   const thisCart = cartStatus.selectedItems.find((item) => item.id == id);
