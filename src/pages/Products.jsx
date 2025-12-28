@@ -12,6 +12,11 @@ function Products() {
     changeTitle("محصولات");
     if (!products.length) {
       dispatch(getProducts());
+      let scroll;
+      clearTimeout(scroll)
+      scroll = setTimeout(() => {
+        window.scrollTo({top: 0})
+      }, 120);
     }
   }, []);
   if (error) return <h1>{error}</h1>;

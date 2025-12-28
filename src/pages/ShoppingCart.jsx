@@ -18,6 +18,11 @@ function ShoppingCart() {
   useEffect(() => {
     if (!products.length) {
       dispatch(getProducts());
+      let scroll;
+      clearTimeout(scroll)
+      scroll = setTimeout(() => {
+        window.scrollTo({top: 0})
+      }, 120);
     }
   }, []);
   // console.log(products, loading, error)
