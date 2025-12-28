@@ -64,23 +64,21 @@ function Card({
     //     (card.current.offsetLeft + card.current.offsetWidth)
     // );
     directMotion();
-    if (!isData) {
-      const timer = setTimeout(() => {
+    if (card.current) {
+      if (!isData) {
+        const timer = setTimeout(() => {
+          scroller();
+          card.current.style.transition = ".5s ease-in-out";
+          window.scrollTo({top: 0});
+          clearTimeout(timer);
+        }, 100);
+      } else {
         scroller();
-        if (card.current) {
+        const timer = setTimeout(() => {
           card.current.style.transition = ".5s ease-in-out";
-        }
-        window.scrollTo({top: 0})
-        clearTimeout(timer)
-      }, 100);
-    } else {
-      scroller();
-      const timer = setTimeout(() => {
-        if (card.current) {
-          card.current.style.transition = ".5s ease-in-out";
-        }
-        clearTimeout(timer)
-      }, 0);
+          clearTimeout(timer);
+        }, 100);
+      }
     }
 
     window.addEventListener("scroll", () => {
