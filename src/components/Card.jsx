@@ -15,7 +15,12 @@ function Card({data: {id, title, images, colors}}) {
           document.documentElement.clientHeight >
         card.current.offsetTop + card.current.offsetHeight - 80
       ) {
-        card.current.classList.add(styles.opened);
+        card.current.style.transition = ".5s ease-in-out";
+        let motion;
+        clearTimeout(motion);
+        motion = setTimeout(() => {
+          card.current.classList.add(styles.opened);
+        }, 0);
       } else {
         card.current.classList.remove(styles.opened);
       }
@@ -59,10 +64,10 @@ function Card({data: {id, title, images, colors}}) {
     //   document.documentElement.offsetWidth -
     //     (card.current.offsetLeft + card.current.offsetWidth)
     // );
+    directMotion();
     let show;
     clearTimeout(show);
     show = setTimeout(() => {
-      directMotion();
       scroller();
       if (card.current) {
         card.current.style.transition = ".5s ease-in-out";
