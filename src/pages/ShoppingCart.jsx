@@ -21,8 +21,8 @@ function ShoppingCart() {
       let scroll;
       clearTimeout(scroll)
       scroll = setTimeout(() => {
-        window.scrollTo({top: 0})
-      }, 300);
+        window.scrollTo({top: 0, behavior: "smooth"})
+      }, 500);
     }
   }, []);
   // console.log(products, loading, error)

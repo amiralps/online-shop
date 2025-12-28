@@ -15,8 +15,8 @@ function Products() {
       let scroll;
       clearTimeout(scroll)
       scroll = setTimeout(() => {
-        window.scrollTo({top: 0})
-      }, 300);
+        window.scrollTo({top: 0, behavior: "smooth"})
+      }, 500);
     }
   }, []);
   if (error) return <h1>{error}</h1>;
