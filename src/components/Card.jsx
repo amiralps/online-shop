@@ -2,9 +2,13 @@ import {useEffect, useRef} from "react";
 import {priceFormat} from "../helper/helper";
 import styles from "../styles/Card.module.css";
 import {Link} from "react-router-dom";
-function Card({data: {id, title, images, colors}}) {
+function Card({
+  data: {
+    item: {id, title, images, colors},
+    isData,
+  },
+}) {
   const card = useRef(null);
-
   function scroller() {
     if (card.current) {
       // if (window.pageYOffset > 0) {
@@ -15,12 +19,7 @@ function Card({data: {id, title, images, colors}}) {
           document.documentElement.clientHeight >
         card.current.offsetTop + card.current.offsetHeight - 80
       ) {
-        card.current.style.transition = ".5s ease-in-out";
-        let motion;
-        clearTimeout(motion);
-        motion = setTimeout(() => {
-          card.current.classList.add(styles.opened);
-        }, 0);
+        card.current.classList.add(styles.opened);
       } else {
         card.current.classList.remove(styles.opened);
       }
@@ -65,14 +64,25 @@ function Card({data: {id, title, images, colors}}) {
     //     (card.current.offsetLeft + card.current.offsetWidth)
     // );
     directMotion();
-    let show;
-    clearTimeout(show);
-    show = setTimeout(() => {
+    if (!isData) {
+      const timer = setTimeout(() => {
+        scroller();
+        if (card.current) {
+          card.current.style.transition = ".5s ease-in-out";
+        }
+        window.scrollTo({top: 0})
+        clearTimeout(timer)
+      }, 100);
+    } else {
       scroller();
-      if (card.current) {
-        card.current.style.transition = ".5s ease-in-out";
-      }
-    }, 100);
+      const timer = setTimeout(() => {
+        if (card.current) {
+          card.current.style.transition = ".5s ease-in-out";
+        }
+        clearTimeout(timer)
+      }, 0);
+    }
+
     window.addEventListener("scroll", () => {
       scroller();
     });

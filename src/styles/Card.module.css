@@ -27,13 +27,13 @@
   visibility: hidden;
 }
 .li:global(.right) {
-  transform: translateX(50px) rotate(5deg);
+  transform: translateX(50px) rotate(5deg) scale(.8);;
 }
 .li:global(.center) {
-  transform: translateY(50px);
+  transform: translateY(50px) scale(.8);;
 }
 .li:global(.left) {
-  transform: translateX(-50px) rotate(-5deg);
+  transform: translateX(-50px) rotate(-5deg) scale(.8);
 }
 .li.opened {
   opacity: 1;

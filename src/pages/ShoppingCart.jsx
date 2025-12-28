@@ -18,11 +18,10 @@ function ShoppingCart() {
   useEffect(() => {
     if (!products.length) {
       dispatch(getProducts());
-      let scroll;
-      clearTimeout(scroll)
-      scroll = setTimeout(() => {
-        window.scrollTo({top: 0, behavior: "smooth"})
-      }, 500);
+      const timer = setTimeout(() => {
+        window.scrollTo({top: 0})
+        clearTimeout(timer)
+      }, 200);
     }
   }, []);
   // console.log(products, loading, error)
