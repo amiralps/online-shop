@@ -22,7 +22,7 @@ function ShoppingCart() {
       clearTimeout(scroll)
       scroll = setTimeout(() => {
         window.scrollTo({top: 0})
-      }, 120);
+      }, 200);
     }
   }, []);
   // console.log(products, loading, error)
